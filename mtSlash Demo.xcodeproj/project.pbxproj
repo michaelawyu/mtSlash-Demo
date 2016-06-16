@@ -17,6 +17,14 @@
 		0902ACF41D0D62D700FD6AAD /* mtSlash_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902ACF31D0D62D700FD6AAD /* mtSlash_DemoUITests.swift */; };
 		0902AD0A1D0DA75A00FD6AAD /* CoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD091D0DA75A00FD6AAD /* CoverPage.swift */; };
 		0902AD131D0DC13100FD6AAD /* coverImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0902AD121D0DC13100FD6AAD /* coverImage.prototype.jpg */; };
+		0902AD191D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD181D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift */; };
+		0902AD1C1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD1B1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift */; };
+		0902AD1E1D0E9E9300FD6AAD /* UsernameInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD1D1D0E9E9300FD6AAD /* UsernameInputPage.swift */; };
+		0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */; };
+		0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */; };
+		0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */; };
+		0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */; };
+		0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,14 @@
 		0902ACF51D0D62D700FD6AAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0902AD091D0DA75A00FD6AAD /* CoverPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverPage.swift; sourceTree = "<group>"; };
 		0902AD121D0DC13100FD6AAD /* coverImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coverImage.prototype.jpg; sourceTree = "<group>"; };
+		0902AD181D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromCoverPageToUsernameInputScreen.swift; sourceTree = "<group>"; };
+		0902AD1B1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameInputScreenViewController.swift; sourceTree = "<group>"; };
+		0902AD1D1D0E9E9300FD6AAD /* UsernameInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameInputPage.swift; sourceTree = "<group>"; };
+		0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = usernameInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
+		0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromUsernameInputScreenToPasswordInputScreen.swift; sourceTree = "<group>"; };
+		0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputScreenViewController.swift; sourceTree = "<group>"; };
+		0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinks.swift; sourceTree = "<group>"; };
+		0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDocumentScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +119,21 @@
 		0902ACCF1D0D62D700FD6AAD /* mtSlash Demo */ = {
 			isa = PBXGroup;
 			children = (
+				0971A9DD1D12EA7400FC9868 /* Miscellaneous */,
 				0902AD0F1D0DBE8F00FD6AAD /* Assets */,
 				0902ACD01D0D62D700FD6AAD /* AppDelegate.swift */,
 				0902ACD21D0D62D700FD6AAD /* CoverPageViewController.swift */,
+				0902AD1B1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift */,
+				0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */,
+				0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */,
 				0902AD091D0DA75A00FD6AAD /* CoverPage.swift */,
+				0902AD1D1D0E9E9300FD6AAD /* UsernameInputPage.swift */,
 				0902ACD41D0D62D700FD6AAD /* Main.storyboard */,
 				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
 				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
 				0902ACDF1D0D62D700FD6AAD /* Info.plist */,
 				0902ACD71D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld */,
+				0902AD1A1D0E557D00FD6AAD /* Custom Segues */,
 			);
 			path = "mtSlash Demo";
 			sourceTree = "<group>";
@@ -138,8 +160,26 @@
 			isa = PBXGroup;
 			children = (
 				0902AD121D0DC13100FD6AAD /* coverImage.prototype.jpg */,
+				0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		0902AD1A1D0E557D00FD6AAD /* Custom Segues */ = {
+			isa = PBXGroup;
+			children = (
+				0902AD181D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift */,
+				0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */,
+			);
+			name = "Custom Segues";
+			sourceTree = "<group>";
+		};
+		0971A9DD1D12EA7400FC9868 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */,
+			);
+			name = Miscellaneous;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +290,7 @@
 				0902AD131D0DC13100FD6AAD /* coverImage.prototype.jpg in Resources */,
 				0902ACDB1D0D62D700FD6AAD /* Assets.xcassets in Resources */,
 				0902ACD61D0D62D700FD6AAD /* Main.storyboard in Resources */,
+				0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +317,15 @@
 			files = (
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
 				0902ACD91D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld in Sources */,
+				0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */,
+				0902AD191D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift in Sources */,
 				0902AD0A1D0DA75A00FD6AAD /* CoverPage.swift in Sources */,
+				0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */,
 				0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */,
+				0902AD1C1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift in Sources */,
+				0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */,
+				0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */,
+				0902AD1E1D0E9E9300FD6AAD /* UsernameInputPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +550,7 @@
 				0902ACFA1D0D62D700FD6AAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0902ACFB1D0D62D700FD6AAD /* Build configuration list for PBXNativeTarget "mtSlash DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +559,7 @@
 				0902ACFD1D0D62D700FD6AAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0902ACFE1D0D62D700FD6AAD /* Build configuration list for PBXNativeTarget "mtSlash DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +568,7 @@
 				0902AD001D0D62D700FD6AAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
