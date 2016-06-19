@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UsernameInputPage: UIView {
+class UsernameInputPage: UIView, UITextFieldDelegate {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var mainTitle: UILabel!
@@ -84,7 +84,22 @@ class UsernameInputPage: UIView {
         userNoticeButton.alpha = 0.0
         privacyPolicyButton.alpha = 0.0
         proceedButton.alpha = 0.0
+        
+        usernameInput.delegate = self
+        usernameInput.text = username
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if touches.first != nil && touches.first!.view != nil && touches.first!.view! != usernameInput {
+            usernameInput.resignFirstResponder()
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        usernameInput.resignFirstResponder()
+        return true
+    }
+    
 }
 
 extension UIImage {

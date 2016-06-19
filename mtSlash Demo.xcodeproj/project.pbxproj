@@ -23,8 +23,14 @@
 		0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */; };
 		0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */; };
 		0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */; };
+		09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */; };
+		09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */; };
+		09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */; };
 		0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */; };
 		0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */; };
+		09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */; };
+		09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */; };
+		09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +73,14 @@
 		0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = usernameInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 		0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromUsernameInputScreenToPasswordInputScreen.swift; sourceTree = "<group>"; };
 		0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputScreenViewController.swift; sourceTree = "<group>"; };
+		09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = passwordInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
+		09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
+		09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromPasswordInputScreenToUsernameInputScreen.swift; sourceTree = "<group>"; };
 		0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinks.swift; sourceTree = "<group>"; };
 		0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDocumentScreenViewController.swift; sourceTree = "<group>"; };
+		09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedScreenViewController.swift; sourceTree = "<group>"; };
+		09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedPage.swift; sourceTree = "<group>"; };
+		09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accessGrantedPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,12 +134,8 @@
 				0971A9DD1D12EA7400FC9868 /* Miscellaneous */,
 				0902AD0F1D0DBE8F00FD6AAD /* Assets */,
 				0902ACD01D0D62D700FD6AAD /* AppDelegate.swift */,
-				0902ACD21D0D62D700FD6AAD /* CoverPageViewController.swift */,
-				0902AD1B1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift */,
-				0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */,
-				0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */,
-				0902AD091D0DA75A00FD6AAD /* CoverPage.swift */,
-				0902AD1D1D0E9E9300FD6AAD /* UsernameInputPage.swift */,
+				09ED77481D15BAD8002C0276 /* View Controllers */,
+				09ED77491D15BAED002C0276 /* Custom Views */,
 				0902ACD41D0D62D700FD6AAD /* Main.storyboard */,
 				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
 				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
@@ -161,6 +169,8 @@
 			children = (
 				0902AD121D0DC13100FD6AAD /* coverImage.prototype.jpg */,
 				0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */,
+				09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */,
+				09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -170,6 +180,7 @@
 			children = (
 				0902AD181D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift */,
 				0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */,
+				09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */,
 			);
 			name = "Custom Segues";
 			sourceTree = "<group>";
@@ -180,6 +191,29 @@
 				0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */,
 			);
 			name = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		09ED77481D15BAD8002C0276 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0902ACD21D0D62D700FD6AAD /* CoverPageViewController.swift */,
+				0902AD1B1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift */,
+				0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */,
+				0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */,
+				09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		09ED77491D15BAED002C0276 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				0902AD091D0DA75A00FD6AAD /* CoverPage.swift */,
+				09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */,
+				0902AD1D1D0E9E9300FD6AAD /* UsernameInputPage.swift */,
+				09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +321,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0902ACDE1D0D62D700FD6AAD /* LaunchScreen.storyboard in Resources */,
+				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
 				0902AD131D0DC13100FD6AAD /* coverImage.prototype.jpg in Resources */,
 				0902ACDB1D0D62D700FD6AAD /* Assets.xcassets in Resources */,
 				0902ACD61D0D62D700FD6AAD /* Main.storyboard in Resources */,
+				09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */,
 				0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,17 +351,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
 				0902ACD91D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld in Sources */,
 				0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */,
 				0902AD191D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift in Sources */,
 				0902AD0A1D0DA75A00FD6AAD /* CoverPage.swift in Sources */,
 				0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */,
+				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */,
 				0902AD1C1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift in Sources */,
 				0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */,
 				0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */,
+				09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */,
 				0902AD1E1D0E9E9300FD6AAD /* UsernameInputPage.swift in Sources */,
+				09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

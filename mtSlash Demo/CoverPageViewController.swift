@@ -17,9 +17,9 @@ class CoverPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let serverEndURLForSettings = NSURL(string: "http://52.175.20.188:8000/serverstatus")
+        let serverEndURLForSettings = WebLinks.getAddressOfWebLink(WebLinks.ServerStatus)
         let sessionForFetchingServerEndSettings = NSURLSession.sharedSession()
-        let taskForFetchingServerEndSettings = sessionForFetchingServerEndSettings.dataTaskWithURL(serverEndURLForSettings!) { (data, response, error) in
+        let taskForFetchingServerEndSettings = sessionForFetchingServerEndSettings.dataTaskWithURL(serverEndURLForSettings) { (data, response, error) in
             if error == nil && data != nil {
                 serverEndSettings = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
             }
