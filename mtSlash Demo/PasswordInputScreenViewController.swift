@@ -91,9 +91,8 @@ class PasswordInputScreenViewController: UIViewController {
             }
             if error == nil {
                 let serverResponse = NSString(data: data!, encoding: NSUTF8StringEncoding)?.uppercaseString
-                print(serverResponse)
                 if serverResponse == "\"OK\"\n" {
-                    print("Authentication Passed")
+                    self.performSegueWithIdentifier("fromPasswordInputScreenToAccessGrantedScreen", sender: self)
                 }
                 if serverResponse == "\"FAILED\"\n" {
                     dispatch_async(dispatch_get_main_queue(), {
@@ -121,5 +120,6 @@ class PasswordInputScreenViewController: UIViewController {
         }
         taskForUserAuthentication.resume()
     }
+
     
 }

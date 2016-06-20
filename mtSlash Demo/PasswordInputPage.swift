@@ -56,6 +56,17 @@ class PasswordInputPage: UIView, UITextFieldDelegate {
             }, completion: nil)
     }
     
+    func hideAllElementsForAnimation() {
+        self.navigationBar.alpha = 0.0
+        self.mainTitle.alpha = 0.0
+        self.descriptionText.alpha = 0.0
+        self.passwordInput.alpha = 0.0
+        self.optionsTitle.alpha = 0.0
+        self.switchUserOption.alpha = 0.0
+        self.helpNeededText.alpha = 0.0
+        self.proceedButton.alpha = 0.0
+    }
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if touches.first != nil && touches.first!.view != nil && touches.first!.view! != passwordInput {
             passwordInput.resignFirstResponder()

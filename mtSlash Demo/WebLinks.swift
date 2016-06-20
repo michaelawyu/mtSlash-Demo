@@ -14,6 +14,8 @@ enum WebLinks {
     case UserNotice
     case PrivacyPolicy
     case UserAuthentication
+    case WhatsNew
+    case UserExpImprovProj
     
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
         switch weblink {
@@ -27,6 +29,10 @@ enum WebLinks {
                 return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/usernotice")!
         case .UserAuthentication:
                 return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/userauthentication")!
+        case .WhatsNew:
+                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/whatsnew")!
+        case .UserExpImprovProj:
+                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/userexpimprovproj")!
         }
     }
     
@@ -42,6 +48,10 @@ enum WebLinks {
             return "使用须知"
         case .UserAuthentication:
             return "用户身份验证"
+        case .WhatsNew:
+            return "更新说明"
+        case .UserExpImprovProj:
+            return "用户体验改进计划"
         }
     }
     
