@@ -23,11 +23,15 @@
 		0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */; };
 		0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */; };
 		0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */; };
+		090E399A1D1AC478005E6133 /* codeSlash.png in Resources */ = {isa = PBXBuildFile; fileRef = 090E39991D1AC478005E6133 /* codeSlash.png */; };
 		09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */; };
 		09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */; };
 		09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */; };
+		0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */; };
+		0957DE861D1EF966004844A8 /* XMenPanelBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0957DE851D1EF966004844A8 /* XMenPanelBackground.jpg */; };
 		0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */; };
 		0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */; };
+		098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */; };
 		09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */; };
 		09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */; };
 		09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */; };
@@ -81,11 +85,15 @@
 		0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = usernameInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 		0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromUsernameInputScreenToPasswordInputScreen.swift; sourceTree = "<group>"; };
 		0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputScreenViewController.swift; sourceTree = "<group>"; };
+		090E39991D1AC478005E6133 /* codeSlash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeSlash.png; sourceTree = "<group>"; };
 		09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = passwordInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 		09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
 		09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromPasswordInputScreenToUsernameInputScreen.swift; sourceTree = "<group>"; };
+		0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcasePanel.swift; sourceTree = "<group>"; };
+		0957DE851D1EF966004844A8 /* XMenPanelBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XMenPanelBackground.jpg; sourceTree = "<group>"; };
 		0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinks.swift; sourceTree = "<group>"; };
 		0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDocumentScreenViewController.swift; sourceTree = "<group>"; };
+		098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cosmos.jpg; sourceTree = "<group>"; };
 		09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedScreenViewController.swift; sourceTree = "<group>"; };
 		09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedPage.swift; sourceTree = "<group>"; };
 		09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accessGrantedPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
 				0902ACDF1D0D62D700FD6AAD /* Info.plist */,
 				0902ACD71D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld */,
+				0957DE821D1E83F3004844A8 /* Custom Components */,
 				0902AD1A1D0E557D00FD6AAD /* Custom Segues */,
 				09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */,
 			);
@@ -185,6 +194,9 @@
 		0902AD0F1D0DBE8F00FD6AAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0957DE851D1EF966004844A8 /* XMenPanelBackground.jpg */,
+				090E39991D1AC478005E6133 /* codeSlash.png */,
+				098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */,
 				0902AD121D0DC13100FD6AAD /* coverImage.prototype.jpg */,
 				0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */,
 				09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */,
@@ -202,6 +214,14 @@
 				09ED77641D171F01002C0276 /* customSegueFromPasswordInputScreenToAccessGrantedScreen.swift */,
 			);
 			name = "Custom Segues";
+			sourceTree = "<group>";
+		};
+		0957DE821D1E83F3004844A8 /* Custom Components */ = {
+			isa = PBXGroup;
+			children = (
+				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
+			);
+			name = "Custom Components";
 			sourceTree = "<group>";
 		};
 		0971A9DD1D12EA7400FC9868 /* Miscellaneous */ = {
@@ -354,7 +374,10 @@
 			files = (
 				0902ACDE1D0D62D700FD6AAD /* LaunchScreen.storyboard in Resources */,
 				09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */,
+				090E399A1D1AC478005E6133 /* codeSlash.png in Resources */,
+				098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */,
 				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
+				0957DE861D1EF966004844A8 /* XMenPanelBackground.jpg in Resources */,
 				0902AD131D0DC13100FD6AAD /* coverImage.prototype.jpg in Resources */,
 				0902ACDB1D0D62D700FD6AAD /* Assets.xcassets in Resources */,
 				0902ACD61D0D62D700FD6AAD /* Main.storyboard in Resources */,
@@ -399,6 +422,7 @@
 				09ED776F1D1835FD002C0276 /* SettingsScreenViewController.swift in Sources */,
 				0902AD1C1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift in Sources */,
 				09ED776D1D1835F0002C0276 /* SearchScreenViewController.swift in Sources */,
+				0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */,
 				0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */,
 				0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */,
 				09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */,

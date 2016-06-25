@@ -10,11 +10,24 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var rootView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var centerPanel: homePageShowcasePanel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentSize = CGSizeMake(rootView.frame.width, contentView.frame.height)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
