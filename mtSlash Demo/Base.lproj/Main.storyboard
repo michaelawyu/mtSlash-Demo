@@ -929,12 +929,12 @@
                                                 <color key="textColor" red="0.88302460400000005" green="0.06768872527" blue="0.04288399758" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPJ-aw-Khk">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPJ-aw-Khk" customClass="homePageShowcase" customModule="mtSlash_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="188" width="380" height="140"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVF-Jt-YTe" customClass="homePageShowcasePanel" customModule="mtSlash_Demo" customModuleProvider="target">
                                                         <rect key="frame" x="30" y="0.0" width="320" height="140"/>
-                                                        <color key="backgroundColor" red="0.79756787330000001" green="0.061137993680000002" blue="0.038733800380000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.79756787330000001" green="0.061137993680000002" blue="0.038733800380000002" alpha="0.85237068965517238" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="320" id="9LJ-jh-oBO"/>
                                                             <constraint firstAttribute="height" constant="140" id="wOr-ir-42A"/>
@@ -942,6 +942,7 @@
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="9LJ-jh-oBO"/>
+                                                                <exclude reference="wOr-ir-42A"/>
                                                             </mask>
                                                         </variation>
                                                     </view>
@@ -1261,6 +1262,7 @@
                         <outlet property="contentView" destination="lV0-Xk-L5l" id="S6T-Ty-UPt"/>
                         <outlet property="rootView" destination="ivg-VI-jft" id="joc-CA-hIz"/>
                         <outlet property="scrollView" destination="jGI-t9-2XX" id="RB0-v3-k6V"/>
+                        <outlet property="showcase" destination="uPJ-aw-Khk" id="dxz-Pq-mFX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMF-n1-9kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
