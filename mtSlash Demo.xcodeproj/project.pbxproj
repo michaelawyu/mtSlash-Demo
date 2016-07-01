@@ -28,13 +28,23 @@
 		09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */; };
 		09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */; };
 		0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */; };
-		0957DE861D1EF966004844A8 /* XMenPanelBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0957DE851D1EF966004844A8 /* XMenPanelBackground.jpg */; };
 		0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8C1D20363A004844A8 /* homePageShowcase.swift */; };
 		0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */; };
 		0957DE911D2110C9004844A8 /* List of Available Categories (For References Only) in Resources */ = {isa = PBXBuildFile; fileRef = 0957DE901D2110C9004844A8 /* List of Available Categories (For References Only) */; };
+		0957DE931D226583004844A8 /* XMenPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0957DE921D226583004844A8 /* XMenPanelBackground.prototype.jpg */; };
+		0957DE951D226E43004844A8 /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE941D226E43004844A8 /* Initialization.swift */; };
+		0957DEA01D2280E5004844A8 /* ConvenientMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */; };
+		0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */; };
+		0957DEA41D22835D004844A8 /* MTReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DEA21D22835D004844A8 /* MTReadingList.swift */; };
 		0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */; };
 		0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */; };
 		098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */; };
+		09C3FA8E1D25875000B0A23B /* HannibalSectionBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8D1D25875000B0A23B /* HannibalSectionBackground.jpg */; };
+		09C3FA901D25876700B0A23B /* discoverScreenBackgroundMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */; };
+		09E5674C1D26882200902788 /* SherlockHolmesIcon(Large).png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */; };
+		09E5674E1D2692BE00902788 /* PopularFandomsIcon(Large).png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674D1D2692BE00902788 /* PopularFandomsIcon(Large).png */; };
+		09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674F1D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg */; };
+		09E567521D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */; };
 		09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */; };
 		09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */; };
 		09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */; };
@@ -93,13 +103,23 @@
 		09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
 		09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromPasswordInputScreenToUsernameInputScreen.swift; sourceTree = "<group>"; };
 		0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcasePanel.swift; sourceTree = "<group>"; };
-		0957DE851D1EF966004844A8 /* XMenPanelBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XMenPanelBackground.jpg; sourceTree = "<group>"; };
 		0957DE8C1D20363A004844A8 /* homePageShowcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcase.swift; sourceTree = "<group>"; };
 		0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDataController.swift; sourceTree = "<group>"; };
 		0957DE901D2110C9004844A8 /* List of Available Categories (For References Only) */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "List of Available Categories (For References Only)"; sourceTree = "<group>"; };
+		0957DE921D226583004844A8 /* XMenPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XMenPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		0957DE941D226E43004844A8 /* Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
+		0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientMethods.swift; sourceTree = "<group>"; };
+		0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTReadingList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0957DEA21D22835D004844A8 /* MTReadingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTReadingList.swift; sourceTree = "<group>"; };
 		0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinks.swift; sourceTree = "<group>"; };
 		0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDocumentScreenViewController.swift; sourceTree = "<group>"; };
 		098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cosmos.jpg; sourceTree = "<group>"; };
+		09C3FA8D1D25875000B0A23B /* HannibalSectionBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HannibalSectionBackground.jpg; sourceTree = "<group>"; };
+		09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discoverScreenBackgroundMask.png; sourceTree = "<group>"; };
+		09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SherlockHolmesIcon(Large).png"; sourceTree = "<group>"; };
+		09E5674D1D2692BE00902788 /* PopularFandomsIcon(Large).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopularFandomsIcon(Large).png"; sourceTree = "<group>"; };
+		09E5674F1D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kingsmanDiscoverScreenBackground.prototype.jpg; sourceTree = "<group>"; };
+		09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extActionsWhenButtonPressedInDiscoverScreenViewController.swift; sourceTree = "<group>"; };
 		09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedScreenViewController.swift; sourceTree = "<group>"; };
 		09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedPage.swift; sourceTree = "<group>"; };
 		09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accessGrantedPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
@@ -173,6 +193,8 @@
 				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
 				0902ACDF1D0D62D700FD6AAD /* Info.plist */,
 				0902ACD71D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld */,
+				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
+				09E567531D26CC1D00902788 /* Extensions */,
 				0957DE821D1E83F3004844A8 /* Custom Components */,
 				0902AD1A1D0E557D00FD6AAD /* Custom Segues */,
 				09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */,
@@ -202,6 +224,8 @@
 		0902AD0F1D0DBE8F00FD6AAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				09E5674A1D26881200902788 /* Discover Screen Icons */,
+				09C3FA8C1D25866900B0A23B /* Discover Screen Backgrounds */,
 				0957DE881D2034C1004844A8 /* Panel Backgrounds */,
 				090E39991D1AC478005E6133 /* codeSlash.png */,
 				098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */,
@@ -237,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */,
+				0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */,
+				0957DEA21D22835D004844A8 /* MTReadingList.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -244,7 +270,7 @@
 		0957DE881D2034C1004844A8 /* Panel Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				0957DE851D1EF966004844A8 /* XMenPanelBackground.jpg */,
+				0957DE921D226583004844A8 /* XMenPanelBackground.prototype.jpg */,
 			);
 			name = "Panel Backgrounds";
 			sourceTree = "<group>";
@@ -252,7 +278,6 @@
 		0957DE891D2035D5004844A8 /* Custom Views (Core) */ = {
 			isa = PBXGroup;
 			children = (
-				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
 			);
 			name = "Custom Views (Core)";
 			sourceTree = "<group>";
@@ -261,8 +286,37 @@
 			isa = PBXGroup;
 			children = (
 				0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */,
+				0957DE941D226E43004844A8 /* Initialization.swift */,
+				0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */,
 			);
 			name = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		09C3FA8C1D25866900B0A23B /* Discover Screen Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */,
+				09C3FA8D1D25875000B0A23B /* HannibalSectionBackground.jpg */,
+				09E5674F1D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg */,
+			);
+			name = "Discover Screen Backgrounds";
+			sourceTree = "<group>";
+		};
+		09E5674A1D26881200902788 /* Discover Screen Icons */ = {
+			isa = PBXGroup;
+			children = (
+				09E5674D1D2692BE00902788 /* PopularFandomsIcon(Large).png */,
+				09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */,
+			);
+			name = "Discover Screen Icons";
+			sourceTree = "<group>";
+		};
+		09E567531D26CC1D00902788 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		09ED77481D15BAD8002C0276 /* View Controllers (Start Up) */ = {
@@ -405,18 +459,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E5674E1D2692BE00902788 /* PopularFandomsIcon(Large).png in Resources */,
 				0902ACDE1D0D62D700FD6AAD /* LaunchScreen.storyboard in Resources */,
 				09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */,
 				090E399A1D1AC478005E6133 /* codeSlash.png in Resources */,
 				098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */,
 				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
-				0957DE861D1EF966004844A8 /* XMenPanelBackground.jpg in Resources */,
+				09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */,
+				0957DE931D226583004844A8 /* XMenPanelBackground.prototype.jpg in Resources */,
 				0902AD131D0DC13100FD6AAD /* coverImage.prototype.jpg in Resources */,
+				09E5674C1D26882200902788 /* SherlockHolmesIcon(Large).png in Resources */,
 				0902ACDB1D0D62D700FD6AAD /* Assets.xcassets in Resources */,
+				09C3FA901D25876700B0A23B /* discoverScreenBackgroundMask.png in Resources */,
 				0902ACD61D0D62D700FD6AAD /* Main.storyboard in Resources */,
 				09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */,
 				0957DE911D2110C9004844A8 /* List of Available Categories (For References Only) in Resources */,
 				0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */,
+				09C3FA8E1D25875000B0A23B /* HannibalSectionBackground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,14 +511,19 @@
 				0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */,
 				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,
+				0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */,
 				09ED77751D1836A7002C0276 /* CentralControlTabBarController.swift in Sources */,
 				0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */,
+				0957DEA01D2280E5004844A8 /* ConvenientMethods.swift in Sources */,
 				09ED776F1D1835FD002C0276 /* SettingsScreenViewController.swift in Sources */,
+				0957DE951D226E43004844A8 /* Initialization.swift in Sources */,
 				0902AD1C1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift in Sources */,
+				09E567521D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift in Sources */,
 				09ED776D1D1835F0002C0276 /* SearchScreenViewController.swift in Sources */,
 				0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */,
 				0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */,
+				0957DEA41D22835D004844A8 /* MTReadingList.swift in Sources */,
 				0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */,
 				09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */,
 				09ED77651D171F01002C0276 /* customSegueFromPasswordInputScreenToAccessGrantedScreen.swift in Sources */,

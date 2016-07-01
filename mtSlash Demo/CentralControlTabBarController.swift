@@ -12,7 +12,7 @@ class CentralControlTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let tabBar = self.tabBar
         tabBar.tintColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
         

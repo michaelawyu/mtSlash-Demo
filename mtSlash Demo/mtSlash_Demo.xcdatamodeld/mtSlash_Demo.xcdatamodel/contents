@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G19a" minimumToolsVersion="Automatic">
-    <entity name="ReadingList" representedClassName="MTReadingList" syncable="YES">
+    <entity name="ReadingList" representedClassName=".MTReadingList" syncable="YES">
         <attribute name="abstract" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="Integer 32" minValueString="1" maxValueString="77" defaultValueString="1" syncable="YES"/>
+        <attribute name="ifVisible" attributeType="Boolean" syncable="YES"/>
         <attribute name="link" attributeType="String" syncable="YES"/>
         <attribute name="owner" attributeType="String" syncable="YES"/>
-        <attribute name="timeAdded" attributeType="Date" minDateTimeInterval="490636800" defaultDateTimeInterval="490636800" syncable="YES"/>
+        <attribute name="timeAdded" attributeType="Date" minDateTimeInterval="488044800" defaultDateTimeInterval="488044800" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ReadingList" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="ReadingList" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

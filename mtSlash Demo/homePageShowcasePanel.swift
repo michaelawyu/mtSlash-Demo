@@ -38,7 +38,7 @@ class homePageShowcasePanel: UIView {
         backgroundImage?.alpha = 1.0
         
         //Sample Context: Background Image for Panel
-        let panelBackgroundImagePath = NSBundle.mainBundle().pathForResource("XMenPanelBackground", ofType: "jpg")
+        let panelBackgroundImagePath = NSBundle.mainBundle().pathForResource("XMenPanelBackground.prototype", ofType: "jpg")
         backgroundImage?.image = UIImage(named: panelBackgroundImagePath!)
         
         updateLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: 20.0))

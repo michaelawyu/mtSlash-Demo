@@ -39,10 +39,7 @@ class DefaultDataController: NSObject {
             }   catch {
                 fatalError("An error has occurred: Failed to set the persistent store.")
             }
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                dataReadyFlag = true
-            })
+            dataReadyFlag = true
         }
     }
     
