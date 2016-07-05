@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 extension DiscoverScreenViewController {
+    //Constant: Total Number of Available Forums : 8
+    
     func firstButtonPressed() {
         newSubformSelected(0)
     }
@@ -43,44 +45,78 @@ extension DiscoverScreenViewController {
     }
     
     func newSubformSelected(forumSelected: Int) {
-        var newCollectionOfForumEntriesInName : [UIButton] = []
-        newCollectionOfForumEntriesInName.append(mainEntry!)
-        mainEntry = collectionOfForumEntriesInName![forumSelected]
-        
-        var firstSlice : [UIButton]! = []
-        var secondSlice : [UIButton]! = []
-        
-        if forumSelected != 7 {
-            firstSlice = Array(collectionOfForumEntriesInName![(forumSelected)..<8])
-            let firstSliceReversed = firstSlice.reverse()
-            for item in firstSliceReversed {
-                newCollectionOfForumEntriesInName.append(item)
+        for i in (0..<9) {
+            if i != 8 {
+                UIView.animateWithDuration(0.8, delay: 0.05 * Double(i), usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+                    self.collectionOfForumEntries![i].transform = CGAffineTransformMakeTranslation(0.0, -100.0)
+                    self.collectionOfForumEntries![i].alpha = 0.0
+                }, completion: nil)
+            }
+            if i == 8 {
+                UIView.animateWithDuration(0.8, delay: 0.05 * Double(i), usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+                    self.mainForumEntry.transform = CGAffineTransformMakeTranslation(0.0, -100.0)
+                    self.mainForumEntry.alpha = 0.0
+                    for entry in self.collectionOfForumDetails! {
+                        entry.alpha = 0.0
+                    }
+                    }, completion: { (ifCompleted) in
+                        self.switchLabelsBetweenForumEntryCollectionAndMainForumEntry(forumSelected)
+                        self.updateForumDetails()
+                        for i in (0..<9) {
+                            if i != 8 {
+                                UIView.animateWithDuration(0.8, delay: 0.05 * Double(i), usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+                                    self.collectionOfForumEntries![i].transform = CGAffineTransformIdentity
+                                    self.collectionOfForumEntries![i].alpha = 0.25
+                                    }, completion: nil)
+                            }
+                            if i == 8{
+                                UIView.animateWithDuration(0.8, delay: 0.05 * Double(i), usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+                                    self.mainForumEntry.transform = CGAffineTransformIdentity
+                                    self.mainForumEntry.alpha = 1.0
+                                    for entry in self.collectionOfForumDetails! {
+                                        entry.alpha = 1.0
+                                        self.enterSubsectionsTitle.alpha = 0.5
+                                    }
+                                    }, completion: nil)
+                            }
+                        }
+                })
             }
         }
+    }
+    
+    func switchLabelsBetweenForumEntryCollectionAndMainForumEntry(forumSelected: Int) {
+        print(forumSelected)
+        var firstSlice : [String]? = nil
+        var secondSlice : [String]? = nil
+        
         if forumSelected != 0 {
-            secondSlice = Array(collectionOfForumEntriesInName![0..<forumSelected])
-            let secondSliceReversed = secondSlice.reverse()
-            for item in secondSliceReversed {
-                newCollectionOfForumEntriesInName.append(item)
-            }
+            firstSlice = Array(collectionOfForumEntryTitles![0..<forumSelected])
         }
-        
-        let distanceToMoveFor
-        UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.8, options: [], animations: {
-            
-            }, completion: nil)
-        
-        collectionOfForumEntriesInName = newCollectionOfForumEntriesInName
-        
-        firstEntry = collectionOfForumEntriesInName![0]
-        secondEntry = collectionOfForumEntriesInName![1]
-        thirdEntry = collectionOfForumEntriesInName![2]
-        fourthEntry = collectionOfForumEntriesInName![3]
-        fifthEntry = collectionOfForumEntriesInName![4]
-        sixthEntry = collectionOfForumEntriesInName![5]
-        seventhEntry = collectionOfForumEntriesInName![6]
-        eighthEntry = collectionOfForumEntriesInName![7]
-        
+        else {
+            firstSlice = []
+        }
 
+        secondSlice = Array(collectionOfForumEntryTitles![(forumSelected + 1)..<9])
+
+        let mainForumEntryTitle = collectionOfForumEntryTitles![forumSelected]
+        
+        var newCollectionOfForumEntryTitles : [String] = []
+        
+        for element in secondSlice! {
+            newCollectionOfForumEntryTitles.append(element)
+        }
+        for element in firstSlice! {
+            newCollectionOfForumEntryTitles.append(element)
+        }
+        newCollectionOfForumEntryTitles.append(mainForumEntryTitle)
+        for i in (0..<9) {
+            collectionOfForumEntries![i].setTitle(newCollectionOfForumEntryTitles[i], forState: UIControlState.Normal)
+        }
+        collectionOfForumEntryTitles = newCollectionOfForumEntryTitles
+        
+    }
+    func updateForumDetails() {
+        // Update Details of Subforums Here
     }
 }

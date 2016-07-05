@@ -1014,28 +1014,28 @@
                     <connections>
                         <outlet property="backgroundImage" destination="Giu-b1-75W" id="V06-0h-1bJ"/>
                         <outlet property="backgroundMask" destination="oGW-xT-cTN" id="fqe-hE-xtw"/>
-                        <outlet property="discussionSubformButton" destination="XFo-5r-2gT" id="DH2-QW-e8U"/>
+                        <outlet property="eighthSubforumEntry" destination="e9I-Jx-7o3" id="bEg-XS-4yo"/>
                         <outlet property="enterCurrentForum" destination="fKD-mJ-wUF" id="EOP-tK-pyc"/>
                         <outlet property="enterFirstSubsection" destination="45i-KY-FQz" id="0OB-e5-tyR"/>
                         <outlet property="enterSecondSubsection" destination="vDz-Lj-QIl" id="SXs-mG-anL"/>
                         <outlet property="enterSubsectionsTitle" destination="8Im-V7-nZH" id="t3q-Ny-mNt"/>
-                        <outlet property="fanartSubforumButton" destination="M01-yY-uRY" id="T7k-Z9-nej"/>
-                        <outlet property="fanbookSubformButton" destination="Xou-7h-qv4" id="jO1-LW-nad"/>
-                        <outlet property="fanvidSubforumButton" destination="9Nd-vb-YEA" id="veC-9Z-37G"/>
+                        <outlet property="fifthSubforumEntry" destination="Xou-7h-qv4" id="CZg-bN-POa"/>
+                        <outlet property="firstSubforumEntry" destination="awD-Or-lXL" id="6Rc-hh-lGe"/>
                         <outlet property="firstSubsectionImage" destination="qqI-YZ-j0v" id="xW5-As-MLx"/>
                         <outlet property="forumIntroduction" destination="6rG-f6-sMF" id="aOi-9v-uZu"/>
                         <outlet property="forumSubtitle" destination="Gcs-BJ-1TW" id="kIm-nU-hOH"/>
-                        <outlet property="helpCenterSubforumButton" destination="cYF-tf-Ijb" id="RTX-Fq-gdG"/>
-                        <outlet property="movieFanficSubforumButton" destination="fwy-FF-2Rv" id="G0X-8S-o2r"/>
+                        <outlet property="fourthSubforumEntry" destination="XFo-5r-2gT" id="eYE-rb-B2h"/>
+                        <outlet property="mainForumEntry" destination="fwy-FF-2Rv" id="Roo-QV-eEr"/>
                         <outlet property="noOfNewPostsToday" destination="jfq-IH-igS" id="CCP-2a-kfa"/>
                         <outlet property="noOfPosts" destination="R66-6y-oVZ" id="3jt-Sg-qNU"/>
                         <outlet property="noOfPostsTitle" destination="BPc-2z-hjZ" id="oxn-Xx-ug4"/>
                         <outlet property="noOfReplies" destination="aQV-q3-Qd3" id="oml-8n-csl"/>
                         <outlet property="noOfRepliesTitle" destination="94a-Sh-VXk" id="blb-Gz-bkc"/>
+                        <outlet property="secondSubforumEntry" destination="cYF-tf-Ijb" id="n6c-9R-09O"/>
                         <outlet property="secondSubsectionImage" destination="ajb-hS-xlQ" id="I4a-LN-PvJ"/>
-                        <outlet property="secretGiftSubforumButton" destination="awD-Or-lXL" id="myA-Rh-AdI"/>
-                        <outlet property="songSubforumButton" destination="ONW-V6-Eov" id="9Gf-Ga-ZrV"/>
-                        <outlet property="tvFanficSubforumButton" destination="e9I-Jx-7o3" id="R0e-S5-jI3"/>
+                        <outlet property="seventhSubforumEntry" destination="M01-yY-uRY" id="hT3-7V-xav"/>
+                        <outlet property="sixthSubforumEntry" destination="9Nd-vb-YEA" id="pdK-BI-X7Y"/>
+                        <outlet property="thirdSubforumEntry" destination="ONW-V6-Eov" id="ef7-ta-q8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rk6-lf-AEh" userLabel="First Responder" sceneMemberID="firstResponder"/>

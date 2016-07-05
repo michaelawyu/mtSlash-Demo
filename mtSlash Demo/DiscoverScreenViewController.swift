@@ -12,15 +12,15 @@ class DiscoverScreenViewController: UIViewController {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var backgroundMask: UIImageView!
-    @IBOutlet weak var secretGiftSubforumButton: UIButton!
-    @IBOutlet weak var helpCenterSubforumButton: UIButton!
-    @IBOutlet weak var songSubforumButton: UIButton!
-    @IBOutlet weak var discussionSubformButton: UIButton!
-    @IBOutlet weak var fanbookSubformButton: UIButton!
-    @IBOutlet weak var fanvidSubforumButton: UIButton!
-    @IBOutlet weak var fanartSubforumButton: UIButton!
-    @IBOutlet weak var tvFanficSubforumButton: UIButton!
-    @IBOutlet weak var movieFanficSubforumButton: UIButton!
+    @IBOutlet weak var firstSubforumEntry: UIButton!
+    @IBOutlet weak var secondSubforumEntry: UIButton!
+    @IBOutlet weak var thirdSubforumEntry: UIButton!
+    @IBOutlet weak var fourthSubforumEntry: UIButton!
+    @IBOutlet weak var fifthSubforumEntry: UIButton!
+    @IBOutlet weak var sixthSubforumEntry: UIButton!
+    @IBOutlet weak var seventhSubforumEntry: UIButton!
+    @IBOutlet weak var eighthSubforumEntry: UIButton!
+    @IBOutlet weak var mainForumEntry: UIButton!
     @IBOutlet weak var forumSubtitle: UILabel!
     @IBOutlet weak var noOfPosts: UILabel!
     @IBOutlet weak var noOfPostsTitle: UILabel!
@@ -35,22 +35,19 @@ class DiscoverScreenViewController: UIViewController {
     @IBOutlet weak var secondSubsectionImage: UIImageView!
     @IBOutlet weak var enterSecondSubsection: UIButton!
     
-    var firstEntry : UIButton? = nil
-    var secondEntry : UIButton? = nil
-    var thirdEntry : UIButton? = nil
-    var fourthEntry : UIButton? = nil
-    var fifthEntry : UIButton? = nil
-    var sixthEntry : UIButton? = nil
-    var seventhEntry : UIButton? = nil
-    var eighthEntry : UIButton? = nil
-    var mainEntry : UIButton? = nil
-    
-    var collectionOfForumEntriesInName : [UIButton]? = nil
+    var collectionOfForumEntries : [UIButton]? = nil
+    var collectionOfForumDetails : [UIView]? = nil
+    var collectionOfForumEntryTitles : [String]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionOfForumEntriesInName = [secretGiftSubforumButton, helpCenterSubforumButton, songSubforumButton, discussionSubformButton, fanbookSubformButton, fanvidSubforumButton, fanartSubforumButton, tvFanficSubforumButton]
+        collectionOfForumEntries = [firstSubforumEntry, secondSubforumEntry, thirdSubforumEntry, fourthSubforumEntry, fifthSubforumEntry, sixthSubforumEntry, seventhSubforumEntry, eighthSubforumEntry, mainForumEntry]
+        
+        collectionOfForumEntryTitles = ["SECRET GIFTS in Holiday Season", "HELP CENTER", "SONG", "DISCUSSION", "FANBOOK", "FANVID", "FANART", "TV FANFIC", "MOVIE FANFIC"]
+        
+        collectionOfForumDetails = [forumSubtitle, noOfPosts, noOfPostsTitle, noOfReplies, noOfRepliesTitle, noOfNewPostsToday, forumIntroduction, enterCurrentForum, enterSubsectionsTitle, firstSubsectionImage, enterFirstSubsection, secondSubsectionImage, enterSecondSubsection]
+
         
         // Update Number of Posts, Number of Replies and Number of Today's New Posts
         
@@ -72,54 +69,49 @@ class DiscoverScreenViewController: UIViewController {
         backgroundImage.alpha = 0.0
         // Set Up Background Image
         
-        let collectionOfForumEntries = [firstEntry, secondEntry, thirdEntry, fourthEntry, fifthEntry, sixthEntry, seventhEntry, eighthEntry]
-        
-        for entry in collectionOfForumEntries {
-            entry!.transform = CGAffineTransformMakeTranslation(0.0, -80.0)
-            entry!.alpha = 0.0
+        for entry in collectionOfForumEntries! {
+            entry.transform = CGAffineTransformMakeTranslation(0.0, -80.0)
+            entry.alpha = 0.0
         }
         
-        mainEntry!.transform = CGAffineTransformMakeTranslation(0.0, -90.0)
-        mainEntry!.alpha = 0.0
+        mainForumEntry!.transform = CGAffineTransformMakeTranslation(0.0, -90.0)
         
-        let collectionOfForumDetails = [forumSubtitle, noOfPosts, noOfPostsTitle, noOfReplies, noOfRepliesTitle, noOfNewPostsToday, forumIntroduction, enterCurrentForum, enterSubsectionsTitle, firstSubsectionImage, enterFirstSubsection, secondSubsectionImage, enterSecondSubsection]
-        
-        for entry in collectionOfForumDetails {
+        for entry in collectionOfForumDetails! {
             entry.alpha = 0.0
         }
 
     }
     
     func firstAppearance() {
-        firstEntry = secretGiftSubforumButton
-        firstEntry?.addTarget(self, action: #selector(self.firstButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
-        secondEntry = helpCenterSubforumButton
-        thirdEntry = songSubforumButton
-        fourthEntry = discussionSubformButton
-        fifthEntry = fanbookSubformButton
-        sixthEntry = fanvidSubforumButton
-        seventhEntry = fanartSubforumButton
-        eighthEntry = tvFanficSubforumButton
-        mainEntry = movieFanficSubforumButton
+        firstSubforumEntry?.addTarget(self, action: #selector(self.firstButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        secondSubforumEntry?.addTarget(self, action: #selector(self.secondButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        thirdSubforumEntry?.addTarget(self, action: #selector(self.thirdButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        fourthSubforumEntry?.addTarget(self, action: #selector(self.fourthButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        fifthSubforumEntry?.addTarget(self, action: #selector(self.fifthButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        sixthSubforumEntry?.addTarget(self, action: #selector(self.sixthButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        seventhSubforumEntry?.addTarget(self, action: #selector(self.seventhButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        eighthSubforumEntry?.addTarget(self, action: #selector(self.eighthButtonPressed), forControlEvents: UIControlEvents.TouchUpInside)
         
-        let collectionOfForumEntries = [firstEntry, secondEntry, thirdEntry, fourthEntry, fifthEntry, sixthEntry, seventhEntry, eighthEntry]
-        
-        let collectionOfForumDetails = [forumSubtitle, noOfPosts, noOfPostsTitle, noOfReplies, noOfRepliesTitle, noOfNewPostsToday, forumIntroduction, enterCurrentForum, enterSubsectionsTitle, firstSubsectionImage, enterFirstSubsection, secondSubsectionImage, enterSecondSubsection]
-        
-        UIView.animateWithDuration(1.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+        UIView.animateWithDuration(1.2, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
             
             self.backgroundImage.alpha = 1.0
             
-            for entry in collectionOfForumEntries {
-                entry!.transform = CGAffineTransformIdentity
-                entry!.alpha = 0.25
+            for entry in self.collectionOfForumEntries! {
+                entry.transform = CGAffineTransformIdentity
+                entry.alpha = 0.25
             }
             
-            self.mainEntry!.transform = CGAffineTransformIdentity
-            self.mainEntry!.alpha = 1.0
+            self.mainForumEntry!.alpha = 1.0
             
-            for entry in collectionOfForumDetails {
-                entry.alpha = 1.0
+            }, completion: nil)
+        
+        UIView.animateWithDuration(1.2, delay: 0.3, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+            
+            for item in self.collectionOfForumDetails! {
+                item.alpha = 1.0
+                if item == self.enterSubsectionsTitle {
+                    item.alpha = 0.5
+                }
             }
             
             }, completion: nil)
