@@ -45,6 +45,7 @@
 		09E5674E1D2692BE00902788 /* PopularFandomsIcon(Large).png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674D1D2692BE00902788 /* PopularFandomsIcon(Large).png */; };
 		09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674F1D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg */; };
 		09E567521D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */; };
+		09E5675D1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5675C1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png */; };
 		09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */; };
 		09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */; };
 		09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */; };
@@ -120,6 +121,7 @@
 		09E5674D1D2692BE00902788 /* PopularFandomsIcon(Large).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopularFandomsIcon(Large).png"; sourceTree = "<group>"; };
 		09E5674F1D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kingsmanDiscoverScreenBackground.prototype.jpg; sourceTree = "<group>"; };
 		09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extActionsWhenButtonPressedInDiscoverScreenViewController.swift; sourceTree = "<group>"; };
+		09E5675C1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cerberus_additions_around_the_derelict_reaper_core.png; sourceTree = "<group>"; };
 		09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedScreenViewController.swift; sourceTree = "<group>"; };
 		09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedPage.swift; sourceTree = "<group>"; };
 		09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accessGrantedPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		0902AD0F1D0DBE8F00FD6AAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				09E5675C1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png */,
 				09E5674A1D26881200902788 /* Discover Screen Icons */,
 				09C3FA8C1D25866900B0A23B /* Discover Screen Backgrounds */,
 				0957DE881D2034C1004844A8 /* Panel Backgrounds */,
@@ -464,6 +467,7 @@
 				09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */,
 				090E399A1D1AC478005E6133 /* codeSlash.png in Resources */,
 				098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */,
+				09E5675D1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png in Resources */,
 				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
 				09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */,
 				0957DE931D226583004844A8 /* XMenPanelBackground.prototype.jpg in Resources */,
