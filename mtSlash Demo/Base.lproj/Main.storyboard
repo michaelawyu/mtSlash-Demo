@@ -1238,7 +1238,7 @@
                                                                 <constraint firstAttribute="width" constant="103" id="cHe-UY-e5y"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
-                                                            <state key="normal" title="重新搜索"/>
+                                                            <state key="normal" title="返回主界面"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.25490196078431371" green="0.55294117647058827" blue="0.90588235294117647" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
