@@ -24,6 +24,9 @@
 		0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */; };
 		0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */; };
 		090E399A1D1AC478005E6133 /* codeSlash.png in Resources */ = {isa = PBXBuildFile; fileRef = 090E39991D1AC478005E6133 /* codeSlash.png */; };
+		0923F2BB1D2F4093000A8D14 /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923F2BA1D2F4093000A8D14 /* SampleTableViewController.swift */; };
+		0923F2BE1D2F47C4000A8D14 /* SearchResultScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923F2BD1D2F47C4000A8D14 /* SearchResultScreenViewController.swift */; };
+		0923F2C21D2F5592000A8D14 /* searchResultContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */; };
 		09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */; };
 		09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */; };
 		09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */; };
@@ -39,13 +42,15 @@
 		0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */; };
 		0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */; };
 		098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */; };
+		099D91251D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */; };
+		099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */; };
 		09C3FA8E1D25875000B0A23B /* HannibalSectionBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8D1D25875000B0A23B /* HannibalSectionBackground.jpg */; };
 		09C3FA901D25876700B0A23B /* discoverScreenBackgroundMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */; };
 		09E5674C1D26882200902788 /* SherlockHolmesIcon(Large).png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */; };
 		09E5674E1D2692BE00902788 /* PopularFandomsIcon(Large).png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674D1D2692BE00902788 /* PopularFandomsIcon(Large).png */; };
 		09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674F1D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg */; };
 		09E567521D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */; };
-		09E5675D1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5675C1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png */; };
+		09E5675D1D2CA5BE00902788 /* searchScreenBackground.prototype.png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5675C1D2CA5BE00902788 /* searchScreenBackground.prototype.png */; };
 		09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */; };
 		09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */; };
 		09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */; };
@@ -100,6 +105,9 @@
 		0902AD371D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromUsernameInputScreenToPasswordInputScreen.swift; sourceTree = "<group>"; };
 		0902AD3B1D116A2600FD6AAD /* PasswordInputScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputScreenViewController.swift; sourceTree = "<group>"; };
 		090E39991D1AC478005E6133 /* codeSlash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeSlash.png; sourceTree = "<group>"; };
+		0923F2BA1D2F4093000A8D14 /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
+		0923F2BD1D2F47C4000A8D14 /* SearchResultScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultScreenViewController.swift; sourceTree = "<group>"; };
+		0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchResultContainerCell.swift; sourceTree = "<group>"; };
 		09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = passwordInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 		09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
 		09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromPasswordInputScreenToUsernameInputScreen.swift; sourceTree = "<group>"; };
@@ -115,13 +123,15 @@
 		0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinks.swift; sourceTree = "<group>"; };
 		0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDocumentScreenViewController.swift; sourceTree = "<group>"; };
 		098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cosmos.jpg; sourceTree = "<group>"; };
+		099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewScreenViewController.swift; sourceTree = "<group>"; };
+		099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoPanelContainerCell.swift; sourceTree = "<group>"; };
 		09C3FA8D1D25875000B0A23B /* HannibalSectionBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HannibalSectionBackground.jpg; sourceTree = "<group>"; };
 		09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discoverScreenBackgroundMask.png; sourceTree = "<group>"; };
 		09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SherlockHolmesIcon(Large).png"; sourceTree = "<group>"; };
 		09E5674D1D2692BE00902788 /* PopularFandomsIcon(Large).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PopularFandomsIcon(Large).png"; sourceTree = "<group>"; };
 		09E5674F1D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kingsmanDiscoverScreenBackground.prototype.jpg; sourceTree = "<group>"; };
 		09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extActionsWhenButtonPressedInDiscoverScreenViewController.swift; sourceTree = "<group>"; };
-		09E5675C1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cerberus_additions_around_the_derelict_reaper_core.png; sourceTree = "<group>"; };
+		09E5675C1D2CA5BE00902788 /* searchScreenBackground.prototype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchScreenBackground.prototype.png; sourceTree = "<group>"; };
 		09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedScreenViewController.swift; sourceTree = "<group>"; };
 		09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedPage.swift; sourceTree = "<group>"; };
 		09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accessGrantedPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
@@ -192,8 +202,10 @@
 				0902ACD41D0D62D700FD6AAD /* Main.storyboard */,
 				09ED77761D1836AB002C0276 /* View Controllers (Core) */,
 				0957DE891D2035D5004844A8 /* Custom Views (Core) */,
-				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
+				0923F2B91D2F4006000A8D14 /* View Controllers (Extension) */,
+				0923F2C31D2F565E000A8D14 /* Custom Views (Extension) */,
 				0902ACDF1D0D62D700FD6AAD /* Info.plist */,
+				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
 				0902ACD71D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld */,
 				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
 				09E567531D26CC1D00902788 /* Extensions */,
@@ -226,7 +238,7 @@
 		0902AD0F1D0DBE8F00FD6AAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				09E5675C1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png */,
+				09E5675C1D2CA5BE00902788 /* searchScreenBackground.prototype.png */,
 				09E5674A1D26881200902788 /* Discover Screen Icons */,
 				09C3FA8C1D25866900B0A23B /* Discover Screen Backgrounds */,
 				0957DE881D2034C1004844A8 /* Panel Backgrounds */,
@@ -249,6 +261,25 @@
 				09ED77641D171F01002C0276 /* customSegueFromPasswordInputScreenToAccessGrantedScreen.swift */,
 			);
 			name = "Custom Segues";
+			sourceTree = "<group>";
+		};
+		0923F2B91D2F4006000A8D14 /* View Controllers (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				0923F2BA1D2F4093000A8D14 /* SampleTableViewController.swift */,
+				0923F2BD1D2F47C4000A8D14 /* SearchResultScreenViewController.swift */,
+				099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */,
+			);
+			name = "View Controllers (Extension)";
+			sourceTree = "<group>";
+		};
+		0923F2C31D2F565E000A8D14 /* Custom Views (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */,
+				099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */,
+			);
+			name = "Custom Views (Extension)";
 			sourceTree = "<group>";
 		};
 		0957DE821D1E83F3004844A8 /* Custom Components */ = {
@@ -467,7 +498,7 @@
 				09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */,
 				090E399A1D1AC478005E6133 /* codeSlash.png in Resources */,
 				098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */,
-				09E5675D1D2CA5BE00902788 /* Cerberus_additions_around_the_derelict_reaper_core.png in Resources */,
+				09E5675D1D2CA5BE00902788 /* searchScreenBackground.prototype.png in Resources */,
 				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
 				09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */,
 				0957DE931D226583004844A8 /* XMenPanelBackground.prototype.jpg in Resources */,
@@ -507,15 +538,18 @@
 				09ED77671D18358F002C0276 /* HomeScreenViewController.swift in Sources */,
 				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
+				099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */,
 				0902ACD91D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld in Sources */,
 				0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */,
 				0902AD191D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift in Sources */,
 				0902AD0A1D0DA75A00FD6AAD /* CoverPage.swift in Sources */,
 				0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */,
 				0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */,
+				0923F2C21D2F5592000A8D14 /* searchResultContainerCell.swift in Sources */,
 				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,
 				0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */,
+				0923F2BB1D2F4093000A8D14 /* SampleTableViewController.swift in Sources */,
 				0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */,
 				09ED77751D1836A7002C0276 /* CentralControlTabBarController.swift in Sources */,
 				0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */,
@@ -524,6 +558,7 @@
 				0957DE951D226E43004844A8 /* Initialization.swift in Sources */,
 				0902AD1C1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift in Sources */,
 				09E567521D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift in Sources */,
+				0923F2BE1D2F47C4000A8D14 /* SearchResultScreenViewController.swift in Sources */,
 				09ED776D1D1835F0002C0276 /* SearchScreenViewController.swift in Sources */,
 				0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */,
 				0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */,
@@ -534,6 +569,7 @@
 				09ED77731D183621002C0276 /* EditorsPickScreenViewController.swift in Sources */,
 				0902AD1E1D0E9E9300FD6AAD /* UsernameInputPage.swift in Sources */,
 				09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */,
+				099D91251D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
