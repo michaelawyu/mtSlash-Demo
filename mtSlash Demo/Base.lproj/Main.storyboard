@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ucx-L9-zNd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZNc-F0-q8k">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -738,7 +738,7 @@
                                     <constraint firstAttribute="height" constant="21" id="O6T-Wn-Y9b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.2470588235" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日新增285" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfq-IH-igS">
@@ -756,7 +756,7 @@
                                     <constraint firstAttribute="height" constant="21" id="zbI-K5-KIa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.2470588235" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主题帖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPc-2z-hjZ">
@@ -1045,7 +1045,7 @@
         <!--Topics View Screen View Controller-->
         <scene sceneID="XVW-Gj-33C">
             <objects>
-                <viewController id="Uuj-5j-vdS" customClass="TopicsViewScreenViewController" customModule="mtSlash_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Topics View Screen View Controller" id="Uuj-5j-vdS" customClass="TopicsViewScreenViewController" customModule="mtSlash_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hHC-kk-RRH"/>
                         <viewControllerLayoutGuide type="bottom" id="gcR-yz-dAf"/>
@@ -1053,33 +1053,43 @@
                     <view key="view" contentMode="scaleToFill" id="o3b-ZP-TuV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-yg-FKg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="浏览主题帖" id="m65-sY-D5b">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="MEu-T7-tnf">
+                            <color key="tintColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJX-KY-EbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3074.5" y="308.5"/>
+            <point key="canvasLocation" x="3540.5" y="308.5"/>
         </scene>
-        <!--Editors Pick Screen View Controller-->
-        <scene sceneID="4mx-Lz-biC">
+        <!--Post View Screen View Controller-->
+        <scene sceneID="RG6-Qc-p0p">
             <objects>
-                <viewController title="Editors Pick Screen View Controller" id="B7p-Jj-v1H" customClass="EditorsPickScreenViewController" customModule="mtSlash_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Post View Screen View Controller" id="PwF-f4-Iae" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yFP-r6-Nip"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ka8-4Z-yWx"/>
+                        <viewControllerLayoutGuide type="top" id="S21-WQ-arW"/>
+                        <viewControllerLayoutGuide type="bottom" id="PDb-UH-9hs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="R5b-2D-Rdx">
+                    <view key="view" contentMode="scaleToFill" id="N0w-Ts-6yP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Editors Pick Icon" id="FwW-TQ-Lfq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YuQ-ra-X1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="an7-EP-6Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633.5" y="1176.5"/>
+            <point key="canvasLocation" x="3971.5" y="307.5"/>
         </scene>
         <!--Search Screen View Controller-->
         <scene sceneID="JHE-0b-hqY">
@@ -1238,10 +1248,12 @@
                                                                 <constraint firstAttribute="width" constant="103" id="cHe-UY-e5y"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
-                                                            <state key="normal" title="返回主界面"/>
+                                                            <state key="normal" title="增加搜索条件">
+                                                                <color key="titleColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                            </state>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.25490196078431371" green="0.55294117647058827" blue="0.90588235294117647" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="zYP-aj-XLM" firstAttribute="top" secondItem="jMa-8U-Lwt" secondAttribute="top" constant="47" id="2oF-MN-tPP"/>
                                                         <constraint firstAttribute="trailing" secondItem="zYP-aj-XLM" secondAttribute="trailing" constant="20" id="8hj-nO-rsK"/>
@@ -1315,7 +1327,7 @@
                                                             <attributedString key="attributedText">
                                                                 <fragment content="HalJordan">
                                                                     <attributes>
-                                                                        <color key="NSColor" red="0.0" green="0.4293260174510875" blue="0.8900841346153846" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="NSColor" red="0.88235294117647056" green="0.24705882352941178" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <font key="NSFont" size="12" name="HelveticaNeue"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
@@ -2440,7 +2452,6 @@
                     <connections>
                         <segue destination="P2o-rd-gQG" kind="relationship" relationship="viewControllers" id="zVL-vO-6ak"/>
                         <segue destination="MEM-mp-QgU" kind="relationship" relationship="viewControllers" id="wrv-xo-lWN"/>
-                        <segue destination="B7p-Jj-v1H" kind="relationship" relationship="viewControllers" id="mb0-Lo-XTN"/>
                         <segue destination="f2F-yf-eKb" kind="relationship" relationship="viewControllers" id="mpR-sC-o1k"/>
                         <segue destination="eu3-w1-SyY" kind="relationship" relationship="viewControllers" id="trF-d8-5aZ"/>
                     </connections>
@@ -2449,28 +2460,34 @@
             </objects>
             <point key="canvasLocation" x="2049.5" y="308.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sTZ-uN-GQ4">
+        <!--Navigation Controller for Topics and Posts Section-->
+        <scene sceneID="lkc-0W-Fuz">
             <objects>
-                <viewController id="Wnd-QR-ebc" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xm3-6h-4wn"/>
-                        <viewControllerLayoutGuide type="bottom" id="SfQ-jy-Qh0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pqO-N5-Ldw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VTt-q8-SK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController title="Navigation Controller for Topics and Posts Section" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="ZNc-F0-q8k" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="5fD-52-bfi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="16"/>
+                            <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Uuj-5j-vdS" kind="relationship" relationship="rootViewController" id="gkm-YI-pKc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVy-r6-kMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3074" y="308"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cosmos.jpg" width="1920" height="1080"/>
         <image name="Discover Icon" width="22" height="22"/>
-        <image name="Editors Pick Icon" width="22" height="22"/>
         <image name="Home Icon" width="22" height="22"/>
         <image name="Movie Fanfic Section Icon" width="22" height="22"/>
         <image name="Number of Replies Icon" width="22" height="22"/>
