@@ -30,6 +30,7 @@
 		09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */; };
 		09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */; };
 		09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */; };
+		093792651D3D398F00C8B233 /* TextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093792641D3D398F00C8B233 /* TextParser.swift */; };
 		0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */; };
 		0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8C1D20363A004844A8 /* homePageShowcase.swift */; };
 		0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */; };
@@ -111,6 +112,7 @@
 		09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = passwordInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 		09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
 		09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromPasswordInputScreenToUsernameInputScreen.swift; sourceTree = "<group>"; };
+		093792641D3D398F00C8B233 /* TextParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextParser.swift; sourceTree = "<group>"; };
 		0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcasePanel.swift; sourceTree = "<group>"; };
 		0957DE8C1D20363A004844A8 /* homePageShowcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcase.swift; sourceTree = "<group>"; };
 		0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDataController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		0902ACCF1D0D62D700FD6AAD /* mtSlash Demo */ = {
 			isa = PBXGroup;
 			children = (
+				093792631D3D397000C8B233 /* Computation Model */,
 				0957DE871D2033F1004844A8 /* Data Model */,
 				0971A9DD1D12EA7400FC9868 /* Miscellaneous */,
 				0902AD0F1D0DBE8F00FD6AAD /* Assets */,
@@ -280,6 +283,14 @@
 				099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */,
 			);
 			name = "Custom Views (Extension)";
+			sourceTree = "<group>";
+		};
+		093792631D3D397000C8B233 /* Computation Model */ = {
+			isa = PBXGroup;
+			children = (
+				093792641D3D398F00C8B233 /* TextParser.swift */,
+			);
+			name = "Computation Model";
 			sourceTree = "<group>";
 		};
 		0957DE821D1E83F3004844A8 /* Custom Components */ = {
@@ -536,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09ED77671D18358F002C0276 /* HomeScreenViewController.swift in Sources */,
+				093792651D3D398F00C8B233 /* TextParser.swift in Sources */,
 				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
 				099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */,
