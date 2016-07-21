@@ -30,7 +30,6 @@
 		09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */; };
 		09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */; };
 		09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */; };
-		093792651D3D398F00C8B233 /* TextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093792641D3D398F00C8B233 /* TextParser.swift */; };
 		0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */; };
 		0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8C1D20363A004844A8 /* homePageShowcase.swift */; };
 		0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */; };
@@ -40,6 +39,10 @@
 		0957DEA01D2280E5004844A8 /* ConvenientMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */; };
 		0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */; };
 		0957DEA41D22835D004844A8 /* MTReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DEA21D22835D004844A8 /* MTReadingList.swift */; };
+		096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0962031F1D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift */; };
+		096203221D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203211D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift */; };
+		096203251D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203241D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift */; };
+		096203271D411E1E00E14A74 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203261D411E1E00E14A74 /* Fonts.swift */; };
 		0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */; };
 		0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */; };
 		098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */; };
@@ -112,7 +115,6 @@
 		09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = passwordInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 		09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
 		09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromPasswordInputScreenToUsernameInputScreen.swift; sourceTree = "<group>"; };
-		093792641D3D398F00C8B233 /* TextParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextParser.swift; sourceTree = "<group>"; };
 		0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcasePanel.swift; sourceTree = "<group>"; };
 		0957DE8C1D20363A004844A8 /* homePageShowcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcase.swift; sourceTree = "<group>"; };
 		0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDataController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,10 @@
 		0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientMethods.swift; sourceTree = "<group>"; };
 		0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTReadingList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0957DEA21D22835D004844A8 /* MTReadingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTReadingList.swift; sourceTree = "<group>"; };
+		0962031F1D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
+		096203211D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
+		096203241D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
+		096203261D411E1E00E14A74 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinks.swift; sourceTree = "<group>"; };
 		0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDocumentScreenViewController.swift; sourceTree = "<group>"; };
 		098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cosmos.jpg; sourceTree = "<group>"; };
@@ -211,7 +217,6 @@
 				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
 				0902ACD71D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld */,
 				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
-				09E567531D26CC1D00902788 /* Extensions */,
 				0957DE821D1E83F3004844A8 /* Custom Components */,
 				0902AD1A1D0E557D00FD6AAD /* Custom Segues */,
 				09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */,
@@ -288,7 +293,9 @@
 		093792631D3D397000C8B233 /* Computation Model */ = {
 			isa = PBXGroup;
 			children = (
-				093792641D3D398F00C8B233 /* TextParser.swift */,
+				0962031F1D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift */,
+				096203211D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift */,
+				096203241D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift */,
 			);
 			name = "Computation Model";
 			sourceTree = "<group>";
@@ -331,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */,
+				096203261D411E1E00E14A74 /* Fonts.swift */,
 				0957DE941D226E43004844A8 /* Initialization.swift */,
 				0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */,
 			);
@@ -354,14 +362,6 @@
 				09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */,
 			);
 			name = "Discover Screen Icons";
-			sourceTree = "<group>";
-		};
-		09E567531D26CC1D00902788 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		09ED77481D15BAD8002C0276 /* View Controllers (Start Up) */ = {
@@ -393,6 +393,7 @@
 				09ED77741D1836A7002C0276 /* CentralControlTabBarController.swift */,
 				09ED77661D18358F002C0276 /* HomeScreenViewController.swift */,
 				09ED77681D1835A5002C0276 /* DiscoverScreenViewController.swift */,
+				09E567511D26CC1900902788 /* extActionsWhenButtonPressedInDiscoverScreenViewController.swift */,
 				09ED77721D183621002C0276 /* EditorsPickScreenViewController.swift */,
 				09ED776C1D1835F0002C0276 /* SearchScreenViewController.swift */,
 				09ED776E1D1835FD002C0276 /* SettingsScreenViewController.swift */,
@@ -546,8 +547,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
 				09ED77671D18358F002C0276 /* HomeScreenViewController.swift in Sources */,
-				093792651D3D398F00C8B233 /* TextParser.swift in Sources */,
 				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
 				099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */,
@@ -562,10 +563,13 @@
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,
 				0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				0923F2BB1D2F4093000A8D14 /* SampleTableViewController.swift in Sources */,
+				096203271D411E1E00E14A74 /* Fonts.swift in Sources */,
 				0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */,
+				096203221D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
 				09ED77751D1836A7002C0276 /* CentralControlTabBarController.swift in Sources */,
 				0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */,
 				0957DEA01D2280E5004844A8 /* ConvenientMethods.swift in Sources */,
+				096203251D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
 				09ED776F1D1835FD002C0276 /* SettingsScreenViewController.swift in Sources */,
 				0957DE951D226E43004844A8 /* Initialization.swift in Sources */,
 				0902AD1C1D0E9D1F00FD6AAD /* UsernameInputScreenViewController.swift in Sources */,

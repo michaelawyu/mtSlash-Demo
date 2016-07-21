@@ -1053,18 +1053,10 @@
                     <view key="view" contentMode="scaleToFill" id="o3b-ZP-TuV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-yg-FKg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="浏览主题帖" id="m65-sY-D5b">
-                        <barButtonItem key="leftBarButtonItem" title="返回" id="MEu-T7-tnf">
-                            <color key="tintColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="m65-sY-D5b">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="fKd-iz-c9b"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -2463,13 +2455,12 @@
         <!--Navigation Controller for Topics and Posts Section-->
         <scene sceneID="lkc-0W-Fuz">
             <objects>
-                <navigationController title="Navigation Controller for Topics and Posts Section" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="ZNc-F0-q8k" sceneMemberID="viewController">
+                <navigationController title="Navigation Controller for Topics and Posts Section" automaticallyAdjustsScrollViewInsets="NO" id="ZNc-F0-q8k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="5fD-52-bfi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5fD-52-bfi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="16"/>
                             <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>

@@ -8,28 +8,40 @@
 
 import UIKit
 
-class TopicsViewScreenViewController: UIViewController {
+class TopicsViewScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var expTableView: ExpTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
+        
     }
-
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        print("Ready to Scroll")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
-    */
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 10
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("SampleCell", forIndexPath: indexPath)
+        return cell
+     }
+    
 
 }
