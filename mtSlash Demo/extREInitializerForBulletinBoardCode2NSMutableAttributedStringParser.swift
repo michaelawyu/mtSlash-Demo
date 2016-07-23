@@ -15,6 +15,8 @@ extension BulletinBoardCode2NSMutableAttributedStringParser {
         
         do {
             regularExpressionForBoldText = try NSRegularExpression(pattern: "\\[b\\].*\\[/b\\]", options: NSRegularExpressionOptions())
+            regularExpressionForItalicText = try NSRegularExpression(pattern: "\\[i\\].*\\[/i\\]", options: NSRegularExpressionOptions())
+            regularExpressionForUnderlinedText = try NSRegularExpression(pattern: "\\[u\\].*\\[/u\\]", options: NSRegularExpressionOptions())
         } catch {
             fatalError("An error has occurred: Unable to set up REs for parsing Bulletin Board Code.")
         }

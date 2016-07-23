@@ -66,6 +66,8 @@
 		09ED77731D183621002C0276 /* EditorsPickScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77721D183621002C0276 /* EditorsPickScreenViewController.swift */; };
 		09ED77751D1836A7002C0276 /* CentralControlTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77741D1836A7002C0276 /* CentralControlTabBarController.swift */; };
 		09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */ = {isa = PBXBuildFile; fileRef = 09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */; };
+		09FE23761D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09FE23751D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg */; };
+		09FE23781D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +153,8 @@
 		09ED77721D183621002C0276 /* EditorsPickScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorsPickScreenViewController.swift; sourceTree = "<group>"; };
 		09ED77741D1836A7002C0276 /* CentralControlTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralControlTabBarController.swift; sourceTree = "<group>"; };
 		09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Copyright Statement (US-EN)"; sourceTree = "<group>"; };
+		09FE23751D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg; sourceTree = "<group>"; };
+		09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerforTopicsandPostsSectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,7 @@
 		0902AD0F1D0DBE8F00FD6AAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				09FE23741D43AD5D000002CD /* Topics VIew Screen Backgrounds */,
 				09E5675C1D2CA5BE00902788 /* searchScreenBackground.prototype.png */,
 				09E5674A1D26881200902788 /* Discover Screen Icons */,
 				09C3FA8C1D25866900B0A23B /* Discover Screen Backgrounds */,
@@ -397,8 +402,17 @@
 				09ED77721D183621002C0276 /* EditorsPickScreenViewController.swift */,
 				09ED776C1D1835F0002C0276 /* SearchScreenViewController.swift */,
 				09ED776E1D1835FD002C0276 /* SettingsScreenViewController.swift */,
+				09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */,
 			);
 			name = "View Controllers (Core)";
+			sourceTree = "<group>";
+		};
+		09FE23741D43AD5D000002CD /* Topics VIew Screen Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				09FE23751D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg */,
+			);
+			name = "Topics VIew Screen Backgrounds";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +527,7 @@
 				09E5675D1D2CA5BE00902788 /* searchScreenBackground.prototype.png in Resources */,
 				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
 				09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */,
+				09FE23761D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg in Resources */,
 				0957DE931D226583004844A8 /* XMenPanelBackground.prototype.jpg in Resources */,
 				0902AD131D0DC13100FD6AAD /* coverImage.prototype.jpg in Resources */,
 				09E5674C1D26882200902788 /* SherlockHolmesIcon(Large).png in Resources */,
@@ -555,6 +570,7 @@
 				0902ACD91D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld in Sources */,
 				0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */,
 				0902AD191D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift in Sources */,
+				09FE23781D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift in Sources */,
 				0902AD0A1D0DA75A00FD6AAD /* CoverPage.swift in Sources */,
 				0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */,
 				0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */,

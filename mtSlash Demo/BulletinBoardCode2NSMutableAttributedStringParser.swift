@@ -18,6 +18,7 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
     // REs
     var regularExpressionForBoldText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForItalicText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForUnderlinedText : NSRegularExpression = NSRegularExpression()
     
     // Styles
     var fontRegularStyle : String = ""
@@ -57,7 +58,24 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
         
         // Remove All [i][/i] Tags : Not Supported
         while true {
+            let matchedItalicTextWithTag = regularExpressionForItalicText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
             
+            if matchedItalicTextWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedItalicTextWithTag = matchedItalicTextWithTag!.range
+            
+            let rangeOfHeadOfTag = NSMakeRange(rangeOfMatchedItalicTextWithTag.location, 3)
+            let rangeOfTailOfTag = NSMakeRange((rangeOfMatchedItalicTextWithTag.location + rangeOfMatchedItalicTextWithTag.length - 4), 4)
+            
+            convertedString.deleteCharactersInRange(rangeOfHeadOfTag)
+            convertedString.deleteCharactersInRange(rangeOfTailOfTag)
+        }
+        
+        // Convert All [u][/u] Tags to Underlined Text
+        while true {
+            break
         }
         
         return convertedString

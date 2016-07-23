@@ -1053,12 +1053,72 @@
                     <view key="view" contentMode="scaleToFill" id="o3b-ZP-TuV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-n6-xkO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MOVIE FANFIC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-c4-JIG">
+                                <rect key="frame" x="53" y="174" width="268" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="电视剧同人区" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUs-Wz-JSG">
+                                <rect key="frame" x="132" y="205" width="111" height="21"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2JX-1S-TAz">
+                                <rect key="frame" x="20" y="327" width="335" height="55"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QV2-X5-QaE">
+                                    <size key="itemSize" width="104" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SampleCell" id="ELR-HT-xo8">
+                                        <rect key="frame" x="0.0" y="2.5" width="104" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="104" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Auto-Sizing Working?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-vC-QMJ">
+                                                    <rect key="frame" x="8" y="14" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="H7d-vC-QMJ" secondAttribute="trailing" id="K04-5q-Vfd"/>
+                                            <constraint firstItem="H7d-vC-QMJ" firstAttribute="top" secondItem="ELR-HT-xo8" secondAttribute="topMargin" constant="6" id="ThF-e1-bdT"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="H7d-vC-QMJ" secondAttribute="bottom" constant="7" id="wCD-MX-xq8"/>
+                                            <constraint firstItem="H7d-vC-QMJ" firstAttribute="leading" secondItem="ELR-HT-xo8" secondAttribute="leadingMargin" id="yck-li-hVm"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Uuj-5j-vdS" id="aJb-xE-7MG"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="m65-sY-D5b">
-                        <barButtonItem key="leftBarButtonItem" title="返回" id="fKd-iz-c9b"/>
+                        <barButtonItem key="leftBarButtonItem" image="Back Icon" id="fKd-iz-c9b">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="subSectionsCollectionView" destination="2JX-1S-TAz" id="sfx-12-WYk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJX-KY-EbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2455,12 +2515,13 @@
         <!--Navigation Controller for Topics and Posts Section-->
         <scene sceneID="lkc-0W-Fuz">
             <objects>
-                <navigationController title="Navigation Controller for Topics and Posts Section" automaticallyAdjustsScrollViewInsets="NO" id="ZNc-F0-q8k" sceneMemberID="viewController">
+                <navigationController title="Navigation Controller for Topics and Posts Section" automaticallyAdjustsScrollViewInsets="NO" id="ZNc-F0-q8k" customClass="NavigationControllerforTopicsandPostsSectionViewController" customModule="mtSlash_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5fD-52-bfi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="16"/>
                             <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2477,6 +2538,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back Icon" width="22" height="22"/>
         <image name="Cosmos.jpg" width="1920" height="1080"/>
         <image name="Discover Icon" width="22" height="22"/>
         <image name="Home Icon" width="22" height="22"/>
@@ -2491,6 +2553,7 @@
         <image name="codeSlash.png" width="287" height="287"/>
         <image name="discoverScreenBackgroundMask.png" width="1242" height="2208"/>
         <image name="kingsmanDiscoverScreenBackground.prototype.jpg" width="2000" height="3000"/>
+        <image name="movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg" width="1920" height="1200"/>
         <image name="passwordInputPageBackgroundImage.prototype.jpg" width="2560" height="1600"/>
         <image name="searchScreenBackground.prototype.png" width="3840" height="2160"/>
         <image name="usernameInputPageBackgroundImage.prototype.jpg" width="1920" height="1200"/>
