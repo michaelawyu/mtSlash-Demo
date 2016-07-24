@@ -68,6 +68,7 @@
 		09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */ = {isa = PBXBuildFile; fileRef = 09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */; };
 		09FE23761D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09FE23751D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg */; };
 		09FE23781D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */; };
+		09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Copyright Statement (US-EN)"; sourceTree = "<group>"; };
 		09FE23751D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg; sourceTree = "<group>"; };
 		09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerforTopicsandPostsSectionViewController.swift; sourceTree = "<group>"; };
+		09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subSectionNameContainerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,9 @@
 			children = (
 				0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */,
 				099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */,
+				09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */,
+				0957DE8C1D20363A004844A8 /* homePageShowcase.swift */,
+				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
 			);
 			name = "Custom Views (Extension)";
 			sourceTree = "<group>";
@@ -308,8 +313,6 @@
 		0957DE821D1E83F3004844A8 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
-				0957DE8C1D20363A004844A8 /* homePageShowcase.swift */,
-				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
 			);
 			name = "Custom Components";
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				0923F2C21D2F5592000A8D14 /* searchResultContainerCell.swift in Sources */,
 				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,
+				09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */,
 				0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				0923F2BB1D2F4093000A8D14 /* SampleTableViewController.swift in Sources */,
 				096203271D411E1E00E14A74 /* Fonts.swift in Sources */,
