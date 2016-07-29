@@ -46,7 +46,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listOfAvailableSubSections.count + 2
+        return listOfAvailableSubSections.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -56,7 +56,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -65,7 +65,16 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+
+        if upperRegionForPanGestureRecognizer.transform.ty >= 0 && (gestureRecognizer as! UIPanGestureRecognizer).translationInView(self.view).y > 0 {
+            return true
+        }
+        
+        if upperRegionForPanGestureRecognizer.transform.ty <= -258 {
+            return true
+        }
+
+        return false
     }
     
     var lastDistanceMovedVertically : CGFloat = 0.0
@@ -89,7 +98,6 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         
         if self.upperRegionForPanGestureRecognizer.transform.ty >= 0 && deltaDistanceMovedVertically > 0 {
             deltaDistanceMovedVertically = 0
-
         }
         
         for subview in self.view.subviews {
@@ -104,16 +112,80 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
             navigationBarInTopicsAndPostsViewScreens?.setBackgroundImage(UIImage.fromColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)), forBarMetrics: UIBarMetrics.Default)
             leftPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
             rightPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
+            
+            // Filled With Sample Data: Update When Code is Ready
             navigationItemOnCurrentPage.title = "MOVIE FANFIC"
 
             deltaDistanceMovedVertically = 0
-            return
         }
         
         lastDistanceMovedVertically = distanceMovedVertically
+        
+        if self.upperRegionForPanGestureRecognizer.transform.ty > -258 && navigationItemOnCurrentPage.title != "" {
+            navigationItemOnCurrentPage.title = ""
+            subSectionsCollectionView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+            navigationBarInTopicsAndPostsViewScreens?.setBackgroundImage(UIImage.fromColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)), forBarMetrics: UIBarMetrics.Default)
+            leftPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+            rightPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        }
     }
     
+    var lastDistanceMovedVerticallyInLowerRegion : CGFloat = 0.0
+    
     func pannedInLowerRegion(sender : UIPanGestureRecognizer) {
-        print("Panned In Lower Region")
+        
+        let distanceMovedVertically = sender.translationInView(self.view).y
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            lastDistanceMovedVerticallyInLowerRegion = 0.0
+        }
+        
+        if (sender.state == UIGestureRecognizerState.Ended || sender.state == UIGestureRecognizerState.Cancelled) && self.upperRegionForPanGestureRecognizer.transform.ty >= 0 {
+            UIView.animateWithDuration(0.1, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: -1.0, options: [], animations: {
+                for subview in self.view.subviews {
+                    subview.transform.ty = 0
+                }
+                }, completion: nil)
+        }
+        
+        var deltaDistanceMovedVertically = distanceMovedVertically - lastDistanceMovedVerticallyInLowerRegion
+        
+        if self.upperRegionForPanGestureRecognizer.transform.ty >= 0 && distanceMovedVertically > 0 {
+            deltaDistanceMovedVertically = 0.0
+        }
+        
+        if self.upperRegionForPanGestureRecognizer.transform.ty <= -258 && self.topicsTableView.contentOffset.y >= 0.0 {
+            deltaDistanceMovedVertically = 0.0
+        }
+        
+        for subview in self.view.subviews {
+            subview.transform = CGAffineTransformConcat(subview.transform, CGAffineTransformMakeTranslation(0.0, deltaDistanceMovedVertically))
+        }
+        
+        if self.upperRegionForPanGestureRecognizer.transform.ty <= -220 && deltaDistanceMovedVertically < 0 {
+            for subview in self.view.subviews {
+                subview.transform.ty = -258
+            }
+            subSectionsCollectionView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
+            navigationBarInTopicsAndPostsViewScreens?.setBackgroundImage(UIImage.fromColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)), forBarMetrics: UIBarMetrics.Default)
+            leftPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
+            rightPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
+            
+            // Filled With Sample Data: Update When Code is Ready
+            navigationItemOnCurrentPage.title = "MOVIE FANFIC"
+            
+            deltaDistanceMovedVertically = 0
+        }
+        
+        lastDistanceMovedVerticallyInLowerRegion = distanceMovedVertically
+        
+        if self.upperRegionForPanGestureRecognizer.transform.ty > -258 && navigationItemOnCurrentPage.title != "" {
+            navigationItemOnCurrentPage.title = ""
+            subSectionsCollectionView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+            navigationBarInTopicsAndPostsViewScreens?.setBackgroundImage(UIImage.fromColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)), forBarMetrics: UIBarMetrics.Default)
+            leftPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+            rightPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        }
+        
     }
 }

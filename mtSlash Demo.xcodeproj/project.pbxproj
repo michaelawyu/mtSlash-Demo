@@ -69,6 +69,8 @@
 		09FE23761D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09FE23751D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg */; };
 		09FE23781D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */; };
 		09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */; };
+		09FE237E1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */; };
+		09FE23801D4B3BE7000002CD /* topicTitleContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,8 @@
 		09FE23751D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg; sourceTree = "<group>"; };
 		09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerforTopicsandPostsSectionViewController.swift; sourceTree = "<group>"; };
 		09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subSectionNameContainerCell.swift; sourceTree = "<group>"; };
+		09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleAvatarProfileImage.jpg; sourceTree = "<group>"; };
+		09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topicTitleContainerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,7 @@
 				0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */,
 				09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */,
 				09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */,
+				09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */,
 				0957DE8C1D20363A004844A8 /* homePageShowcase.swift */,
 				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
+				09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */,
 			);
 			name = "Custom Views (Extension)";
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				0902ACDE1D0D62D700FD6AAD /* LaunchScreen.storyboard in Resources */,
 				09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */,
 				090E399A1D1AC478005E6133 /* codeSlash.png in Resources */,
+				09FE237E1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg in Resources */,
 				098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */,
 				09E5675D1D2CA5BE00902788 /* searchScreenBackground.prototype.png in Resources */,
 				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
@@ -603,6 +610,7 @@
 				09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */,
 				09ED77651D171F01002C0276 /* customSegueFromPasswordInputScreenToAccessGrantedScreen.swift in Sources */,
 				09ED77731D183621002C0276 /* EditorsPickScreenViewController.swift in Sources */,
+				09FE23801D4B3BE7000002CD /* topicTitleContainerCell.swift in Sources */,
 				0902AD1E1D0E9E9300FD6AAD /* UsernameInputPage.swift in Sources */,
 				09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */,
 				099D91251D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift in Sources */,
