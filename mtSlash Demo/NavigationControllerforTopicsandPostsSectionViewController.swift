@@ -27,5 +27,8 @@ class NavigationControllerforTopicsandPostsSectionViewController: UINavigationCo
         return self.visibleViewController
     }
     
+    override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
+        return super.popViewControllerAnimated(animated)
+    }
 
 }

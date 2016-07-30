@@ -1235,6 +1235,14 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rM-Iq-uSB">
+                                                            <rect key="frame" x="225" y="6" width="142" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <state key="normal" title="Test Post View Screen"/>
+                                                            <connections>
+                                                                <segue destination="PwF-f4-Iae" kind="show" id="cNB-e6-dHh"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -1398,7 +1406,7 @@
         <!--Post View Screen View Controller-->
         <scene sceneID="RG6-Qc-p0p">
             <objects>
-                <viewController title="Post View Screen View Controller" id="PwF-f4-Iae" sceneMemberID="viewController">
+                <viewController title="Post View Screen View Controller" id="PwF-f4-Iae" customClass="PostsViewScreenViewController" customModule="mtSlash_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S21-WQ-arW"/>
                         <viewControllerLayoutGuide type="bottom" id="PDb-UH-9hs"/>
@@ -1412,7 +1420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="an7-EP-6Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3971.5" y="307.5"/>
+            <point key="canvasLocation" x="3999.5" y="307.5"/>
         </scene>
         <!--Search Screen View Controller-->
         <scene sceneID="JHE-0b-hqY">

@@ -16,7 +16,7 @@ class Fonts {
     
     static func convertFontName2SupportedFonts(name: String) -> SupportedFonts? {
         switch name {
-        case "PingFangSC":
+        case "PingFangSC-Regular":
             return SupportedFonts.PingFangSC
         default:
             return nil

@@ -71,6 +71,7 @@
 		09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */; };
 		09FE237E1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */; };
 		09FE23801D4B3BE7000002CD /* topicTitleContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */; };
+		09FE23821D4B74B4000002CD /* PostsViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE23811D4B74B4000002CD /* PostsViewScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subSectionNameContainerCell.swift; sourceTree = "<group>"; };
 		09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleAvatarProfileImage.jpg; sourceTree = "<group>"; };
 		09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topicTitleContainerCell.swift; sourceTree = "<group>"; };
+		09FE23811D4B74B4000002CD /* PostsViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				0923F2BA1D2F4093000A8D14 /* SampleTableViewController.swift */,
 				0923F2BD1D2F47C4000A8D14 /* SearchResultScreenViewController.swift */,
 				099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */,
+				09FE23811D4B74B4000002CD /* PostsViewScreenViewController.swift */,
 			);
 			name = "View Controllers (Extension)";
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,
 				09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */,
+				09FE23821D4B74B4000002CD /* PostsViewScreenViewController.swift in Sources */,
 				0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				0923F2BB1D2F4093000A8D14 /* SampleTableViewController.swift in Sources */,
 				096203271D411E1E00E14A74 /* Fonts.swift in Sources */,
