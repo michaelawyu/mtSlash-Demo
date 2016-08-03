@@ -42,6 +42,7 @@ extension BulletinBoardCode2NSMutableAttributedStringParser {
             regularExpressionForBackgoundColoredText = try NSRegularExpression(pattern: "\\[backcolor.*?\\].*?\\[/backcolor\\]", options: NSRegularExpressionOptions())
             regularExpressionForHeadOfTagOfBackgroundColoredText = try NSRegularExpression(pattern: "\\[backcolor.*?\\]", options: NSRegularExpressionOptions())
             regularExpressionForTailOfTagOfBackgroundColoredText = try NSRegularExpression(pattern: "\\[/backcolor\\]", options: NSRegularExpressionOptions())
+            regularExpressionForParagraphMark = try NSRegularExpression(pattern: "\\[p*?\\].*?\\[/p\\]", options: NSRegularExpressionOptions())
         } catch {
             fatalError("An error has occurred: Unable to set up REs for parsing Bulletin Board Code.")
         }

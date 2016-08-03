@@ -1182,7 +1182,7 @@
                                                                 <constraint firstAttribute="width" constant="240" id="kdO-gi-d6V"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNd-Vc-rGG">
@@ -1415,15 +1415,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="500" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-4c-X9F">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-4c-X9F">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DV0-24-dEv">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="500"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SampleCell" id="DV0-24-dEv">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DV0-24-dEv" id="fmZ-Fs-7pF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="499.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleAvatarProfileImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XT7-aW-XAE">
@@ -1443,42 +1443,42 @@
                                                             <attributes>
                                                                 <color key="NSColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="18" name="HiraginoSans-W6"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="译">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="18" name="PingFangSC-Semibold"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="] Three Midnights 三个午夜 （AU 童">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="18" name="HiraginoSans-W6"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="话">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="18" name="PingFangSC-Semibold"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="魔法王国梗 ML 2月11日八千字更新 ）">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="18" name="HiraginoSans-W6"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svD-if-vPQ">
-                                                    <rect key="frame" x="13" y="130" width="349" height="369.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svD-if-vPQ">
+                                                    <rect key="frame" x="13" y="155" width="349" height="344.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
@@ -1494,13 +1494,65 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                         </fragment>
                                                     </attributedString>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7D-DN-IDR">
+                                                    <rect key="frame" x="18" y="138" width="184" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="goF-yy-INt"/>
+                                                        <constraint firstAttribute="width" constant="184" id="nuL-lL-0Mg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
+                                                    <state key="normal" title="仅浏览由此作者发布的帖子"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tony橙子" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-iY-8Wo">
+                                                    <rect key="frame" x="62" y="10" width="240" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="5F8-kq-xbX"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="DXa-YG-kci"/>
+                                                        <constraint firstAttribute="height" constant="21" id="QCH-Oj-0hn"/>
+                                                        <constraint firstAttribute="width" constant="240" id="mSw-qd-qQ0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.88235294119999996" green="0.2470588235" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="5F8-kq-xbX"/>
+                                                            <exclude reference="DXa-YG-kci"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发表于 2015-7-11 09:09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9f-8v-gRM">
+                                                    <rect key="frame" x="61" y="26" width="240" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="5tG-Go-Mpx"/>
+                                                        <constraint firstAttribute="height" constant="21" id="Fqy-M1-yOG"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="mbf-Mc-0E9"/>
+                                                        <constraint firstAttribute="width" constant="240" id="sVs-KM-dTu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="5tG-Go-Mpx"/>
+                                                            <exclude reference="mbf-Mc-0E9"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="svD-if-vPQ" secondAttribute="trailing" constant="5" id="4i9-Bo-3HN"/>
+                                                <constraint firstItem="p9f-8v-gRM" firstAttribute="top" secondItem="fmZ-Fs-7pF" secondAttribute="topMargin" constant="18" id="95n-Jo-MOx"/>
+                                                <constraint firstItem="m7D-DN-IDR" firstAttribute="top" secondItem="CkO-ka-keV" secondAttribute="bottom" constant="8" id="EKh-PO-wfs"/>
+                                                <constraint firstItem="p9f-8v-gRM" firstAttribute="leading" secondItem="XT7-aW-XAE" secondAttribute="trailing" constant="7" id="GvI-0r-xzv"/>
+                                                <constraint firstItem="VeW-iY-8Wo" firstAttribute="top" secondItem="fmZ-Fs-7pF" secondAttribute="topMargin" constant="2" id="OZw-7N-DeH"/>
+                                                <constraint firstItem="VeW-iY-8Wo" firstAttribute="leading" secondItem="XT7-aW-XAE" secondAttribute="trailing" constant="8" id="Wqh-d0-Soo"/>
+                                                <constraint firstItem="m7D-DN-IDR" firstAttribute="leading" secondItem="fmZ-Fs-7pF" secondAttribute="leadingMargin" constant="10" id="ctD-z8-TfN"/>
                                                 <constraint firstItem="CkO-ka-keV" firstAttribute="top" secondItem="XT7-aW-XAE" secondAttribute="bottom" constant="12" id="d6r-PX-5pi"/>
                                                 <constraint firstItem="XT7-aW-XAE" firstAttribute="top" secondItem="fmZ-Fs-7pF" secondAttribute="topMargin" constant="3" id="dgi-1u-xtc"/>
-                                                <constraint firstItem="svD-if-vPQ" firstAttribute="top" secondItem="CkO-ka-keV" secondAttribute="bottom" id="faD-Ya-YDU"/>
+                                                <constraint firstItem="svD-if-vPQ" firstAttribute="top" secondItem="CkO-ka-keV" secondAttribute="bottom" constant="25" id="faD-Ya-YDU"/>
                                                 <constraint firstItem="svD-if-vPQ" firstAttribute="bottom" secondItem="fmZ-Fs-7pF" secondAttribute="bottomMargin" constant="8" id="fos-SO-Xnf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="CkO-ka-keV" secondAttribute="trailing" constant="10" id="hC9-Fv-7cs"/>
                                                 <constraint firstItem="CkO-ka-keV" firstAttribute="leading" secondItem="fmZ-Fs-7pF" secondAttribute="leadingMargin" constant="10" id="qgT-wH-tNt"/>
@@ -1510,15 +1562,25 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PwF-f4-Iae" id="Svd-e6-ST6"/>
+                                    <outlet property="delegate" destination="PwF-f4-Iae" id="6Rg-1S-nJX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="阅读帖子" id="dqz-wI-Dck">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g4V-Nq-IRt"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="postsTableView" destination="cfL-4c-X9F" id="YQU-PC-nWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="an7-EP-6Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4008.5" y="307.5"/>
+            <point key="canvasLocation" x="4007.5" y="307.5"/>
         </scene>
         <!--Search Screen View Controller-->
         <scene sceneID="JHE-0b-hqY">
@@ -2898,6 +2960,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5fD-52-bfi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.25943509619999999" green="0.25943509619999999" blue="0.25943509619999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="16"/>
@@ -2937,7 +3000,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
         <image name="usernameInputPageBackgroundImage.prototype.jpg" width="1920" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kjg-DM-X8N"/>
         <segue reference="68k-Co-yHG"/>
+        <segue reference="lx3-BL-GPL"/>
     </inferredMetricsTieBreakers>
 </document>

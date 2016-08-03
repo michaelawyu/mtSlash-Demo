@@ -44,6 +44,7 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
     var regularExpressionForBackgoundColoredText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForHeadOfTagOfBackgroundColoredText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForTailOfTagOfBackgroundColoredText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForParagraphMark : NSRegularExpression = NSRegularExpression()
     
     // Styles
     var fontRegularStyle : String = ""
@@ -191,6 +192,8 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             
             convertedString.deleteCharactersInRange(rangeOfMatchedListWithTag)
         }
+        
+        // Remove All [p][/p] Tags: Not Required in Parsing
         
         // Convert All [u][/u] Tags to Underlined Text
         while true {
