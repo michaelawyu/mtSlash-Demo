@@ -29,11 +29,29 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
     var regularExpressionForList : NSRegularExpression = NSRegularExpression()
     var regularExpressionForAudioFile : NSRegularExpression = NSRegularExpression()
     var regularExpressionForMediaFile : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfMediaFile : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfMediaFile : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForLinkedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfLinkedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfLinkedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForEmbeddedImage : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForSizedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfSizedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfSizedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForColoredText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfColoredText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfColoredText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForBackgoundColoredText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfBackgroundColoredText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfBackgroundColoredText : NSRegularExpression = NSRegularExpression()
     
     // Styles
     var fontRegularStyle : String = ""
     var fontBoldStyle : String = ""
     var fontSize : CGFloat = 0.0
+    
+    // Color Palatte
+    let supportedColors = Colors()
     
     init(bulletinBoardCode: String) {
         self.bulletinBoardCode = bulletinBoardCode
@@ -211,7 +229,169 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             convertedString.replaceCharactersInRange(rangeOfMatchedEmbeddedAudioFileWithTag, withAttributedString: URLForAudioFile)
         }
         
-        // Convert All [video][/video] Tags to Embedded Link
+        // Convert All [img][/img] Tags to Embedded Link
+        while true {
+            let matchedEmbeddedImageWithTag = regularExpressionForEmbeddedImage.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedEmbeddedImageWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedEmbeddedImageWithTag = matchedEmbeddedImageWithTag!.range
+            
+            let extractedString = convertedString.mutableString.substringWithRange(rangeOfMatchedEmbeddedImageWithTag)
+            let URLForEmbeddedImageAsString = extractedString[extractedString.startIndex.advancedBy(5)..<extractedString.endIndex.advancedBy(-6)]
+            
+            let URLForEmbeddedImage = NSAttributedString(string: "检测到的图像链接", attributes: [NSLinkAttributeName: NSURL(string: URLForEmbeddedImageAsString)!])
+            
+            convertedString.replaceCharactersInRange(rangeOfMatchedEmbeddedImageWithTag, withAttributedString: URLForEmbeddedImage)
+        }
+        
+        // Convert All [media][/media] Tags to Embedded Link
+        while true {
+            let matchedEmbeddedMediaFileWithTag = regularExpressionForMediaFile.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedEmbeddedMediaFileWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedEmbeddedMediaFileWithTag = matchedEmbeddedMediaFileWithTag!.range
+            
+            let extractedString = NSMutableString(string: convertedString.mutableString.substringWithRange(rangeOfMatchedEmbeddedMediaFileWithTag))
+            let matchedHeadOfTagOfMediaFile = regularExpressionForHeadOfTagOfMediaFile.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            let matchedTailOfTagOfMediaFile = regularExpressionForTailOfTagOfMediaFile.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            
+            let rangeOfMatchedHeadOfTagOfMediaFile = matchedHeadOfTagOfMediaFile!.range
+            let rangeOfMatchedTailOfTagOfMediaFile = matchedTailOfTagOfMediaFile!.range
+            
+            let extractedStringInString = extractedString as String
+            let URLForMediaFileAsString = extractedStringInString[extractedStringInString.startIndex.advancedBy(rangeOfMatchedHeadOfTagOfMediaFile.length)..<extractedStringInString.endIndex.advancedBy(-(rangeOfMatchedTailOfTagOfMediaFile.length))]
+            
+            let URLForMediaFile = NSAttributedString(string: "检测到的视频链接", attributes: [NSLinkAttributeName: NSURL(string: URLForMediaFileAsString)!])
+            
+            convertedString.replaceCharactersInRange(rangeOfMatchedEmbeddedMediaFileWithTag, withAttributedString: URLForMediaFile)
+        }
+        
+        // Convert All [url][/url] Tags to Embedded Link
+        while true {
+            let matchedLinkedTextWithTag = regularExpressionForLinkedText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedLinkedTextWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedLinkedTextWithTag = matchedLinkedTextWithTag!.range
+            
+            let extractedString = NSMutableString(string: convertedString.mutableString.substringWithRange(rangeOfMatchedLinkedTextWithTag))
+            let matchedHeadOfTagOfLinkedText = regularExpressionForHeadOfTagOfLinkedText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            let matchedTailOfTagOfLinkedText = regularExpressionForTailOfTagOfLinkedText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            
+            let rangeOfMatchedHeadOfTagOfLinkedText = matchedHeadOfTagOfLinkedText!.range
+            let rangeOfMatchedTailOfTagOfLinkedText = matchedTailOfTagOfLinkedText!.range
+            
+            let extractedHeadOfTag = extractedString.substringWithRange(rangeOfMatchedHeadOfTagOfLinkedText)
+            let URLEmbeddedInLinkedText = extractedHeadOfTag[extractedHeadOfTag.startIndex.advancedBy(5)..<extractedHeadOfTag.endIndex.advancedBy(-1)]
+            
+            let extractedStringInString = extractedString as String
+            let textWithLink = extractedStringInString[extractedStringInString.startIndex.advancedBy(rangeOfMatchedHeadOfTagOfLinkedText.length)..<extractedStringInString.endIndex.advancedBy(-(rangeOfMatchedTailOfTagOfLinkedText.length))]
+            
+            let linkedTextAsAttributedString = NSAttributedString(string: textWithLink, attributes: [NSLinkAttributeName: NSURL(string: URLEmbeddedInLinkedText)!])
+            
+            convertedString.replaceCharactersInRange(rangeOfMatchedLinkedTextWithTag, withAttributedString: linkedTextAsAttributedString)
+        }
+        
+        // Resize Text with [size][/size] Tag
+        while true {
+            let matchedSizedTextWithTag = regularExpressionForSizedText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedSizedTextWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedSizedTextWithTag = matchedSizedTextWithTag!.range
+            
+            let extractedString = NSMutableString(string: convertedString.mutableString.substringWithRange(rangeOfMatchedSizedTextWithTag))
+            let matchedHeadOfTagOfSizedText = regularExpressionForHeadOfTagOfSizedText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            let matchedTailOfTagOfSizedText = regularExpressionForTailOfTagOfSizedText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            
+            let rangeOfMatchedHeadOfTagOfSizedText = matchedHeadOfTagOfSizedText!.range
+            let rangeOfMatchedTailOfTagOfSizedText = matchedTailOfTagOfSizedText!.range
+            
+            let extractedHeadOfTag = extractedString.substringWithRange(rangeOfMatchedHeadOfTagOfSizedText)
+            let RequestedSizeInString = extractedHeadOfTag[extractedHeadOfTag.startIndex.advancedBy(6)..<extractedHeadOfTag.endIndex.advancedBy(-1)]
+            var RequestedSize = Int(RequestedSizeInString)
+            
+            if RequestedSize == nil || RequestedSize < 1 || RequestedSize > 7 {
+                RequestedSize = Int(fontSize)
+            }
+            
+            let updatedSize = CGFloat(Float(fontSize) - Float(3 - RequestedSize!))
+            
+            convertedString.addAttributes([NSFontAttributeName : UIFont(name: fontRegularStyle, size: updatedSize)!], range: NSMakeRange(rangeOfMatchedSizedTextWithTag.location + rangeOfMatchedHeadOfTagOfSizedText.length, rangeOfMatchedSizedTextWithTag.length - rangeOfMatchedHeadOfTagOfSizedText.length - rangeOfMatchedTailOfTagOfSizedText.length))
+            
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedSizedTextWithTag.location + rangeOfMatchedTailOfTagOfSizedText.location, rangeOfMatchedTailOfTagOfSizedText.length))
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedSizedTextWithTag.location + rangeOfMatchedHeadOfTagOfSizedText.location, rangeOfMatchedHeadOfTagOfSizedText.length))
+        }
+        
+        // Color Texts with [color][/color] Tag
+        while true {
+            let matchedColoredTextWithTag = regularExpressionForColoredText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedColoredTextWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedColoredTextWithTag = matchedColoredTextWithTag!.range
+            let extractedString = NSMutableString(string: convertedString.mutableString.substringWithRange(rangeOfMatchedColoredTextWithTag))
+            let matchedHeadOfTagOfColoredText = regularExpressionForHeadOfTagOfColoredText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            let matchedTailOfTagOfColoredText = regularExpressionForTailOfTagOfColoredText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            
+            let rangeOfMatchedHeadOfTagOfColoredText = matchedHeadOfTagOfColoredText!.range
+            let rangeOfMatchedTailOfTagOfColoredText = matchedTailOfTagOfColoredText!.range
+            
+            let extractedHeadOfTag = extractedString.substringWithRange(rangeOfMatchedHeadOfTagOfColoredText)
+            let RequestedColorInString = extractedHeadOfTag[extractedHeadOfTag.startIndex.advancedBy(7)..<extractedHeadOfTag.endIndex.advancedBy(-1)]
+            var RequestedColor = supportedColors.convertColorName2SupportedColor(RequestedColorInString)
+            
+            if RequestedColor == nil {
+                RequestedColor = supportedColors.convertColorName2SupportedColor("Black")
+            }
+            
+            convertedString.addAttributes([NSForegroundColorAttributeName: RequestedColor!], range: NSMakeRange(rangeOfMatchedColoredTextWithTag.location + rangeOfMatchedHeadOfTagOfColoredText.length, rangeOfMatchedColoredTextWithTag.length - rangeOfMatchedHeadOfTagOfColoredText.length - rangeOfMatchedTailOfTagOfColoredText.length))
+            
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedColoredTextWithTag.location + rangeOfMatchedTailOfTagOfColoredText.location, rangeOfMatchedTailOfTagOfColoredText.length))
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedColoredTextWithTag.location + rangeOfMatchedHeadOfTagOfColoredText.location, rangeOfMatchedHeadOfTagOfColoredText.length))
+        }
+        
+        // Color the Background of Texts with [backcolor][/backcolor] Tag
+        while true {
+            let matchedBackgroundColoredTextWithTag = regularExpressionForBackgoundColoredText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedBackgroundColoredTextWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedBackgroundColoredTextWithTag = matchedBackgroundColoredTextWithTag!.range
+            let extractedString = NSMutableString(string: convertedString.mutableString.substringWithRange(rangeOfMatchedBackgroundColoredTextWithTag))
+            let matchedHeadOfTagOfColoredText = regularExpressionForHeadOfTagOfBackgroundColoredText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            let matchedTailOfTagOfColoredText = regularExpressionForTailOfTagOfBackgroundColoredText.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            
+            let rangeOfMatchedHeadOfTagOfBackgroundColoredText = matchedHeadOfTagOfColoredText!.range
+            let rangeOfMatchedTailOfTagOfBackgroundColoredText = matchedTailOfTagOfColoredText!.range
+            
+            let extractedHeadOfTag = extractedString.substringWithRange(rangeOfMatchedHeadOfTagOfBackgroundColoredText)
+            let RequestedColorInString = extractedHeadOfTag[extractedHeadOfTag.startIndex.advancedBy(11)..<extractedHeadOfTag.endIndex.advancedBy(-1)]
+            var RequestedColor = supportedColors.convertColorName2SupportedColor(RequestedColorInString)
+            
+            if RequestedColor == nil {
+                RequestedColor = supportedColors.convertColorName2SupportedColor("Black")
+            }
+            
+            convertedString.addAttributes([NSForegroundColorAttributeName: RequestedColor!], range: NSMakeRange(rangeOfMatchedBackgroundColoredTextWithTag.location + rangeOfMatchedHeadOfTagOfBackgroundColoredText.length, rangeOfMatchedBackgroundColoredTextWithTag.length - rangeOfMatchedHeadOfTagOfBackgroundColoredText.length - rangeOfMatchedTailOfTagOfBackgroundColoredText.length))
+            
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedBackgroundColoredTextWithTag.location + rangeOfMatchedTailOfTagOfBackgroundColoredText.location, rangeOfMatchedTailOfTagOfBackgroundColoredText.length))
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedBackgroundColoredTextWithTag.location + rangeOfMatchedHeadOfTagOfBackgroundColoredText.location, rangeOfMatchedHeadOfTagOfBackgroundColoredText.length))
+        }
         
         return convertedString
     }
