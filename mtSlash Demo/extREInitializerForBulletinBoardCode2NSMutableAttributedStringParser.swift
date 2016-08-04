@@ -42,7 +42,16 @@ extension BulletinBoardCode2NSMutableAttributedStringParser {
             regularExpressionForBackgoundColoredText = try NSRegularExpression(pattern: "\\[backcolor.*?\\].*?\\[/backcolor\\]", options: NSRegularExpressionOptions())
             regularExpressionForHeadOfTagOfBackgroundColoredText = try NSRegularExpression(pattern: "\\[backcolor.*?\\]", options: NSRegularExpressionOptions())
             regularExpressionForTailOfTagOfBackgroundColoredText = try NSRegularExpression(pattern: "\\[/backcolor\\]", options: NSRegularExpressionOptions())
-            regularExpressionForParagraphMark = try NSRegularExpression(pattern: "\\[p*?\\].*?\\[/p\\]", options: NSRegularExpressionOptions())
+            //regularExpressionForParagraphMark = try NSRegularExpression(pattern: "\\[p*?\\].*?\\[/p\\]", options: NSRegularExpressionOptions())
+            regularExpressionForAlignment = try NSRegularExpression(pattern: "\\[align.*?\\].*?\\[/align\\]", options: NSRegularExpressionOptions())
+            regularExpressionForHeadOfTagOfAlignment = try NSRegularExpression(pattern: "\\[align.*?\\]", options: NSRegularExpressionOptions())
+            regularExpressionForTailOfTagOfAlignment = try NSRegularExpression(pattern: "\\[/align\\]", options: NSRegularExpressionOptions())
+            regularExpressionForHeadOfTagOfParagraphMark = try NSRegularExpression(pattern: "\\[p.*?\\]", options: NSRegularExpressionOptions())
+            regularExpressionForTailOfTagOfParagraphMark = try NSRegularExpression(pattern: "\\[/p\\]", options: NSRegularExpressionOptions())
+            regularExpressionForSubscriptedText = try NSRegularExpression(pattern: "\\[sub\\].*?\\[/sub\\]", options: NSRegularExpressionOptions())
+            regularExpressionForSuperscriptedText = try NSRegularExpression(pattern: "\\[sup\\].*?\\[/sup\\]", options: NSRegularExpressionOptions())
+            regularExpressionForEmbeddedIMLink = try NSRegularExpression(pattern: "\\[qq\\].*?\\[/qq\\]", options: NSRegularExpressionOptions())
+            regularExpressionForFlyoverContent = try NSRegularExpression(pattern: "\\[fly\\].*?\\[/fly\\]", options: NSRegularExpressionOptions())
         } catch {
             fatalError("An error has occurred: Unable to set up REs for parsing Bulletin Board Code.")
         }

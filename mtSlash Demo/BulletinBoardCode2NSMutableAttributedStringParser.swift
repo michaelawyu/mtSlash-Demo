@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreText
 // Extension: extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser
 // Extension: extSupportForBulletinBoardCode2NSMutableAttributedStringParser
 
@@ -44,7 +45,15 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
     var regularExpressionForBackgoundColoredText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForHeadOfTagOfBackgroundColoredText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForTailOfTagOfBackgroundColoredText : NSRegularExpression = NSRegularExpression()
-    var regularExpressionForParagraphMark : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForAlignment : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfAlignment : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfAlignment : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfParagraphMark : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfParagraphMark : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForSubscriptedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForSuperscriptedText : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForEmbeddedIMLink : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForFlyoverContent : NSRegularExpression = NSRegularExpression()
     
     // Styles
     var fontRegularStyle : String = ""
@@ -53,6 +62,9 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
     
     // Color Palatte
     let supportedColors = Colors()
+    
+    // List of Available Alignments
+    let supportedAlignments = Alignments()
     
     init(bulletinBoardCode: String) {
         self.bulletinBoardCode = bulletinBoardCode
@@ -88,6 +100,36 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             
             convertedString.deleteCharactersInRange(rangeOfHeadOfTag)
             convertedString.deleteCharactersInRange(rangeOfTailOfTag)
+        }
+        
+        // Convert All [sub][/sub] Tags to Subscripted Text
+        while true {
+            let matchedSubscriptedTextWithTag = regularExpressionForSubscriptedText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedSubscriptedTextWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedSubscriptedTextWithTag = matchedSubscriptedTextWithTag!.range
+            
+            convertedString.addAttributes([kCTSuperscriptAttributeName as String: -1], range: rangeOfMatchedSubscriptedTextWithTag)
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedSubscriptedTextWithTag.location + rangeOfMatchedSubscriptedTextWithTag.length - 6, 6))
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedSubscriptedTextWithTag.location, 5))
+        }
+        
+        // Convert All [sup][sup] Tags to Superscripted Text
+        while true {
+            let matchedSuperscriptedTextWithTag = regularExpressionForSuperscriptedText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedSuperscriptedTextWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedSuperscriptedTextWithTag = matchedSuperscriptedTextWithTag!.range
+            
+            convertedString.addAttributes([kCTSuperscriptAttributeName as String: 1], range: rangeOfMatchedSuperscriptedTextWithTag)
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedSuperscriptedTextWithTag.location + rangeOfMatchedSuperscriptedTextWithTag.length - 6, 6))
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedSuperscriptedTextWithTag.location, 5))
         }
         
         // Remove All [i][/i] Tags : Tag Not Supported
@@ -154,6 +196,32 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             convertedString.deleteCharactersInRange(rangeOfMatchedFloatingContentWithTag)
         }
         
+        // Remove All [qq][/qq] Tags : Tag Not Supported
+        while true {
+            let matchedEmbeddedIMLinkWithTag = regularExpressionForEmbeddedIMLink.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedEmbeddedIMLinkWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedEmbeddedIMLinkWithTag = matchedEmbeddedIMLinkWithTag!.range
+            
+            convertedString.deleteCharactersInRange(rangeOfMatchedEmbeddedIMLinkWithTag)
+        }
+        
+        // Remove All [fly][/fly] Tags : Tag Not Supported
+        while true {
+            let matchedFlyoverContentWithTag = regularExpressionForFlyoverContent.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedFlyoverContentWithTag == nil {
+                break
+            }
+            
+            let rangeOfMatchedFlyoverContentWithTag = matchedFlyoverContentWithTag!.range
+            
+            convertedString.deleteCharactersInRange(rangeOfMatchedFlyoverContentWithTag)
+        }
+        
         // Remove All [flash][/flash] Tags : Tag Not Supported
         while true {
             let matchedFlashContentWithTag = regularExpressionForFlashContent.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
@@ -194,6 +262,20 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
         }
         
         // Remove All [p][/p] Tags: Not Required in Parsing
+        while true {
+            let matchedHeadOfTagOfParagraphMark = regularExpressionForHeadOfTagOfParagraphMark.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            let matchedTailOfTagOfParagraphMark = regularExpressionForTailOfTagOfParagraphMark.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+            
+            if matchedHeadOfTagOfParagraphMark == nil || matchedTailOfTagOfParagraphMark == nil {
+                break
+            }
+            
+            let rangeOfMatchedHeadOfTagOfParagraphMark = matchedHeadOfTagOfParagraphMark!.range
+            let rangeOfMatchedTailOfTagOfParagraphMark = matchedTailOfTagOfParagraphMark!.range
+            
+            convertedString.deleteCharactersInRange(rangeOfMatchedTailOfTagOfParagraphMark)
+            convertedString.deleteCharactersInRange(rangeOfMatchedHeadOfTagOfParagraphMark)
+        }
         
         // Convert All [u][/u] Tags to Underlined Text
         while true {
@@ -394,6 +476,36 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             
             convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedBackgroundColoredTextWithTag.location + rangeOfMatchedTailOfTagOfBackgroundColoredText.location, rangeOfMatchedTailOfTagOfBackgroundColoredText.length))
             convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedBackgroundColoredTextWithTag.location + rangeOfMatchedHeadOfTagOfBackgroundColoredText.location, rangeOfMatchedHeadOfTagOfBackgroundColoredText.length))
+        }
+        
+        // Adjust the Alignment of Texts with [align][/align] Tag
+         while true {
+            let matchedAlignedTextWithTag = regularExpressionForAlignment.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: NSMakeRange(0, convertedString.mutableString.length))
+         
+            if matchedAlignedTextWithTag == nil {
+                break
+            }
+         
+            let rangeOfMatchedAlignedTextWithTag = matchedAlignedTextWithTag!.range
+            let extractedString = NSMutableString(string: convertedString.mutableString.substringWithRange(rangeOfMatchedAlignedTextWithTag))
+            let matchedHeadOfTagOfAlignedText = regularExpressionForHeadOfTagOfAlignment.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+            let matchedTailOfTagOfAlignedText = regularExpressionForTailOfTagOfAlignment.firstMatchInString(extractedString as String, options: NSMatchingOptions(), range: NSMakeRange(0, extractedString.length))
+         
+            let rangeOfMatchedHeadOfTagOfAlignedText = matchedHeadOfTagOfAlignedText!.range
+            let rangeOfMatchedTailOfTagOfAlignedText = matchedTailOfTagOfAlignedText!.range
+         
+            let extractedHeadOfTag = extractedString.substringWithRange(rangeOfMatchedHeadOfTagOfAlignedText)
+            let requestedAlignmentInString = extractedHeadOfTag[extractedHeadOfTag.startIndex.advancedBy(7)..<extractedHeadOfTag.endIndex.advancedBy(-1)]
+            var requestedAlignment = supportedAlignments.convertNameOfSupportedAlignment2ParagraphStyle(requestedAlignmentInString)
+         
+            if requestedAlignment == nil {
+                requestedAlignment = supportedAlignments.convertNameOfSupportedAlignment2ParagraphStyle("default")
+            }
+         
+            convertedString.addAttributes([NSParagraphStyleAttributeName : requestedAlignment!], range: NSMakeRange(rangeOfMatchedAlignedTextWithTag.location + rangeOfMatchedHeadOfTagOfAlignedText.length, rangeOfMatchedAlignedTextWithTag.length - rangeOfMatchedHeadOfTagOfAlignedText.length - rangeOfMatchedTailOfTagOfAlignedText.length))
+         
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedAlignedTextWithTag.location + rangeOfMatchedTailOfTagOfAlignedText.location, rangeOfMatchedTailOfTagOfAlignedText.length))
+            convertedString.deleteCharactersInRange(NSMakeRange(rangeOfMatchedAlignedTextWithTag.location + rangeOfMatchedHeadOfTagOfAlignedText.location, rangeOfMatchedHeadOfTagOfAlignedText.length))
         }
         
         return convertedString

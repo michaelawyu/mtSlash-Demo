@@ -45,6 +45,7 @@
 		096203271D411E1E00E14A74 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203261D411E1E00E14A74 /* Fonts.swift */; };
 		0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */; };
 		0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */; };
+		0971E2431D5385A200CFE64E /* Alignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971E2421D5385A200CFE64E /* Alignments.swift */; };
 		097AB7A81D50F72F008B9A76 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097AB7A71D50F72F008B9A76 /* Colors.swift */; };
 		098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */; };
 		099D91251D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */; };
@@ -136,6 +137,7 @@
 		096203261D411E1E00E14A74 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0971A9DE1D12EAAC00FC9868 /* WebLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinks.swift; sourceTree = "<group>"; };
 		0971A9E01D12EC7000FC9868 /* WebDocumentScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDocumentScreenViewController.swift; sourceTree = "<group>"; };
+		0971E2421D5385A200CFE64E /* Alignments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignments.swift; sourceTree = "<group>"; };
 		097AB7A71D50F72F008B9A76 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cosmos.jpg; sourceTree = "<group>"; };
 		099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewScreenViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				0957DE941D226E43004844A8 /* Initialization.swift */,
 				0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */,
 				097AB7A71D50F72F008B9A76 /* Colors.swift */,
+				0971E2421D5385A200CFE64E /* Alignments.swift */,
 			);
 			name = Miscellaneous;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
+				0971E2431D5385A200CFE64E /* Alignments.swift in Sources */,
 				097AB7A81D50F72F008B9A76 /* Colors.swift in Sources */,
 				09ED77671D18358F002C0276 /* HomeScreenViewController.swift in Sources */,
 				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
