@@ -8,34 +8,46 @@
 
 import Foundation
 
+// URL for backend server
+let backendServerURL : String = "http://111.221.90.214:8000/"
+
 enum WebLinks {
+    // Server Status
     case ServerStatus
+    // Registration
     case Registration
+    // User Notice
     case UserNotice
+    // Privacy Policy
     case PrivacyPolicy
+    // User Authentication
     case UserAuthentication
+    // What's New
     case WhatsNew
+    // User Experience Improvement Project
     case UserExpImprovProj
     
+    // Function: Return corresponding URL for requested link
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
         switch weblink {
         case .ServerStatus:
-                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/serverstatus")!
+                return NSURL(string: backendServerURL + "serverstatus")!
         case .Registration:
-                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/registration")!
+                return NSURL(string: backendServerURL + "registration")!
         case .PrivacyPolicy:
-                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/privacypolicy")!
+                return NSURL(string: backendServerURL + "privacypolicy")!
         case .UserNotice:
-                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/usernotice")!
+                return NSURL(string: backendServerURL + "usernotice")!
         case .UserAuthentication:
-                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/userauthentication")!
+                return NSURL(string: backendServerURL + "userauthentication")!
         case .WhatsNew:
-                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/whatsnew")!
+                return NSURL(string: backendServerURL + "whatsnew")!
         case .UserExpImprovProj:
-                return NSURL(string: "http://mtslashdev.eastasia.cloudapp.azure.com:8000/userexpimprovproj")!
+                return NSURL(string: backendServerURL + "userexpimprovproj")!
         }
     }
     
+    // Function: Return the name(description) for requested link
     static func getNameOfWebLink (weblink: WebLinks) -> String {
         switch weblink {
         case .ServerStatus:

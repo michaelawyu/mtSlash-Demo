@@ -90,13 +90,16 @@ class PasswordInputScreenViewController: UIViewController {
                 })
             }
             if error == nil {
-                let serverResponse = NSString(data: data!, encoding: NSUTF8StringEncoding)?.uppercaseString
-                if serverResponse == "\"OK\"\n" {
+                let serverResponse = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSDictionary
+                let ifPassedAuthentication = serverResponse["result"]!
+                
+                if ifPassedAuthentication as! Int == 1 {
                     self.performSegueWithIdentifier("fromPasswordInputScreenToAccessGrantedScreen", sender: self)
                 }
-                if serverResponse == "\"FAILED\"\n" {
+
+                if ifPassedAuthentication as! Int == 0 {
                     dispatch_async(dispatch_get_main_queue(), {
-                        let accessDenied = UIAlertController(title: "错误的用户名或密码", message: "你输入的密码与当前的用户名不匹配。请尝试重新输入。", preferredStyle: UIAlertControllerStyle.Alert)
+                        let accessDenied = UIAlertController(title: "错误的用户名或密码", message: "你输入的密码与当前的用户名不匹配，或您使用的身份还不具备访问随缘居的权限。请尝试重新输入登录凭据。", preferredStyle: UIAlertControllerStyle.Alert)
                         let OKAction = UIAlertAction(title: "重试", style: UIAlertActionStyle.Default, handler: { (action) in
                             accessDenied.dismissViewControllerAnimated(true, completion: nil)
                         })
@@ -113,9 +116,7 @@ class PasswordInputScreenViewController: UIViewController {
                         self.switchUserOption.alpha = 1
                         self.optionsTitle.alpha = 1
                     })
-
                 }
-                
             }
         }
         taskForUserAuthentication.resume()

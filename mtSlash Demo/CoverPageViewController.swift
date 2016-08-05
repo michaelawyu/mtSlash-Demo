@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Set up a variable for storing server-end settings
 var serverEndSettings : NSDictionary?
 
 class CoverPageViewController: UIViewController {
@@ -16,8 +17,11 @@ class CoverPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Fetch the URL of backend Server from WebLinks class
         let serverEndURLForSettings = WebLinks.getAddressOfWebLink(WebLinks.ServerStatus)
+        
+        // Download the settings from the server and read them into serverEndSettings variable
         let sessionForFetchingServerEndSettings = NSURLSession.sharedSession()
         let taskForFetchingServerEndSettings = sessionForFetchingServerEndSettings.dataTaskWithURL(serverEndURLForSettings) { (data, response, error) in
             if error == nil && data != nil {
@@ -29,10 +33,12 @@ class CoverPageViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    // Function : Activiated when the logon button is pressed
     @IBAction func logonButtonTouchedUpInside(sender: AnyObject) {
+        
+        // Prepare for Segue: Hide up all elements on screen
         UIView.animateWithDuration(0.5, delay: 0.0, options: [UIViewAnimationOptions.CurveEaseIn], animations: {
             
             (self.view as! CoverPage).buildLabel.alpha = 0.0
@@ -43,6 +49,7 @@ class CoverPageViewController: UIViewController {
             (self.view as! CoverPage).viewWithTag(10)?.alpha = 0.0
             
             }) { (ifCompleted) in
+                // Perform the Segue
                 self.performSegueWithIdentifier("fromCoverPageToUsernameInputScreen", sender: self)
         }
     }

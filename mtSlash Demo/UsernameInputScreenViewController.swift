@@ -8,7 +8,9 @@
 
 import UIKit
 
+// Set up a variable for storing username entered
 var username : String = ""
+// Set up a variable for storing requested link
 var ActivatedWebLink: WebLinks?
 
 class UsernameInputScreenViewController: UIViewController {

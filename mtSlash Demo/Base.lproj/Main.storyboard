@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZNc-F0-q8k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -62,8 +62,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0f-gd-Nba">
-                                <rect key="frame" x="0.0" y="37" width="110" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0f-gd-Nba">
+                                <rect key="frame" x="-4" y="37" width="110" height="27"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.070588235289999995" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="0Ke-4g-mQ6"/>
@@ -86,8 +86,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OW-cb-Nfv">
-                                <rect key="frame" x="0.0" y="608" width="375" height="59"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OW-cb-Nfv">
+                                <rect key="frame" x="-4" y="608" width="383" height="59"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.070588235289999995" blue="0.043137254899999998" alpha="0.69841056034482762" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="OC8-US-O5q"/>
@@ -233,7 +233,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16X-q2-nhE">
                                 <rect key="frame" x="127" y="444" width="120" height="30"/>
@@ -3000,7 +3000,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
         <image name="usernameInputPageBackgroundImage.prototype.jpg" width="1920" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="68k-Co-yHG"/>
-        <segue reference="lx3-BL-GPL"/>
+        <segue reference="kjg-DM-X8N"/>
+        <segue reference="oFl-IZ-AS2"/>
     </inferredMetricsTieBreakers>
 </document>
