@@ -23,6 +23,10 @@ class WebDocumentScreenViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     @IBAction func returnButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

@@ -37,8 +37,10 @@
 		0957DE931D226583004844A8 /* XMenPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0957DE921D226583004844A8 /* XMenPanelBackground.prototype.jpg */; };
 		0957DE951D226E43004844A8 /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE941D226E43004844A8 /* Initialization.swift */; };
 		0957DEA01D2280E5004844A8 /* ConvenientMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */; };
-		0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */; };
-		0957DEA41D22835D004844A8 /* MTReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DEA21D22835D004844A8 /* MTReadingList.swift */; };
+		095C16B11D58796F000970A3 /* MTUsers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C16AD1D58796F000970A3 /* MTUsers+CoreDataProperties.swift */; };
+		095C16B21D58796F000970A3 /* MTUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C16AE1D58796F000970A3 /* MTUsers.swift */; };
+		095C16B31D58796F000970A3 /* MTReadingList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C16AF1D58796F000970A3 /* MTReadingList+CoreDataProperties.swift */; };
+		095C16B41D58796F000970A3 /* MTReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C16B01D58796F000970A3 /* MTReadingList.swift */; };
 		096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0962031F1D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift */; };
 		096203221D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203211D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift */; };
 		096203251D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203241D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift */; };
@@ -129,8 +131,10 @@
 		0957DE921D226583004844A8 /* XMenPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XMenPanelBackground.prototype.jpg; sourceTree = "<group>"; };
 		0957DE941D226E43004844A8 /* Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientMethods.swift; sourceTree = "<group>"; };
-		0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTReadingList+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0957DEA21D22835D004844A8 /* MTReadingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTReadingList.swift; sourceTree = "<group>"; };
+		095C16AD1D58796F000970A3 /* MTUsers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTUsers+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		095C16AE1D58796F000970A3 /* MTUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTUsers.swift; sourceTree = "<group>"; };
+		095C16AF1D58796F000970A3 /* MTReadingList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTReadingList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		095C16B01D58796F000970A3 /* MTReadingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTReadingList.swift; sourceTree = "<group>"; };
 		0962031F1D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
 		096203211D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
 		096203241D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
@@ -332,8 +336,10 @@
 			isa = PBXGroup;
 			children = (
 				0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */,
-				0957DEA11D22835D004844A8 /* MTReadingList+CoreDataProperties.swift */,
-				0957DEA21D22835D004844A8 /* MTReadingList.swift */,
+				095C16AD1D58796F000970A3 /* MTUsers+CoreDataProperties.swift */,
+				095C16AE1D58796F000970A3 /* MTUsers.swift */,
+				095C16AF1D58796F000970A3 /* MTReadingList+CoreDataProperties.swift */,
+				095C16B01D58796F000970A3 /* MTReadingList.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -581,8 +587,10 @@
 				096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
 				0971E2431D5385A200CFE64E /* Alignments.swift in Sources */,
 				097AB7A81D50F72F008B9A76 /* Colors.swift in Sources */,
+				095C16B31D58796F000970A3 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				09ED77671D18358F002C0276 /* HomeScreenViewController.swift in Sources */,
 				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
+				095C16B11D58796F000970A3 /* MTUsers+CoreDataProperties.swift in Sources */,
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
 				099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */,
 				0902ACD91D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld in Sources */,
@@ -595,9 +603,9 @@
 				0923F2C21D2F5592000A8D14 /* searchResultContainerCell.swift in Sources */,
 				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,
+				095C16B41D58796F000970A3 /* MTReadingList.swift in Sources */,
 				09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */,
 				09FE23821D4B74B4000002CD /* PostsViewScreenViewController.swift in Sources */,
-				0957DEA31D22835D004844A8 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				0923F2BB1D2F4093000A8D14 /* SampleTableViewController.swift in Sources */,
 				096203271D411E1E00E14A74 /* Fonts.swift in Sources */,
 				0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */,
@@ -605,6 +613,7 @@
 				09ED77751D1836A7002C0276 /* CentralControlTabBarController.swift in Sources */,
 				0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */,
 				0957DEA01D2280E5004844A8 /* ConvenientMethods.swift in Sources */,
+				095C16B21D58796F000970A3 /* MTUsers.swift in Sources */,
 				096203251D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
 				09ED776F1D1835FD002C0276 /* SettingsScreenViewController.swift in Sources */,
 				0957DE951D226E43004844A8 /* Initialization.swift in Sources */,
@@ -614,7 +623,6 @@
 				09ED776D1D1835F0002C0276 /* SearchScreenViewController.swift in Sources */,
 				0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */,
 				0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */,
-				0957DEA41D22835D004844A8 /* MTReadingList.swift in Sources */,
 				0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */,
 				09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */,
 				09ED77651D171F01002C0276 /* customSegueFromPasswordInputScreenToAccessGrantedScreen.swift in Sources */,

@@ -33,6 +33,10 @@ class UsernameInputScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     @IBAction func registrationOptionButtonPressed(sender: AnyObject) {
         ActivatedWebLink = WebLinks.Registration
         self.performSegueWithIdentifier("fromUsernameInputScreenToWebDocumentScreen", sender: self)

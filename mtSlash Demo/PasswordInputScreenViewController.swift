@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 var password : String = ""
+var uid : Int = 0
 
 class PasswordInputScreenViewController: UIViewController {
 
@@ -32,10 +34,19 @@ class PasswordInputScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     @IBAction func switchUserOptionButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("fromPasswordInputScreenToUsernameInputScreen", sender: self)
     }
-
+    
+    var receivedUsername: String = ""
+    var receivedPassword: String = ""
+    var email: String = ""
+    var groupid: Int = 0
+    
     @IBAction func proceedButtonPressed(sender: AnyObject) {
         if passwordInput.text == nil || passwordInput.text == "" {
             let passwordNotInputted = UIAlertController(title: "空的密码", message: "您似乎并没有输入任何密码。请重新输入后再试。", preferredStyle: UIAlertControllerStyle.Alert)
@@ -92,6 +103,14 @@ class PasswordInputScreenViewController: UIViewController {
             if error == nil {
                 let serverResponse = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSDictionary
                 let ifPassedAuthentication = serverResponse["result"]!
+                let receivedUserInfo = serverResponse["user_info"]! as! NSDictionary
+                
+                // Load transferred user info to memory
+                self.receivedUsername = receivedUserInfo["username"] as! String
+                self.receivedPassword = password
+                uid = receivedUserInfo["uid"] as! Int
+                self.groupid = receivedUserInfo["groupid"] as! Int
+                self.email = receivedUserInfo["email"] as! String
                 
                 if ifPassedAuthentication as! Int == 1 {
                     self.performSegueWithIdentifier("fromPasswordInputScreenToAccessGrantedScreen", sender: self)
@@ -121,6 +140,72 @@ class PasswordInputScreenViewController: UIViewController {
         }
         taskForUserAuthentication.resume()
     }
-
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Get the reading list contents from data model (as described in Data Model group).
+        // Wait until the framework is initialized.
+        while dataReadyFlag != true {
+            print("Waiting for the Data Model.")
+        }
+        
+        // Set up data controller and moc (managed object context)
+        let dataController : DefaultDataController = ConvenientMethods.getDataControllerInAppDelegate()
+        let managedObjectContextInUse = dataController.managedObjectContext
+        
+        // Disable last active user in the database
+        let predicateForIdentifyingLastActiveUser = NSPredicate(format: "ifActive == %@", argumentArray: [true])
+        let requestForIdentifyingLastActiveUser = NSFetchRequest(entityName: "MTUsers")
+        requestForIdentifyingLastActiveUser.predicate = predicateForIdentifyingLastActiveUser
+        
+        var lastActiveUsers : [MTUsers]? = nil
+        
+        do {
+            lastActiveUsers = try managedObjectContextInUse.executeFetchRequest(requestForIdentifyingLastActiveUser) as? [MTUsers]
+        } catch {
+            fatalError("An error as occured: Failed to fetch info of last active user from the database.")
+        }
+        
+        if lastActiveUsers?.count != 0 {
+            lastActiveUsers!.first!.ifActive = false
+        }
+        
+        // Check if current user has been logged in the database
+        let predicateForCheckingIfCurrentUserHasBeenLogged = NSPredicate(format: "uid == %@", argumentArray: [uid])
+        let requestForCheckingIfCurrentUserHasBeenLogged = NSFetchRequest(entityName: "MTUsers")
+        requestForCheckingIfCurrentUserHasBeenLogged.predicate = predicateForCheckingIfCurrentUserHasBeenLogged
+        
+        var usersWithGivenUID : [MTUsers]? = nil
+        
+        do {
+            usersWithGivenUID = try managedObjectContextInUse.executeFetchRequest(requestForCheckingIfCurrentUserHasBeenLogged) as? [MTUsers]
+        } catch {
+            fatalError("An error has occurred: Failed to fetch user info from the database.")
+        }
+        
+        // If already logged, update user info as received and set current user as active user
+        if usersWithGivenUID?.count != 0 {
+            let currentUser = usersWithGivenUID!.first!
+            currentUser.email = email
+            currentUser.groupid = groupid
+            currentUser.ifActive = true
+            currentUser.password = receivedPassword
+            currentUser.username = receivedUsername
+            currentUser.uid = uid
+        }
+        
+        // If not already logged, initialize a new user item based on current data mobel
+        if usersWithGivenUID?.count == 0 {
+            let newUserItem = NSEntityDescription.insertNewObjectForEntityForName("MTUsers", inManagedObjectContext: managedObjectContextInUse) as! MTUsers
+        
+            newUserItem.setValuesOfUser(receivedUsername, uid: uid, password: receivedPassword, groupid: groupid, email: email)
+            newUserItem.ifActive = true
+        }
+        
+        do {
+            try managedObjectContextInUse.save()
+        } catch {
+            fatalError("An error has occurred: Failed to save modified user info into the database.")
+        }
+    }
 }

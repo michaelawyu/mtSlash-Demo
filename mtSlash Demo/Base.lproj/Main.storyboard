@@ -173,11 +173,12 @@
                     <connections>
                         <outlet property="logonButton" destination="2OW-cb-Nfv" id="azO-gH-TXN"/>
                         <segue destination="952-Qo-Rdn" kind="custom" identifier="fromCoverPageToUsernameInputScreen" customClass="customSegueFromCoverPageToUsernameInputScreen" customModule="mtSlash_Demo" customModuleProvider="target" id="kjg-DM-X8N"/>
+                        <segue destination="erl-L0-xNi" kind="presentation" identifier="fromCoverPageToCentralControlScreen" id="9Xb-WA-ah5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244.5" y="308.5"/>
+            <point key="canvasLocation" x="1159.5" y="-585.5"/>
         </scene>
         <!--Username Input Screen View Controller-->
         <scene sceneID="HNB-gb-SiA">
@@ -352,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bce-3C-qOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703.5" y="308.5"/>
+            <point key="canvasLocation" x="693.5" y="308.5"/>
         </scene>
         <!--Web Document Screen View Controller-->
         <scene sceneID="1fr-nh-P33">
@@ -564,73 +565,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一切就绪" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-dw-YMZ">
-                                <rect key="frame" x="140" y="162" width="96" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="KZy-DD-Ag4"/>
-                                    <constraint firstAttribute="height" constant="31" id="Yji-FU-NEb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="KZy-DD-Ag4"/>
-                                        <exclude reference="Yji-FU-NEb"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-E9-Tre">
-                                <rect key="frame" x="-4" y="608" width="383" height="59"/>
-                                <color key="backgroundColor" red="0.89019607840000003" green="0.070588235289999995" blue="0.043137254899999998" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="h6S-qS-tjY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
-                                <state key="normal" title="完成">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="proceedButtonPressed:" destination="Fmm-aW-UvJ" eventType="touchUpInside" id="mDu-QD-BIV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y98-m4-bEx">
-                                <rect key="frame" x="127" y="444" width="120" height="30"/>
-                                <state key="normal" title="用户体验改进计划"/>
-                                <connections>
-                                    <action selector="userExpImprovProjButtonPressed:" destination="Fmm-aW-UvJ" eventType="touchUpInside" id="iZs-MX-dQm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q78-S6-raB">
-                                <rect key="frame" x="157" y="406" width="60" height="30"/>
-                                <state key="normal" title="更新说明"/>
-                                <connections>
-                                    <action selector="whatsNewOptionButtonPressed:" destination="Fmm-aW-UvJ" eventType="touchUpInside" id="enZ-q6-7JG"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请使用下方的链接查看更新说明、了解用户体验改进计划，或是直接开始浏览随缘居™。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjB-qd-iLs">
-                                <rect key="frame" x="45" y="222" width="285" height="39.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="285" id="bZM-wa-FCX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9F3-iW-Uh7">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="b5I-PM-0eX"/>
-                                </constraints>
-                                <color key="barTintColor" red="0.89019607840000003" green="0.070588235289999995" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="18"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="完成" id="cDj-8w-r06"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="另请参阅" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5c-Nn-Zlv">
                                 <rect key="frame" x="150" y="377" width="76" height="24"/>
                                 <constraints>
@@ -647,21 +581,89 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9F3-iW-Uh7">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="b5I-PM-0eX"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.89019607840000003" green="0.070588235289999995" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="完成" id="cDj-8w-r06"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q78-S6-raB">
+                                <rect key="frame" x="157" y="406" width="60" height="30"/>
+                                <state key="normal" title="更新说明"/>
+                                <connections>
+                                    <action selector="whatsNewOptionButtonPressed:" destination="Fmm-aW-UvJ" eventType="touchUpInside" id="enZ-q6-7JG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y98-m4-bEx">
+                                <rect key="frame" x="127" y="444" width="120" height="30"/>
+                                <state key="normal" title="用户体验改进计划"/>
+                                <connections>
+                                    <action selector="userExpImprovProjButtonPressed:" destination="Fmm-aW-UvJ" eventType="touchUpInside" id="iZs-MX-dQm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-E9-Tre">
+                                <rect key="frame" x="-4" y="608" width="383" height="59"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.070588235289999995" blue="0.043137254899999998" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="h6S-qS-tjY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="proceedButtonPressed:" destination="Fmm-aW-UvJ" eventType="touchUpInside" id="mDu-QD-BIV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一切就绪" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-dw-YMZ">
+                                <rect key="frame" x="140" y="162" width="96" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="KZy-DD-Ag4"/>
+                                    <constraint firstAttribute="height" constant="31" id="Yji-FU-NEb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KZy-DD-Ag4"/>
+                                        <exclude reference="Yji-FU-NEb"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您也可以使用下方的链接，了解此应用程序最近的更新内容，或加入用户体验改进计划。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFT-s6-INE">
+                                <rect key="frame" x="31" y="222" width="313" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="JhG-dC-PMz"/>
+                                    <constraint firstAttribute="width" constant="313" id="fUG-CZ-MVO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kjB-qd-iLs" firstAttribute="centerX" secondItem="xUt-Ds-9Ie" secondAttribute="centerX" id="0ap-BA-fyP"/>
                             <constraint firstItem="9F3-iW-Uh7" firstAttribute="top" secondItem="xUt-Ds-9Ie" secondAttribute="topMargin" id="6xX-SK-4Xj"/>
                             <constraint firstItem="ZD6-dw-YMZ" firstAttribute="leading" secondItem="xUt-Ds-9Ie" secondAttribute="leadingMargin" constant="124" id="9KY-32-efR"/>
                             <constraint firstItem="u5c-Nn-Zlv" firstAttribute="leading" secondItem="xUt-Ds-9Ie" secondAttribute="leadingMargin" constant="134" id="9Lp-yY-wLK"/>
                             <constraint firstItem="IkV-E9-Tre" firstAttribute="leading" secondItem="xUt-Ds-9Ie" secondAttribute="leadingMargin" constant="-20" id="BVB-6D-gBM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u5c-Nn-Zlv" secondAttribute="trailing" constant="133" id="DX5-Sw-sb8"/>
-                            <constraint firstItem="kjB-qd-iLs" firstAttribute="top" secondItem="5oL-YF-5VZ" secondAttribute="bottom" constant="202" id="EGJ-7v-jVu"/>
+                            <constraint firstItem="AFT-s6-INE" firstAttribute="top" secondItem="xUt-Ds-9Ie" secondAttribute="topMargin" constant="222" id="IZ5-93-he9"/>
                             <constraint firstItem="u5c-Nn-Zlv" firstAttribute="centerX" secondItem="xUt-Ds-9Ie" secondAttribute="centerX" id="Ijq-sx-MKm"/>
                             <constraint firstItem="u5c-Nn-Zlv" firstAttribute="centerX" secondItem="xUt-Ds-9Ie" secondAttribute="centerX" id="Jow-sg-eiE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZD6-dw-YMZ" secondAttribute="trailing" constant="123" id="KKk-mS-HJr"/>
                             <constraint firstItem="Q78-S6-raB" firstAttribute="centerX" secondItem="xUt-Ds-9Ie" secondAttribute="centerX" id="Lhe-43-EIq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9F3-iW-Uh7" secondAttribute="trailing" constant="-20" id="OQU-eN-bKv"/>
+                            <constraint firstItem="AFT-s6-INE" firstAttribute="centerX" secondItem="xUt-Ds-9Ie" secondAttribute="centerX" id="T45-9f-Gbe"/>
                             <constraint firstItem="ZD6-dw-YMZ" firstAttribute="centerX" secondItem="xUt-Ds-9Ie" secondAttribute="centerX" id="TPp-bw-MfZ"/>
                             <constraint firstItem="Y98-m4-bEx" firstAttribute="top" secondItem="5oL-YF-5VZ" secondAttribute="bottom" constant="424" id="UOJ-Mu-q2g"/>
                             <constraint firstItem="Y98-m4-bEx" firstAttribute="centerX" secondItem="xUt-Ds-9Ie" secondAttribute="centerX" id="UPE-ct-f4u"/>
@@ -686,7 +688,7 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outlet property="descriptionText" destination="kjB-qd-iLs" id="jaX-nO-Kv3"/>
+                            <outlet property="descriptionText" destination="AFT-s6-INE" id="AQ9-Rn-CSC"/>
                             <outlet property="mainTitle" destination="ZD6-dw-YMZ" id="DiV-HG-lL2"/>
                             <outlet property="navigationBar" destination="9F3-iW-Uh7" id="7gL-SX-UhE"/>
                             <outlet property="optionsTitle" destination="u5c-Nn-Zlv" id="yOz-XA-NmS"/>
@@ -3000,6 +3002,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
         <image name="usernameInputPageBackgroundImage.prototype.jpg" width="1920" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9Xb-WA-ah5"/>
         <segue reference="kjg-DM-X8N"/>
         <segue reference="oFl-IZ-AS2"/>
     </inferredMetricsTieBreakers>

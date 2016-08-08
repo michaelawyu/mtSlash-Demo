@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G19a" minimumToolsVersion="Automatic">
-    <entity name="ReadingList" representedClassName=".MTReadingList" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="MTReadingList" representedClassName=".MTReadingList" syncable="YES">
         <attribute name="abstract" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="Integer 32" minValueString="1" maxValueString="77" defaultValueString="1" syncable="YES"/>
         <attribute name="ifVisible" attributeType="Boolean" syncable="YES"/>
         <attribute name="link" attributeType="String" syncable="YES"/>
-        <attribute name="owner" attributeType="String" syncable="YES"/>
         <attribute name="timeAdded" attributeType="Date" minDateTimeInterval="488044800" defaultDateTimeInterval="488044800" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="belongTo" maxCount="1" deletionRule="Cascade" destinationEntity="MTUsers" inverseName="haveAReadingListOf" inverseEntity="MTUsers" syncable="YES"/>
+    </entity>
+    <entity name="MTUsers" representedClassName=".MTUsers" syncable="YES">
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="groupid" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="ifActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="password" attributeType="String" syncable="YES"/>
+        <attribute name="uid" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="username" attributeType="String" syncable="YES"/>
+        <relationship name="haveAReadingListOf" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MTReadingList" inverseName="belongTo" inverseEntity="MTReadingList" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ReadingList" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="MTReadingList" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="MTUsers" positionX="-63" positionY="36" width="128" height="150"/>
     </elements>
 </model>

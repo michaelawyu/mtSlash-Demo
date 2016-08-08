@@ -27,8 +27,42 @@ class HomeScreenViewController: UIViewController {
         
         let showcaseWidthAfterInitialization = self.view.frame.width + 5.0
         
-        //Getting the Data
+        /*
+        // Get the reading list contents from data model (as described in Data Model group).
+        // Wait until the framework is initialized.
+        while dataReadyFlag != true {
+            print("Waiting for the Data Model.")
+        }
         
+        // Set up data controller and moc (managed object context)
+        let dataController : DefaultDataController = ConvenientMethods.getDataControllerInAppDelegate()
+        let managedObjectContextInUse = dataController.managedObjectContext
+        
+        // Set up fetch requests for future use
+        let readingListItemsFetchRequest = NSFetchRequest(entityName: "ReadingList")
+        var readingListItems : [MTReadingList]? = nil
+        
+        // Fetch user-specific reading list from the data famework
+        do {
+            readingListItems = try managedObjectContextInUse.executeFetchRequest(readingListItemsFetchRequest) as? [MTReadingList]
+        } catch {
+            fatalError("An error has occurred: Failed to fetch reading list items from the database.")
+        }
+        
+        // Append default items to the reading list when it is empty
+        if readingListItems!.count == 0 {
+            Initialization.incorporateDefaultReadingList(dataController)
+            
+            // Reload the reading list
+            do {
+                readingListItems = try managedObjectContextInUse.executeFetchRequest(readingListItemsFetchRequest) as? [MTReadingList]
+            } catch {
+                fatalError("An error has occurred: Failed to fetch reading list items from the database.")
+            }
+        }
+        */
+        
+        // Set up the gesture recognizer
         let rightToLeftSwipeGestureRecognizerInShowcaseView = UISwipeGestureRecognizer(target: self, action: #selector(self.rightToLeftSwipedInShowcaseView))
         rightToLeftSwipeGestureRecognizerInShowcaseView.direction = UISwipeGestureRecognizerDirection.Left
         showcase.addGestureRecognizer(rightToLeftSwipeGestureRecognizerInShowcaseView)
@@ -37,6 +71,9 @@ class HomeScreenViewController: UIViewController {
         leftToRightSwipeGestureRecognizerInShowcaseView.direction = UISwipeGestureRecognizerDirection.Right
         showcase.addGestureRecognizer(leftToRightSwipeGestureRecognizerInShowcaseView)
         
+        // Initialize the panels in homePageShowcase
+        
+        // Note: centerPanel is already initialized in IB
         centerPanel = samplePanel
         
         leftPanel = homePageShowcasePanel(frame: CGRect(x: 0.0, y: 0.0, width: showcaseWidthAfterInitialization - 60.0, height: showcase.frame.height))
@@ -49,32 +86,9 @@ class HomeScreenViewController: UIViewController {
         showcase.addSubview(rightPanel)
         showcase.setConstraintsForRightPanel(rightPanel, showcaseWidth: showcaseWidthAfterInitialization)
         
-        /*
-        while dataReadyFlag != true {
-            print("Waiting for the Data Model.")
-        }
+        // Update the time label
+
         
-        let dataController : DefaultDataController = ConvenientMethods.getDataControllerInAppDelegate()
-        let managedObjectContextInUse = dataController.managedObjectContext
-        let readingListItemsFetchRequest = NSFetchRequest(entityName: "ReadingList")
-        var readingListItems : [MTReadingList]? = nil
-        
-        do {
-            readingListItems = try managedObjectContextInUse.executeFetchRequest(readingListItemsFetchRequest) as? [MTReadingList]
-        } catch {
-            fatalError("An error has occurred: Failed to fetch reading list items from the database.")
-        }
-        
-        if readingListItems!.count == 0 {
-            Initialization.incorporateDefaultReadingList(dataController)
-        }
-        
-        do {
-            readingListItems = try managedObjectContextInUse.executeFetchRequest(readingListItemsFetchRequest) as? [MTReadingList]
-        } catch {
-            fatalError("An error has occurred: Failed to fetch reading list items from the database.")
-        }
-        */
         
     }
     
