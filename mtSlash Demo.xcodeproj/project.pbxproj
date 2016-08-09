@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0901284B1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901284A1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift */; };
+		0901284D1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901284C1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift */; };
+		0901284F1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901284E1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift */; };
+		090128511D5A79F8007F1032 /* displaySampleSidenoteInSettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090128501D5A79F8007F1032 /* displaySampleSidenoteInSettingsViewCell.swift */; };
+		090128531D5A7A0D007F1032 /* currentAccountSidenoteInSettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090128521D5A7A0D007F1032 /* currentAccountSidenoteInSettingsViewCell.swift */; };
 		0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902ACD01D0D62D700FD6AAD /* AppDelegate.swift */; };
 		0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902ACD21D0D62D700FD6AAD /* CoverPageViewController.swift */; };
 		0902ACD61D0D62D700FD6AAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0902ACD41D0D62D700FD6AAD /* Main.storyboard */; };
@@ -41,6 +46,7 @@
 		095C16B21D58796F000970A3 /* MTUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C16AE1D58796F000970A3 /* MTUsers.swift */; };
 		095C16B31D58796F000970A3 /* MTReadingList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C16AF1D58796F000970A3 /* MTReadingList+CoreDataProperties.swift */; };
 		095C16B41D58796F000970A3 /* MTReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C16B01D58796F000970A3 /* MTReadingList.swift */; };
+		095C16B81D59C0DA000970A3 /* settingsScreenBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 095C16B71D59C0DA000970A3 /* settingsScreenBackground.prototype.jpg */; };
 		096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0962031F1D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift */; };
 		096203221D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203211D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift */; };
 		096203251D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096203241D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift */; };
@@ -95,6 +101,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0901284A1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = standardSettingsWithAccessoryViewCell.swift; sourceTree = "<group>"; };
+		0901284C1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = standardSettingsWithoutAccessoryViewCell.swift; sourceTree = "<group>"; };
+		0901284E1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fontSidenoteInSettingsViewCell.swift; sourceTree = "<group>"; };
+		090128501D5A79F8007F1032 /* displaySampleSidenoteInSettingsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = displaySampleSidenoteInSettingsViewCell.swift; sourceTree = "<group>"; };
+		090128521D5A7A0D007F1032 /* currentAccountSidenoteInSettingsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentAccountSidenoteInSettingsViewCell.swift; sourceTree = "<group>"; };
 		0902ACCD1D0D62D700FD6AAD /* mtSlash Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mtSlash Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0902ACD01D0D62D700FD6AAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0902ACD21D0D62D700FD6AAD /* CoverPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPageViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +146,7 @@
 		095C16AE1D58796F000970A3 /* MTUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTUsers.swift; sourceTree = "<group>"; };
 		095C16AF1D58796F000970A3 /* MTReadingList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTReadingList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		095C16B01D58796F000970A3 /* MTReadingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTReadingList.swift; sourceTree = "<group>"; };
+		095C16B71D59C0DA000970A3 /* settingsScreenBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = settingsScreenBackground.prototype.jpg; sourceTree = "<group>"; };
 		0962031F1D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
 		096203211D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
 		096203241D4110B700E14A74 /* extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extSupportForCustomStylesInBulletinBoardCode2NSMutableAttributedStringParser.swift; sourceTree = "<group>"; };
@@ -276,6 +288,7 @@
 				09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */,
 				09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */,
 				09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */,
+				095C16B71D59C0DA000970A3 /* settingsScreenBackground.prototype.jpg */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -311,6 +324,11 @@
 				0957DE8C1D20363A004844A8 /* homePageShowcase.swift */,
 				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
 				09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */,
+				0901284A1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift */,
+				0901284C1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift */,
+				0901284E1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift */,
+				090128501D5A79F8007F1032 /* displaySampleSidenoteInSettingsViewCell.swift */,
+				090128521D5A7A0D007F1032 /* currentAccountSidenoteInSettingsViewCell.swift */,
 			);
 			name = "Custom Views (Extension)";
 			sourceTree = "<group>";
@@ -558,6 +576,7 @@
 				0902ACD61D0D62D700FD6AAD /* Main.storyboard in Resources */,
 				09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */,
 				0957DE911D2110C9004844A8 /* List of Available Categories (For References Only) in Resources */,
+				095C16B81D59C0DA000970A3 /* settingsScreenBackground.prototype.jpg in Resources */,
 				0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */,
 				09C3FA8E1D25875000B0A23B /* HannibalSectionBackground.jpg in Resources */,
 			);
@@ -585,11 +604,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
+				090128531D5A7A0D007F1032 /* currentAccountSidenoteInSettingsViewCell.swift in Sources */,
 				0971E2431D5385A200CFE64E /* Alignments.swift in Sources */,
 				097AB7A81D50F72F008B9A76 /* Colors.swift in Sources */,
 				095C16B31D58796F000970A3 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				09ED77671D18358F002C0276 /* HomeScreenViewController.swift in Sources */,
 				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
+				090128511D5A79F8007F1032 /* displaySampleSidenoteInSettingsViewCell.swift in Sources */,
+				0901284D1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift in Sources */,
 				095C16B11D58796F000970A3 /* MTUsers+CoreDataProperties.swift in Sources */,
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
 				099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */,
@@ -600,7 +622,9 @@
 				0902AD0A1D0DA75A00FD6AAD /* CoverPage.swift in Sources */,
 				0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */,
 				0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */,
+				0901284B1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift in Sources */,
 				0923F2C21D2F5592000A8D14 /* searchResultContainerCell.swift in Sources */,
+				0901284F1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift in Sources */,
 				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,
 				095C16B41D58796F000970A3 /* MTReadingList.swift in Sources */,
