@@ -35,6 +35,7 @@
 		09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */; };
 		09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */; };
 		09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */; };
+		0949E0711D61AB7D00499193 /* ForumSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949E0701D61AB7D00499193 /* ForumSections.swift */; };
 		0957DE841D1E841F004844A8 /* homePageShowcasePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */; };
 		0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8C1D20363A004844A8 /* homePageShowcase.swift */; };
 		0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */; };
@@ -58,6 +59,26 @@
 		098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */; };
 		099D91251D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */; };
 		099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */; };
+		09BE84FA1D624545000802B3 /* GeneralPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE84F91D624545000802B3 /* GeneralPanelBackground.prototype.jpg */; };
+		09BE84FC1D6245F0000802B3 /* AvengersPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE84FB1D6245F0000802B3 /* AvengersPanelBackground.prototype.jpg */; };
+		09BE84FE1D6246A6000802B3 /* IronmanPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE84FD1D6246A6000802B3 /* IronmanPanelBackground.prototype.jpg */; };
+		09BE85001D624717000802B3 /* ThorPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE84FF1D624717000802B3 /* ThorPanelBackground.prototype.jpg */; };
+		09BE85021D62477B000802B3 /* CaptainAmericPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85011D62477B000802B3 /* CaptainAmericPanelBackground.prototype.jpg */; };
+		09BE85041D624841000802B3 /* GuardiansOfTheGalaxyPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85031D624841000802B3 /* GuardiansOfTheGalaxyPanelBackground.prototype.jpg */; };
+		09BE85061D6248F6000802B3 /* AntmanPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85051D6248F6000802B3 /* AntmanPanelBackground.prototype.jpg */; };
+		09BE85081D62494D000802B3 /* TheIncredibleHulkPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85071D62494D000802B3 /* TheIncredibleHulkPanelBackground.prototype.jpg */; };
+		09BE850A1D624AA5000802B3 /* DCUniversePanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85091D624AA5000802B3 /* DCUniversePanelBackground.prototype.jpg */; };
+		09BE850C1D624B1D000802B3 /* InceptionPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE850B1D624B1D000802B3 /* InceptionPanelBackground.prototype.jpg */; };
+		09BE850E1D624B8C000802B3 /* TheSocialNetworkPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE850D1D624B8C000802B3 /* TheSocialNetworkPanelBackground.prototype.jpg */; };
+		09BE85101D624CB5000802B3 /* MissionImpossiblePanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE850F1D624CB5000802B3 /* MissionImpossiblePanelBackground.prototype.jpg */; };
+		09BE85121D624D4D000802B3 /* StarTrekUniversePanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85111D624D4D000802B3 /* StarTrekUniversePanelBackground.prototype.jpg */; };
+		09BE85141D624D9F000802B3 /* 007SeriesPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85131D624D9F000802B3 /* 007SeriesPanelBackground.prototype.jpg */; };
+		09BE85161D624DF9000802B3 /* TolkienUniversePanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85151D624DF9000802B3 /* TolkienUniversePanelBackground.prototype.jpg */; };
+		09BE85181D624E43000802B3 /* PacificRimPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85171D624E43000802B3 /* PacificRimPanelBackground.prototype.jpg */; };
+		09BE851A1D624E91000802B3 /* HarryPotterPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85191D624E91000802B3 /* HarryPotterPanelBackground.prototype.jpg */; };
+		09BE851C1D624ECF000802B3 /* SpiderManPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE851B1D624ECF000802B3 /* SpiderManPanelBackground.prototype.jpg */; };
+		09BE851E1D624F38000802B3 /* KingsmanPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE851D1D624F38000802B3 /* KingsmanPanelBackground.prototype.jpg */; };
+		09BE85201D624FBC000802B3 /* LesMiserablesPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE851F1D624FBC000802B3 /* LesMiserablesPanelBackground.prototype.jpg */; };
 		09C3FA8E1D25875000B0A23B /* HannibalSectionBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8D1D25875000B0A23B /* HannibalSectionBackground.jpg */; };
 		09C3FA901D25876700B0A23B /* discoverScreenBackgroundMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */; };
 		09E5674C1D26882200902788 /* SherlockHolmesIcon(Large).png in Resources */ = {isa = PBXBuildFile; fileRef = 09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */; };
@@ -135,6 +156,7 @@
 		09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = passwordInputPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
 		09336CA51D141DB4007E8C63 /* PasswordInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
 		09336CA71D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegueFromPasswordInputScreenToUsernameInputScreen.swift; sourceTree = "<group>"; };
+		0949E0701D61AB7D00499193 /* ForumSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumSections.swift; sourceTree = "<group>"; };
 		0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcasePanel.swift; sourceTree = "<group>"; };
 		0957DE8C1D20363A004844A8 /* homePageShowcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageShowcase.swift; sourceTree = "<group>"; };
 		0957DE8E1D2037F4004844A8 /* DefaultDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDataController.swift; sourceTree = "<group>"; };
@@ -158,6 +180,26 @@
 		098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cosmos.jpg; sourceTree = "<group>"; };
 		099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewScreenViewController.swift; sourceTree = "<group>"; };
 		099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoPanelContainerCell.swift; sourceTree = "<group>"; };
+		09BE84F91D624545000802B3 /* GeneralPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GeneralPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE84FB1D6245F0000802B3 /* AvengersPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AvengersPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE84FD1D6246A6000802B3 /* IronmanPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IronmanPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE84FF1D624717000802B3 /* ThorPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ThorPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85011D62477B000802B3 /* CaptainAmericPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CaptainAmericPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85031D624841000802B3 /* GuardiansOfTheGalaxyPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GuardiansOfTheGalaxyPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85051D6248F6000802B3 /* AntmanPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AntmanPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85071D62494D000802B3 /* TheIncredibleHulkPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TheIncredibleHulkPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85091D624AA5000802B3 /* DCUniversePanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DCUniversePanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE850B1D624B1D000802B3 /* InceptionPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = InceptionPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE850D1D624B8C000802B3 /* TheSocialNetworkPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TheSocialNetworkPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE850F1D624CB5000802B3 /* MissionImpossiblePanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MissionImpossiblePanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85111D624D4D000802B3 /* StarTrekUniversePanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StarTrekUniversePanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85131D624D9F000802B3 /* 007SeriesPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 007SeriesPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85151D624DF9000802B3 /* TolkienUniversePanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TolkienUniversePanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85171D624E43000802B3 /* PacificRimPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PacificRimPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE85191D624E91000802B3 /* HarryPotterPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HarryPotterPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE851B1D624ECF000802B3 /* SpiderManPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpiderManPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE851D1D624F38000802B3 /* KingsmanPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = KingsmanPanelBackground.prototype.jpg; sourceTree = "<group>"; };
+		09BE851F1D624FBC000802B3 /* LesMiserablesPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LesMiserablesPanelBackground.prototype.jpg; sourceTree = "<group>"; };
 		09C3FA8D1D25875000B0A23B /* HannibalSectionBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HannibalSectionBackground.jpg; sourceTree = "<group>"; };
 		09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discoverScreenBackgroundMask.png; sourceTree = "<group>"; };
 		09E5674B1D26882200902788 /* SherlockHolmesIcon(Large).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SherlockHolmesIcon(Large).png"; sourceTree = "<group>"; };
@@ -318,11 +360,8 @@
 		0923F2C31D2F565E000A8D14 /* Custom Views (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */,
 				099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */,
 				09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */,
-				0957DE8C1D20363A004844A8 /* homePageShowcase.swift */,
-				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
 				09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */,
 				0901284A1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift */,
 				0901284C1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift */,
@@ -366,6 +405,26 @@
 			isa = PBXGroup;
 			children = (
 				0957DE921D226583004844A8 /* XMenPanelBackground.prototype.jpg */,
+				09BE84F91D624545000802B3 /* GeneralPanelBackground.prototype.jpg */,
+				09BE84FB1D6245F0000802B3 /* AvengersPanelBackground.prototype.jpg */,
+				09BE84FD1D6246A6000802B3 /* IronmanPanelBackground.prototype.jpg */,
+				09BE84FF1D624717000802B3 /* ThorPanelBackground.prototype.jpg */,
+				09BE85011D62477B000802B3 /* CaptainAmericPanelBackground.prototype.jpg */,
+				09BE85031D624841000802B3 /* GuardiansOfTheGalaxyPanelBackground.prototype.jpg */,
+				09BE85051D6248F6000802B3 /* AntmanPanelBackground.prototype.jpg */,
+				09BE85071D62494D000802B3 /* TheIncredibleHulkPanelBackground.prototype.jpg */,
+				09BE85091D624AA5000802B3 /* DCUniversePanelBackground.prototype.jpg */,
+				09BE850B1D624B1D000802B3 /* InceptionPanelBackground.prototype.jpg */,
+				09BE850D1D624B8C000802B3 /* TheSocialNetworkPanelBackground.prototype.jpg */,
+				09BE850F1D624CB5000802B3 /* MissionImpossiblePanelBackground.prototype.jpg */,
+				09BE85111D624D4D000802B3 /* StarTrekUniversePanelBackground.prototype.jpg */,
+				09BE85131D624D9F000802B3 /* 007SeriesPanelBackground.prototype.jpg */,
+				09BE85151D624DF9000802B3 /* TolkienUniversePanelBackground.prototype.jpg */,
+				09BE85171D624E43000802B3 /* PacificRimPanelBackground.prototype.jpg */,
+				09BE85191D624E91000802B3 /* HarryPotterPanelBackground.prototype.jpg */,
+				09BE851B1D624ECF000802B3 /* SpiderManPanelBackground.prototype.jpg */,
+				09BE851D1D624F38000802B3 /* KingsmanPanelBackground.prototype.jpg */,
+				09BE851F1D624FBC000802B3 /* LesMiserablesPanelBackground.prototype.jpg */,
 			);
 			name = "Panel Backgrounds";
 			sourceTree = "<group>";
@@ -373,6 +432,9 @@
 		0957DE891D2035D5004844A8 /* Custom Views (Core) */ = {
 			isa = PBXGroup;
 			children = (
+				0957DE8C1D20363A004844A8 /* homePageShowcase.swift */,
+				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
+				0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */,
 			);
 			name = "Custom Views (Core)";
 			sourceTree = "<group>";
@@ -386,6 +448,7 @@
 				0957DE9F1D2280E5004844A8 /* ConvenientMethods.swift */,
 				097AB7A71D50F72F008B9A76 /* Colors.swift */,
 				0971E2421D5385A200CFE64E /* Alignments.swift */,
+				0949E0701D61AB7D00499193 /* ForumSections.swift */,
 			);
 			name = Miscellaneous;
 			sourceTree = "<group>";
@@ -559,15 +622,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E5674E1D2692BE00902788 /* PopularFandomsIcon(Large).png in Resources */,
+				09BE85101D624CB5000802B3 /* MissionImpossiblePanelBackground.prototype.jpg in Resources */,
+				09BE85161D624DF9000802B3 /* TolkienUniversePanelBackground.prototype.jpg in Resources */,
 				0902ACDE1D0D62D700FD6AAD /* LaunchScreen.storyboard in Resources */,
+				09BE85081D62494D000802B3 /* TheIncredibleHulkPanelBackground.prototype.jpg in Resources */,
+				09BE85181D624E43000802B3 /* PacificRimPanelBackground.prototype.jpg in Resources */,
 				09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */,
+				09BE84FE1D6246A6000802B3 /* IronmanPanelBackground.prototype.jpg in Resources */,
+				09BE851E1D624F38000802B3 /* KingsmanPanelBackground.prototype.jpg in Resources */,
 				090E399A1D1AC478005E6133 /* codeSlash.png in Resources */,
+				09BE85141D624D9F000802B3 /* 007SeriesPanelBackground.prototype.jpg in Resources */,
 				09FE237E1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg in Resources */,
+				09BE84FA1D624545000802B3 /* GeneralPanelBackground.prototype.jpg in Resources */,
 				098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */,
 				09E5675D1D2CA5BE00902788 /* searchScreenBackground.prototype.png in Resources */,
+				09BE85041D624841000802B3 /* GuardiansOfTheGalaxyPanelBackground.prototype.jpg in Resources */,
+				09BE851A1D624E91000802B3 /* HarryPotterPanelBackground.prototype.jpg in Resources */,
 				09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */,
 				09E567501D26970500902788 /* kingsmanDiscoverScreenBackground.prototype.jpg in Resources */,
 				09FE23761D43AD6F000002CD /* movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg in Resources */,
+				09BE85121D624D4D000802B3 /* StarTrekUniversePanelBackground.prototype.jpg in Resources */,
 				0957DE931D226583004844A8 /* XMenPanelBackground.prototype.jpg in Resources */,
 				0902AD131D0DC13100FD6AAD /* coverImage.prototype.jpg in Resources */,
 				09E5674C1D26882200902788 /* SherlockHolmesIcon(Large).png in Resources */,
@@ -575,10 +649,19 @@
 				09C3FA901D25876700B0A23B /* discoverScreenBackgroundMask.png in Resources */,
 				0902ACD61D0D62D700FD6AAD /* Main.storyboard in Resources */,
 				09336CA41D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg in Resources */,
+				09BE850C1D624B1D000802B3 /* InceptionPanelBackground.prototype.jpg in Resources */,
+				09BE850E1D624B8C000802B3 /* TheSocialNetworkPanelBackground.prototype.jpg in Resources */,
 				0957DE911D2110C9004844A8 /* List of Available Categories (For References Only) in Resources */,
+				09BE84FC1D6245F0000802B3 /* AvengersPanelBackground.prototype.jpg in Resources */,
+				09BE851C1D624ECF000802B3 /* SpiderManPanelBackground.prototype.jpg in Resources */,
 				095C16B81D59C0DA000970A3 /* settingsScreenBackground.prototype.jpg in Resources */,
+				09BE850A1D624AA5000802B3 /* DCUniversePanelBackground.prototype.jpg in Resources */,
 				0902AD361D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg in Resources */,
 				09C3FA8E1D25875000B0A23B /* HannibalSectionBackground.jpg in Resources */,
+				09BE85061D6248F6000802B3 /* AntmanPanelBackground.prototype.jpg in Resources */,
+				09BE85021D62477B000802B3 /* CaptainAmericPanelBackground.prototype.jpg in Resources */,
+				09BE85201D624FBC000802B3 /* LesMiserablesPanelBackground.prototype.jpg in Resources */,
+				09BE85001D624717000802B3 /* ThorPanelBackground.prototype.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +689,7 @@
 				096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
 				090128531D5A7A0D007F1032 /* currentAccountSidenoteInSettingsViewCell.swift in Sources */,
 				0971E2431D5385A200CFE64E /* Alignments.swift in Sources */,
+				0949E0711D61AB7D00499193 /* ForumSections.swift in Sources */,
 				097AB7A81D50F72F008B9A76 /* Colors.swift in Sources */,
 				095C16B31D58796F000970A3 /* MTReadingList+CoreDataProperties.swift in Sources */,
 				09ED77671D18358F002C0276 /* HomeScreenViewController.swift in Sources */,

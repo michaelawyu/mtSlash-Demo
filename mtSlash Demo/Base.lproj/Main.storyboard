@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="erl-L0-xNi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -2070,7 +2070,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                     <constraint firstAttribute="width" constant="30" id="vE1-z0-igM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-Fb-yEt">
@@ -2087,7 +2087,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="字体样式（菜单示例）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4N-8o-Sdf">
                                                     <rect key="frame" x="0.0" y="10" width="160" height="22.5"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="苹方(标准)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsv-bV-Bug">
@@ -2102,11 +2102,21 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="Gsv-bV-Bug" firstAttribute="top" secondItem="idN-wi-hL0" secondAttribute="topMargin" constant="2.5" id="4bj-Hq-0lG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Gsv-bV-Bug" secondAttribute="bottom" constant="3" id="AHq-n1-YQZ"/>
                                                 <constraint firstItem="Gsv-bV-Bug" firstAttribute="centerY" secondItem="idN-wi-hL0" secondAttribute="centerY" id="BF9-MP-cjP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Gsv-bV-Bug" secondAttribute="trailing" constant="-8" id="OyU-Zw-c1g"/>
+                                                <constraint firstItem="W4N-8o-Sdf" firstAttribute="top" secondItem="idN-wi-hL0" secondAttribute="topMargin" constant="2" id="dPq-NI-jHg"/>
                                                 <constraint firstItem="W4N-8o-Sdf" firstAttribute="centerY" secondItem="idN-wi-hL0" secondAttribute="centerY" id="i5s-uK-vwt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="W4N-8o-Sdf" secondAttribute="bottom" constant="3.5" id="wZ0-Ze-dg3"/>
                                                 <constraint firstItem="W4N-8o-Sdf" firstAttribute="leading" secondItem="idN-wi-hL0" secondAttribute="leadingMargin" constant="-8" id="yg5-UF-Cax"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="i5s-uK-vwt"/>
+                                                    <exclude reference="BF9-MP-cjP"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -2199,7 +2209,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                     <attributedString key="attributedText">
                                                         <fragment content="一只敏捷的狐狸跳过了那条栅栏。">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="16" name="PingFangSC-Regular"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
@@ -2211,6 +2221,8 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="3vg-bg-3WB" firstAttribute="top" secondItem="NCc-UR-N0w" secondAttribute="topMargin" constant="45" id="0pa-kc-TVu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0tr-nX-S7H" secondAttribute="bottom" constant="69.5" id="LCN-9X-DHw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3vg-bg-3WB" secondAttribute="bottom" constant="36.5" id="eaW-RR-ITy"/>
                                                 <constraint firstItem="0tr-nX-S7H" firstAttribute="top" secondItem="NCc-UR-N0w" secondAttribute="topMargin" constant="20" id="fqa-ez-mgU"/>
                                                 <constraint firstItem="0tr-nX-S7H" firstAttribute="centerX" secondItem="NCc-UR-N0w" secondAttribute="centerX" id="m1U-zJ-JAn"/>
                                                 <constraint firstItem="3vg-bg-3WB" firstAttribute="centerX" secondItem="NCc-UR-N0w" secondAttribute="centerX" id="qNx-2I-RZt"/>
@@ -2231,15 +2243,22 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="清空搜索历史纪录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW7-jq-Evf">
                                                     <rect key="frame" x="0.0" y="10.5" width="128" height="22.5"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zW7-jq-Evf" secondAttribute="bottom" constant="3" id="5JB-Ov-PjE"/>
+                                                <constraint firstItem="zW7-jq-Evf" firstAttribute="top" secondItem="9Og-1V-1cb" secondAttribute="topMargin" constant="2.5" id="VRP-Rn-FD6"/>
                                                 <constraint firstItem="zW7-jq-Evf" firstAttribute="centerY" secondItem="9Og-1V-1cb" secondAttribute="centerY" id="jAA-7f-DVs"/>
                                                 <constraint firstItem="zW7-jq-Evf" firstAttribute="leading" secondItem="9Og-1V-1cb" secondAttribute="leadingMargin" constant="-8" id="n59-ya-hXS"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="jAA-7f-DVs"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -2262,10 +2281,18 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="ZSn-sq-Bct"/>
+                                                            <exclude reference="r9R-Vt-3V1"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5aS-Jg-xYw" secondAttribute="bottom" constant="15" id="13e-Jv-s8V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5aS-Jg-xYw" secondAttribute="trailing" constant="143" id="6ae-zz-GQe"/>
                                                 <constraint firstItem="5aS-Jg-xYw" firstAttribute="top" secondItem="jtB-gA-VcJ" secondAttribute="topMargin" constant="-8" id="JaA-gM-JCP"/>
                                                 <constraint firstItem="5aS-Jg-xYw" firstAttribute="leading" secondItem="jtB-gA-VcJ" secondAttribute="leadingMargin" constant="-8" id="dbb-Lo-Tbj"/>
                                             </constraints>
@@ -2792,10 +2819,12 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="contentView" destination="lV0-Xk-L5l" id="S6T-Ty-UPt"/>
+                        <outlet property="monthAndDayLabel" destination="783-fn-235" id="oi8-0U-FYH"/>
                         <outlet property="rootView" destination="ivg-VI-jft" id="joc-CA-hIz"/>
                         <outlet property="samplePanel" destination="pVF-Jt-YTe" id="dEo-77-Zzm"/>
                         <outlet property="scrollView" destination="jGI-t9-2XX" id="RB0-v3-k6V"/>
                         <outlet property="showcase" destination="uPJ-aw-Khk" id="dxz-Pq-mFX"/>
+                        <outlet property="yearLabel" destination="aGK-eP-mzB" id="wRJ-aF-b57"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMF-n1-9kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3273,8 +3302,8 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
         <image name="usernameInputPageBackgroundImage.prototype.jpg" width="1920" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kjg-DM-X8N"/>
         <segue reference="9Xb-WA-ah5"/>
-        <segue reference="lx3-BL-GPL"/>
-        <segue reference="oFl-IZ-AS2"/>
+        <segue reference="68k-Co-yHG"/>
     </inferredMetricsTieBreakers>
 </document>

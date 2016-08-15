@@ -38,8 +38,7 @@ class homePageShowcasePanel: UIView {
         backgroundImage?.alpha = 1.0
         
         //Sample Context: Background Image for Panel
-        let panelBackgroundImagePath = NSBundle.mainBundle().pathForResource("XMenPanelBackground.prototype", ofType: "jpg")
-        backgroundImage?.image = UIImage(named: panelBackgroundImagePath!)
+        backgroundImage?.image = UIImage()
         
         updateLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: 20.0))
         updateLabel?.numberOfLines = 1
@@ -50,7 +49,7 @@ class homePageShowcasePanel: UIView {
         updateLabel?.translatesAutoresizingMaskIntoConstraints = false
         
         //Sample Context: Update Label
-        updateLabel?.text = "最近添加"
+        updateLabel?.text = "添加日期"
         
         itemTitle = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: 50.0))
         itemTitle?.numberOfLines = 2
@@ -61,7 +60,7 @@ class homePageShowcasePanel: UIView {
         itemTitle?.translatesAutoresizingMaskIntoConstraints = false
         
         //Sample Context: Item Title
-        itemTitle?.text = "【EC】Borderline（黑道E/教授C 教授有能力）6.14第三部01附赠蚊香眼小教授"
+        itemTitle?.text = "项目标题"
         
         self.addSubview(backgroundImage!)
         self.addSubview(updateLabel!)
