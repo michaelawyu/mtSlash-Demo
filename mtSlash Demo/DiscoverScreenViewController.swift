@@ -39,6 +39,10 @@ class DiscoverScreenViewController: UIViewController {
     var collectionOfForumDetails : [UIView]? = nil
     var collectionOfForumEntryTitles : [String]? = nil
     
+    var numberOfThreadsInSectionsDict = NSDictionary()
+    var numberOfPostsInSectionsDict = NSDictionary()
+    var numberOfPostsTodayInSectionsDict = NSDictionary()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,10 +51,9 @@ class DiscoverScreenViewController: UIViewController {
         collectionOfForumEntryTitles = ["SECRET GIFTS in Holiday Season", "HELP CENTER", "SONG", "DISCUSSION", "FANBOOK", "FANVID", "FANART", "TV FANFIC", "MOVIE FANFIC"]
         
         collectionOfForumDetails = [forumSubtitle, noOfPosts, noOfPostsTitle, noOfReplies, noOfRepliesTitle, noOfNewPostsToday, forumIntroduction, enterCurrentForum, enterSubsectionsTitle, firstSubsectionImage, enterFirstSubsection, secondSubsectionImage, enterSecondSubsection]
-
         
         // Update Number of Posts, Number of Replies and Number of Today's New Posts
-        
+        retrieveMiscellaneousInfoOfSections()
         setUpElementsForFirstAppearance()
     }
     
@@ -63,6 +66,32 @@ class DiscoverScreenViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         firstAppearance()
+    }
+    
+    func retrieveMiscellaneousInfoOfSections() {
+        // Fetch the URL of backend Server from WebLinks class
+        let serverEndURLForSectionInfo = WebLinks.getAddressOfWebLink(WebLinks.SectionInfo)
+        
+        // Download the settings from the server and read them into serverEndSettings variable
+        let sessionForFetchingSectionInfo = NSURLSession.sharedSession()
+        let taskForFetchingSectionInfo = sessionForFetchingSectionInfo.dataTaskWithURL(serverEndURLForSectionInfo) { (data, response, error) in
+            if error == nil && data != nil {
+                let sectionInfo = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                self.numberOfPostsInSectionsDict = sectionInfo["posts"] as! NSDictionary
+                self.numberOfThreadsInSectionsDict = sectionInfo["threads"] as! NSDictionary
+                self.numberOfPostsTodayInSectionsDict = sectionInfo["todayposts"] as! NSDictionary
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    let failedToFetchSectionInfoWindow = UIAlertController(title: "无法取得板块基本信息", message: "似乎发生了一个网络错误。您的数据链接可能已经中断，或服务器暂时无法为您提供服务。请稍后再试。", preferredStyle: UIAlertControllerStyle.Alert)
+                    let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
+                        failedToFetchSectionInfoWindow.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                    failedToFetchSectionInfoWindow.addAction(OKAction)
+                    self.presentViewController(failedToFetchSectionInfoWindow, animated: true, completion: nil)
+                })
+            }
+        }
+        taskForFetchingSectionInfo.resume()
     }
     
     func setUpElementsForFirstAppearance() {
@@ -79,7 +108,8 @@ class DiscoverScreenViewController: UIViewController {
         for entry in collectionOfForumDetails! {
             entry.alpha = 0.0
         }
-
+        
+        initForumDetails(ForumSections.Sections.MovieFanfic_General)
     }
     
     func firstAppearance() {
@@ -115,5 +145,58 @@ class DiscoverScreenViewController: UIViewController {
             }
             
             }, completion: nil)
+        
+    }
+    
+    func initForumDetails(forumSection: ForumSections.Sections) {
+        let forumID = ForumSections.convertInAppSectionDef2WebEndSectionNumber(forumSection).0
+        
+        var numberOfThreads: Int = 0
+        var numberOfThreadsAbridgedInString : String = "数据不可用"
+        var numberOfPosts : Int = 0
+        var numberOfPostsAbridgedInString : String = "数据不可用"
+        var numberOfPostsToday : Int = 0
+        var numberOfPostsTodayAbridgedInString : String = "今日新增数据不可用"
+        
+        if numberOfThreadsInSectionsDict[forumID.description] != nil {
+            numberOfThreads = numberOfThreadsInSectionsDict[forumID.description] as! Int
+            numberOfThreadsAbridgedInString = self.numberAbridger(numberOfThreads)
+        }
+        
+        if numberOfPostsInSectionsDict[forumID.description] != nil {
+            numberOfPosts = numberOfPostsInSectionsDict[forumID.description] as! Int
+            numberOfPostsAbridgedInString = self.numberAbridger(numberOfPosts)
+        }
+        
+        if numberOfPostsTodayInSectionsDict[forumID.description] != nil {
+            numberOfPostsToday = numberOfPostsTodayInSectionsDict[forumID.description] as! Int
+            numberOfPostsTodayAbridgedInString = "今日新增\(self.numberAbridger(numberOfPostsToday))"
+        }
+        
+        noOfPosts.text = numberOfThreadsAbridgedInString
+        noOfReplies.text = numberOfPostsAbridgedInString
+        noOfNewPostsToday.text = numberOfPostsTodayAbridgedInString
+        
+        self.view.layoutIfNeeded()
+        
+    }
+    
+    func numberAbridger(number : Int) -> String {
+        if number >= 10000 {
+            let numberAbridged = number / 10000
+            return "\(numberAbridged)万+"
+        }
+        
+        if number >= 1000 && number < 10000 {
+            let numberAbridged = number / 1000
+            return "\(numberAbridged)千+"
+        }
+        
+        if number >= 100 && number < 1000 {
+            let numberAbridged = number / 100
+            return "\(numberAbridged)百+"
+        }
+        
+        return number.description
     }
 }

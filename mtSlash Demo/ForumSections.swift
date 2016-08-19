@@ -186,7 +186,7 @@ class ForumSections {
             let panelBackgroundImagePath = NSBundle.mainBundle().pathForResource("SherlockHolmesTVSeries1984PanelBackground.prototype", ofType: "jpg")
             return UIImage(named: panelBackgroundImagePath!)!
         case Sections.TVFanfic_Sherlock_Crossovers:
-            let panelBackgroundImagePath = NSBundle.mainBundle().pathForResource("SherlockCrossoversPanelBackground.prototype", ofType: "jpg")
+            let panelBackgroundImagePath = NSBundle.mainBundle().pathForResource("GeneralPanelBackground.prototype", ofType: "jpg")
             return UIImage(named: panelBackgroundImagePath!)!
         case Sections.TVFanfic_PopularFandoms_CSISeries:
             let panelBackgroundImagePath = NSBundle.mainBundle().pathForResource("CSISeriesPanelBackground.prototype", ofType: "jpg")

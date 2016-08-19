@@ -9,7 +9,7 @@
 import Foundation
 
 // URL for backend server
-let backendServerURL : String = "http://111.221.90.214:8000/"
+let backendServerURL : String = "http://mtslashmobileappdeploymenttestbed.southeastasia.cloudapp.azure.com:8000/"
 
 enum WebLinks {
     // Server Status
@@ -26,6 +26,8 @@ enum WebLinks {
     case WhatsNew
     // User Experience Improvement Project
     case UserExpImprovProj
+    // Section Info
+    case SectionInfo
     
     // Function: Return corresponding URL for requested link
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
@@ -44,6 +46,8 @@ enum WebLinks {
                 return NSURL(string: backendServerURL + "whatsnew")!
         case .UserExpImprovProj:
                 return NSURL(string: backendServerURL + "userexpimprovproj")!
+        case .SectionInfo:
+                return NSURL(string: backendServerURL + "sectioninfo")!
         }
     }
     
@@ -64,6 +68,8 @@ enum WebLinks {
             return "更新说明"
         case .UserExpImprovProj:
             return "用户体验改进计划"
+        case .SectionInfo:
+            return "板块基本信息"
         }
     }
     

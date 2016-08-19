@@ -116,6 +116,7 @@ extension DiscoverScreenViewController {
         collectionOfForumEntryTitles = newCollectionOfForumEntryTitles
         
     }
+    
     func updateForumDetails() {
         // Update Details of Subforums Here
     }

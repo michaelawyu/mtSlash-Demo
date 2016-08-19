@@ -46,9 +46,12 @@ class HomeScreenViewController: UIViewController {
         // Set up fetch requests for future use
         let readingListItemsFetchRequest = NSFetchRequest(entityName: "MTReadingList")
         let currentUser = ConvenientMethods.getCurrentUser(uid)
-        let predicateForFetchingSpecificReadingListWithOnlyVisibleItems = NSPredicate(format: "(belongTo == %@) AND (ifVisible == %@)", argumentArray: [currentUser, true])
+        
+        // Code disabled temporarily
+        //let predicateForFetchingSpecificReadingListWithOnlyVisibleItems = NSPredicate(format: "(belongTo == %@) AND (ifVisible == %@)", argumentArray: [currentUser, true])
+        
         let predicateForFetchingSpecificReadingListWithAllItems = NSPredicate(format: "(belongTo == %@)", argumentArray: [currentUser])
-        readingListItemsFetchRequest.predicate = predicateForFetchingSpecificReadingListWithOnlyVisibleItems
+        readingListItemsFetchRequest.predicate = predicateForFetchingSpecificReadingListWithAllItems
         var readingListItems : [MTReadingList]? = nil
         
         // Fetch user-specific reading list from the data famework
@@ -107,7 +110,7 @@ class HomeScreenViewController: UIViewController {
         let backgroundImageOfCenteredItem = ForumSections.getPanelBackgroundImageOfGivenSection(sectionOfCenteredItem)
         let titleOfCenteredItem = fetchedReadingListItems[currentReadingListPt].title!
         let lastUpdatedTimeOfCenteredItem = fetchedReadingListItems[currentReadingListPt].timeAdded!
-        let baseCalendar = NSCalendar(identifier: "NSCalendarIdentifierGregorian")!
+        let baseCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
         let numberOfDaysAfterLastUpdatedTimeOfCenteredItemInComponent = baseCalendar.components(NSCalendarUnit.Day, fromDate: lastUpdatedTimeOfCenteredItem, toDate: NSDate(), options: NSCalendarOptions())
         let numberOfDaysAfterLastUpdatedTimeOfCenteredItem = numberOfDaysAfterLastUpdatedTimeOfCenteredItemInComponent.day
         let lastUpdatedTimeOfCenteredItemInString = "上次更新于\(numberOfDaysAfterLastUpdatedTimeOfCenteredItem)天前"
@@ -163,7 +166,7 @@ class HomeScreenViewController: UIViewController {
     func rightToLeftSwipedInShowcaseView() {
         
         // Cancel the gesture recognition if reached the end of the reading list BEFORE the swipe
-        if currentReadingListPt == fetchedReadingListItems.count {
+        if currentReadingListPt == fetchedReadingListItems.count - 1 {
             return
         }
         
@@ -187,7 +190,7 @@ class HomeScreenViewController: UIViewController {
                 self.rightPanel = temp
                 UIView.animateWithDuration(0.15, animations: {
                     // Hide the right panel if reached the end of the reading list AFTER the swipe
-                    if self.currentReadingListPt == self.fetchedReadingListItems.count {
+                    if self.currentReadingListPt == self.fetchedReadingListItems.count - 1 {
                         self.rightPanel.alpha = 0.0
                     } else {
                         // Load the next reading list item
@@ -195,7 +198,7 @@ class HomeScreenViewController: UIViewController {
                         let backgroundImageOfRightItem = ForumSections.getPanelBackgroundImageOfGivenSection(sectionOfRightItem)
                         let titleOfRightItem = self.fetchedReadingListItems[self.currentReadingListPt + 1].title!
                         let lastUpdatedTimeOfRightItem = self.fetchedReadingListItems[self.currentReadingListPt + 1].timeAdded!
-                        let baseCalendar = NSCalendar(identifier: "NSCalendarIdentifierGregorian")!
+                        let baseCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
                         let numberOfDaysAfterLastUpdatedTimeOfRightItemInComponent = baseCalendar.components(NSCalendarUnit.Day, fromDate: lastUpdatedTimeOfRightItem, toDate: NSDate(), options: NSCalendarOptions())
                         let numberOfDaysAfterLastUpdatedTimeOfRightItem = numberOfDaysAfterLastUpdatedTimeOfRightItemInComponent.day
                         let lastUpdatedTimeOfRightItemInString = "上次更新于\(numberOfDaysAfterLastUpdatedTimeOfRightItem)天前"
@@ -243,7 +246,7 @@ class HomeScreenViewController: UIViewController {
                     let backgroundImageOfLeftItem = ForumSections.getPanelBackgroundImageOfGivenSection(sectionOfLeftItem)
                     let titleOfLeftItem = self.fetchedReadingListItems[self.currentReadingListPt - 1].title!
                     let lastUpdatedTimeOfLeftItem = self.fetchedReadingListItems[self.currentReadingListPt - 1].timeAdded!
-                    let baseCalendar = NSCalendar(identifier: "NSCalendarIdentifierGregorian")!
+                    let baseCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
                     let numberOfDaysAfterLastUpdatedTimeOfLeftItemInComponent = baseCalendar.components(NSCalendarUnit.Day, fromDate: lastUpdatedTimeOfLeftItem, toDate: NSDate(), options: NSCalendarOptions())
                     let numberOfDaysAfterLastUpdatedTimeOfLeftItem = numberOfDaysAfterLastUpdatedTimeOfLeftItemInComponent.day
                     let lastUpdatedTimeOfLeftItemInString = "上次更新于\(numberOfDaysAfterLastUpdatedTimeOfLeftItem)天前"
