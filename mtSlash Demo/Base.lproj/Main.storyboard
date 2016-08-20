@@ -800,6 +800,9 @@
                                 <state key="normal" title="进入此分区">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="enterCurrentSection:" destination="MEM-mp-QgU" eventType="touchUpInside" id="dyU-cK-Cdw"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SherlockHolmesIcon(Large).png" translatesAutoresizingMaskIntoConstraints="NO" id="qqI-YZ-j0v">
                                 <rect key="frame" x="20" y="577" width="33" height="33"/>
@@ -830,6 +833,9 @@
                                         <exclude reference="9qr-iT-1pm"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="enterFirstSubSection:" destination="MEM-mp-QgU" eventType="touchUpInside" id="Dug-5V-hIL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDz-Lj-QIl">
                                 <rect key="frame" x="173" y="579" width="60" height="30"/>
@@ -846,6 +852,9 @@
                                         <exclude reference="vOO-08-o5t"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="enterSecondSubSection:" destination="MEM-mp-QgU" eventType="touchUpInside" id="Hca-pv-Ece"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwy-FF-2Rv">
                                 <rect key="frame" x="20" y="433" width="335" height="28"/>
@@ -1059,6 +1068,7 @@
                         <outlet property="seventhSubforumEntry" destination="M01-yY-uRY" id="hT3-7V-xav"/>
                         <outlet property="sixthSubforumEntry" destination="9Nd-vb-YEA" id="pdK-BI-X7Y"/>
                         <outlet property="thirdSubforumEntry" destination="ONW-V6-Eov" id="ef7-ta-q8K"/>
+                        <segue destination="ZNc-F0-q8k" kind="presentation" identifier="fromDiscoverScreenToNavigationControllerForTopicsAndPostsScreen" id="Sn5-w3-W38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rk6-lf-AEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1409,6 +1419,9 @@
                     <navigationItem key="navigationItem" id="m65-sY-D5b">
                         <barButtonItem key="leftBarButtonItem" image="Back Icon" id="fKd-iz-c9b">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="leftBackButtonPressed:" destination="Uuj-5j-vdS" id="7r2-Rj-YdF"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -3339,8 +3352,8 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
         <image name="usernameInputPageBackgroundImage.prototype.jpg" width="1920" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kjg-DM-X8N"/>
         <segue reference="9Xb-WA-ah5"/>
+        <segue reference="kjg-DM-X8N"/>
         <segue reference="68k-Co-yHG"/>
     </inferredMetricsTieBreakers>
 </document>

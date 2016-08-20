@@ -45,6 +45,10 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         return UIStatusBarStyle.LightContent
     }
     
+    @IBAction func leftBackButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listOfAvailableSubSections.count
     }

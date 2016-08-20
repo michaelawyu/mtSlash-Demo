@@ -8,6 +8,7 @@
 
 import UIKit
 
+var sectionLink : Int? = nil
 class DiscoverScreenViewController: UIViewController {
 
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -249,4 +250,26 @@ class DiscoverScreenViewController: UIViewController {
         
         return number.description
     }
+    
+    @IBAction func enterCurrentSection(sender: AnyObject) {
+        sectionLink = numberOfCurrentForumEntry
+        print(sectionLink)
+        performSegueWithIdentifier("fromDiscoverScreenToNavigationControllerForTopicsAndPostsScreen", sender: self)
+    }
+    
+    
+    @IBAction func enterFirstSubSection(sender: AnyObject) {
+        sectionLink = numberOfFirstSubSection
+        print(sectionLink)
+        performSegueWithIdentifier("fromDiscoverScreenToNavigationControllerForTopicsAndPostsScreen", sender: self)
+    }
+    
+    
+    @IBAction func enterSecondSubSection(sender: AnyObject) {
+        sectionLink = numberOfSecondSubSection
+        print(sectionLink)
+        performSegueWithIdentifier("fromDiscoverScreenToNavigationControllerForTopicsAndPostsScreen", sender: self)
+    }
+    
+    
 }
