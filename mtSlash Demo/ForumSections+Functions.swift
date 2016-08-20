@@ -141,7 +141,42 @@ extension ForumSections {
         //return (0,0)
     }
     
-    static func getAvailabilityOfSubSections(sections: Sections) -> (Bool, String?, UIImage?, Bool, String?, UIImage?) {
-        return (false, nil, nil, false, nil, nil)
+    static func getAvailabilityOfSubSections(section: Sections) -> (String?, String?, Bool, String?, Int?, UIImage?, Bool, String?, Int?, UIImage?) {
+        //format: (introOfCurrentSubSection, ifHaveFirstSubSection, nameOfFirstSubSection, refOfFirstSubSection, logoOfFirstSubSection, ifHaveSecondSubSection, nameOfSecondSubSection, refOfSecondSubSection, logoOfSecondSubSection)
+        switch section {
+        case Sections.MovieFanfic_General:
+            let firstSubSectionImagePath = NSBundle.mainBundle().pathForResource("AvengersIcon(Large)", ofType: "png")
+            let firstSubSectionImage = UIImage(named: firstSubSectionImagePath!)!
+            let secondSubSectionImagePath = NSBundle.mainBundle().pathForResource("PopularFandomsIcon(Large)", ofType: "png")
+            let secondSubSectionImage = UIImage(named: secondSubSectionImagePath!)!
+            return ("欧美电影同人区", "欢迎各类电影相关同人文，涵盖小说、动漫、音乐剧等杂类", true, "复仇者联盟专区", 6, firstSubSectionImage, true, "热门同人区", 17 ,secondSubSectionImage)
+        case Sections.TVFanfic_General:
+            let firstSubSectionImagePath = NSBundle.mainBundle().pathForResource("SherlockHolmesIcon(Large)", ofType: "png")
+            let firstSubSectionImage = UIImage(named: firstSubSectionImagePath!)!
+            let secondSubSectionImagePath = NSBundle.mainBundle().pathForResource("PopularFandomsIcon(Large)", ofType: "png")
+            let secondSubSectionImage = UIImage(named: secondSubSectionImagePath!)!
+            return ("欧美电视剧同人区", "欢迎各类电视剧相关同人文", true, "福尔摩斯专区", 83, firstSubSectionImage, true, "热门同人区", 82, secondSubSectionImage)
+        case Sections.FanBook_General:
+            let firstSubSectionImagePath = NSBundle.mainBundle().pathForResource("FleaMarketIcon(Large)", ofType: "png")
+            let firstSubSectionImage = UIImage(named: firstSubSectionImagePath!)!
+            return ("同人志区", "同人志宣传、交流区", true, "求本转本专区", 69, firstSubSectionImage, false, nil, nil, nil)
+        case Sections.SecretGiftsInHolidaySeason_General_Reserved:
+            let firstSubSectionImagePath = NSBundle.mainBundle().pathForResource("GiftsInThePastIcon(Large)", ofType: "png")
+            let firstSubSectionImage = UIImage(named: firstSubSectionImagePath!)!
+            return ("新年神秘礼物季", "跨年版庆活动", true, "历年礼物储藏处", 78, firstSubSectionImage, false, nil, nil, nil)
+        case Sections.FanArt_General:
+            return ("欧美影视同人图区", "支持各种同人性质的图片创作，欢迎自创作品或推荐其他作品", false, nil, nil, nil, false, nil, nil, nil)
+        case Sections.FanVid_General:
+            return ("欧美影视同人MV区", "支持各种原创MV创作或推荐其他MV，希望玩视频剪辑的人会越来越多", false, nil, nil, nil, false, nil, nil, nil)
+        case Sections.Discussion_General:
+            return ("讨论区", "灌水、花痴，萌字第一！请随心所欲的玩耍吧！", false, nil, nil, nil, false, nil, nil, nil)
+        case Sections.Song_General:
+            return ("音乐区", "分享旋律起伏带来的快乐", false, nil, nil, nil, false, nil, nil, nil)
+        case Sections.HelpCenter_General:
+            return ("求助区", "寻文、求资源、找帮助，当使用搜索无能时，来这里求助", false, nil, nil, nil, false, nil, nil, nil)
+        default:
+            return (nil, nil, false, nil, nil, nil, false, nil, nil, nil)
+        }
+        //return (nil, false, nil, nil, nil, false, nil, nil, nil)
     }
 }

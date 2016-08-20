@@ -38,6 +38,11 @@ class DiscoverScreenViewController: UIViewController {
     var collectionOfForumEntries : [UIButton]? = nil
     var collectionOfForumDetails : [UIView]? = nil
     var collectionOfForumEntryTitles : [String]? = nil
+    var collectionOfForumEntryNumbers : [Int]? = nil
+    
+    var numberOfCurrentForumEntry : Int? = nil
+    var numberOfFirstSubSection : Int? = nil
+    var numberOfSecondSubSection : Int? = nil
     
     var numberOfThreadsInSectionsDict = NSDictionary()
     var numberOfPostsInSectionsDict = NSDictionary()
@@ -49,6 +54,8 @@ class DiscoverScreenViewController: UIViewController {
         collectionOfForumEntries = [firstSubforumEntry, secondSubforumEntry, thirdSubforumEntry, fourthSubforumEntry, fifthSubforumEntry, sixthSubforumEntry, seventhSubforumEntry, eighthSubforumEntry, mainForumEntry]
         
         collectionOfForumEntryTitles = ["SECRET GIFTS in Holiday Season", "HELP CENTER", "SONG", "DISCUSSION", "FANBOOK", "FANVID", "FANART", "TV FANFIC", "MOVIE FANFIC"]
+        
+        collectionOfForumEntryNumbers = [74, 72, 71, 70, 68, 64, 63, 34, 2]
         
         collectionOfForumDetails = [forumSubtitle, noOfPosts, noOfPostsTitle, noOfReplies, noOfRepliesTitle, noOfNewPostsToday, forumIntroduction, enterCurrentForum, enterSubsectionsTitle, firstSubsectionImage, enterFirstSubsection, secondSubsectionImage, enterSecondSubsection]
         
@@ -66,6 +73,10 @@ class DiscoverScreenViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         firstAppearance()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func retrieveMiscellaneousInfoOfSections() {
@@ -176,6 +187,45 @@ class DiscoverScreenViewController: UIViewController {
         noOfPosts.text = numberOfThreadsAbridgedInString
         noOfReplies.text = numberOfPostsAbridgedInString
         noOfNewPostsToday.text = numberOfPostsTodayAbridgedInString
+        
+        let availabilityOfSubSections = ForumSections.getAvailabilityOfSubSections(forumSection)
+        
+        numberOfCurrentForumEntry = collectionOfForumEntryNumbers!.last
+        
+        let ifFirstSubSectionAvailable = availabilityOfSubSections.2
+        let ifSecondSubSectionAvailable = availabilityOfSubSections.6
+        
+        self.forumSubtitle.text = availabilityOfSubSections.0
+        self.forumIntroduction.text = availabilityOfSubSections.1
+        
+        if ifFirstSubSectionAvailable == true {
+            enterSubsectionsTitle.hidden = false
+            firstSubsectionImage.hidden = false
+            enterFirstSubsection.hidden = false
+            
+            enterFirstSubsection.setTitle(availabilityOfSubSections.3!, forState: UIControlState.Normal)
+            numberOfFirstSubSection = availabilityOfSubSections.4!
+            firstSubsectionImage.image = availabilityOfSubSections.5!
+        } else {
+            firstSubsectionImage.hidden = true
+            enterFirstSubsection.hidden = true
+        }
+        
+        if ifSecondSubSectionAvailable == true {
+            secondSubsectionImage.hidden = false
+            enterSecondSubsection.hidden = false
+            
+            enterSecondSubsection.setTitle(availabilityOfSubSections.7!, forState: UIControlState.Normal)
+            numberOfSecondSubSection = availabilityOfSubSections.8!
+            secondSubsectionImage.image = availabilityOfSubSections.9!
+        } else {
+            secondSubsectionImage.hidden = true
+            enterSecondSubsection.hidden = true
+        }
+        
+        if ifFirstSubSectionAvailable == false && ifSecondSubSectionAvailable == false {
+            enterSubsectionsTitle.hidden = true
+        }
         
         self.view.layoutIfNeeded()
         
