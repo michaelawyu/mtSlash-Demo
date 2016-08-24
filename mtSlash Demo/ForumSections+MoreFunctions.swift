@@ -132,4 +132,29 @@ extension ForumSections {
         
         //return UIImage()
     }
+    
+    static func getPanelBackgroundInUpperRegionOfTopicsViewScreen() -> UIImage {
+        let randomRefNumberForBackgroundImage = arc4random_uniform(5)
+        
+        switch randomRefNumberForBackgroundImage {
+        case 0:
+            let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("sampleBackground_Circles", ofType: "jpg")
+            return UIImage(named: sectionBackgroundImagePath!)!
+        case 1:
+            let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("sampleBackground_IrregularShapes", ofType: "jpg")
+            return UIImage(named: sectionBackgroundImagePath!)!
+        case 2:
+            let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("sampleBackground_Triangles", ofType: "jpg")
+            return UIImage(named: sectionBackgroundImagePath!)!
+        case 3:
+            let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("sampleBackground_Pentagons", ofType: "jpg")
+            return UIImage(named: sectionBackgroundImagePath!)!
+        case 4:
+            let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("sampleBackground_Hexagons", ofType: "jpg")
+            return UIImage(named: sectionBackgroundImagePath!)!
+        default:
+            return UIImage()
+        }
+        //return UIImage()
+    }
 }

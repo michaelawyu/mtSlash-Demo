@@ -17,24 +17,72 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     @IBOutlet weak var leftPlaceholderView: UIView!
     @IBOutlet weak var rightPlaceholderView: UIView!
     @IBOutlet weak var navigationItemOnCurrentPage: UINavigationItem!
+    @IBOutlet weak var mainTitleInUpperRegion: UILabel!
+    @IBOutlet weak var subTitleInUpperRegion: UILabel!
+    @IBOutlet weak var noteInUpperRegion: UILabel!
     
-    var listOfAvailableSubSections : [String] = []
+    
+    var listOfAvailableSubSectionsAndItsRefs : [(String, Int)] = []
+    var listOfThreads : [NSDictionary] = []
+    
+    // Convert InAppSectionDef (sectionLink) to web end reference number
+    let currentForumID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).0
+    var currentSort_ID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).1
+    var currentNumberOfPages : Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarInTopicsAndPostsViewScreens!.setBackgroundImage(UIImage.fromColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)), forBarMetrics: UIBarMetrics.Default)
         (subSectionsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: 100, height: 50.5)
         
-        // Initialize List of Available Sections Here
-        // Sample Data:
-        listOfAvailableSubSections = ["全部", "DC", "Inception", "TSN", "X-Men", "MI4", "ST", "007", "Tolkien", "Pacific Rim", "HP", "Spider-Man", "Kingsman", "悲惨世界"]
+        // Load current section
+        let currentSection = ForumSections.Sections(rawValue: sectionLink!)!
         
+        // Initialize list of available sections
+        listOfAvailableSubSectionsAndItsRefs = ForumSections.getListOfAvailableCategories(currentSection)
+
+        // Initalize background image panel in the upper region
+        backgroundPanelInUpperRegion.image = ForumSections.getPanelBackgroundInUpperRegionOfTopicsViewScreen()
+        
+        // Initalized texts in the upper region
+        let listOfTitlesAndNotesOfCurrentSection = ForumSections.getTitlesAndNotesOfCurrentSubSection(currentSection)
+        mainTitleInUpperRegion.text = listOfTitlesAndNotesOfCurrentSection[0]
+        subTitleInUpperRegion.text = listOfTitlesAndNotesOfCurrentSection[1]
+        noteInUpperRegion.text = listOfTitlesAndNotesOfCurrentSection[2]
+        
+        // Initialize gesture recognizers
         let panGestureRecognizerForUpperRegion = UIPanGestureRecognizer(target: self, action: #selector(self.pannedInUpperRegion(_:)))
         upperRegionForPanGestureRecognizer.addGestureRecognizer(panGestureRecognizerForUpperRegion)
         
         let panGestureRecognizerForLowerRegion = UIPanGestureRecognizer(target: self, action: #selector(self.pannedInLowerRegion(_:)))
         panGestureRecognizerForLowerRegion.delegate = self
         topicsTableView.addGestureRecognizer(panGestureRecognizerForLowerRegion)
+        
+        // Retrieve threads from the server
+        retrieveThreadsFromServer()
+    }
+    
+    func retrieveThreadsFromServer() {
+        // Fetch the URL of backend Server from WebLinks class
+        let serverEndURLForRetrievingThreads = WebLinks.getAddressOfWebLink(WebLinks.RetrieveThreads)
+        
+        // Download the list of threads from the server and read them into listOfThreads variable
+        let sessionForRetrievingThreads = NSURLSession.sharedSession()
+        let requestForRetrievingThreads = NSMutableURLRequest(URL: serverEndURLForRetrievingThreads)
+        requestForRetrievingThreads.HTTPMethod = "POST"
+        requestForRetrievingThreads.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        let HTTPBodyContentForRequest = "fid=\(currentForumID_Raw)&sort_id=\(currentSort_ID_Raw)&limit_multiplier=\(currentNumberOfPages)"
+        requestForRetrievingThreads.HTTPBody = HTTPBodyContentForRequest.dataUsingEncoding(NSUTF8StringEncoding)
+        let taskForRetrievingThreads = sessionForRetrievingThreads.dataTaskWithRequest(requestForRetrievingThreads) { (data, response, error) in
+            if error == nil && data != nil {
+                let retrievedThreads = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                self.listOfThreads = retrievedThreads["results"]! as! [NSDictionary]
+                print(self.listOfThreads)
+            } else {
+                //
+            }
+        }
+        taskForRetrievingThreads.resume()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,17 +93,21 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         return UIStatusBarStyle.LightContent
     }
     
+    // Return to the previous screen
     @IBAction func leftBackButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listOfAvailableSubSections.count
+        return listOfAvailableSubSectionsAndItsRefs.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = (subSectionsCollectionView.dequeueReusableCellWithReuseIdentifier("subSectionNameContainerCell", forIndexPath: indexPath) as! subSectionNameContainerCell)
-        cell.setTitleOfButton(listOfAvailableSubSections[indexPath.indexAtPosition(1)])
+        let titleOfSubSection = listOfAvailableSubSectionsAndItsRefs[indexPath.indexAtPosition(1)].0
+        let linkOfSubSection = listOfAvailableSubSectionsAndItsRefs[indexPath.indexAtPosition(1)].1
+        cell.setTitleOfButton(titleOfSubSection)
+        cell.setEmbeddedSectionLinkOfButton(linkOfSubSection)
         return cell
     }
     

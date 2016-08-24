@@ -84,7 +84,7 @@ class DiscoverScreenViewController: UIViewController {
         // Fetch the URL of backend Server from WebLinks class
         let serverEndURLForSectionInfo = WebLinks.getAddressOfWebLink(WebLinks.SectionInfo)
         
-        // Download the settings from the server and read them into serverEndSettings variable
+        // Download the section info from the server and read them into numberOfPostsInSectionsDict, numberOfThreadsInSectionDict and numberOfPostsTodayInSectionDict variables
         let sessionForFetchingSectionInfo = NSURLSession.sharedSession()
         let taskForFetchingSectionInfo = sessionForFetchingSectionInfo.dataTaskWithURL(serverEndURLForSectionInfo) { (data, response, error) in
             if error == nil && data != nil {
@@ -92,6 +92,9 @@ class DiscoverScreenViewController: UIViewController {
                 self.numberOfPostsInSectionsDict = sectionInfo["posts"] as! NSDictionary
                 self.numberOfThreadsInSectionsDict = sectionInfo["threads"] as! NSDictionary
                 self.numberOfPostsTodayInSectionsDict = sectionInfo["todayposts"] as! NSDictionary
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.initForumDetails(ForumSections.Sections.MovieFanfic_General)
+                })
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
                     let failedToFetchSectionInfoWindow = UIAlertController(title: "无法取得板块基本信息", message: "似乎发生了一个网络错误。您的数据链接可能已经中断，或服务器暂时无法为您提供服务。请稍后再试。", preferredStyle: UIAlertControllerStyle.Alert)
@@ -253,21 +256,18 @@ class DiscoverScreenViewController: UIViewController {
     
     @IBAction func enterCurrentSection(sender: AnyObject) {
         sectionLink = numberOfCurrentForumEntry
-        print(sectionLink)
         performSegueWithIdentifier("fromDiscoverScreenToNavigationControllerForTopicsAndPostsScreen", sender: self)
     }
     
     
     @IBAction func enterFirstSubSection(sender: AnyObject) {
         sectionLink = numberOfFirstSubSection
-        print(sectionLink)
         performSegueWithIdentifier("fromDiscoverScreenToNavigationControllerForTopicsAndPostsScreen", sender: self)
     }
     
     
     @IBAction func enterSecondSubSection(sender: AnyObject) {
         sectionLink = numberOfSecondSubSection
-        print(sectionLink)
         performSegueWithIdentifier("fromDiscoverScreenToNavigationControllerForTopicsAndPostsScreen", sender: self)
     }
     

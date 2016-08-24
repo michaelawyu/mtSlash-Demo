@@ -28,6 +28,8 @@ enum WebLinks {
     case UserExpImprovProj
     // Section Info
     case SectionInfo
+    // Retrieval of Threads
+    case RetrieveThreads
     
     // Function: Return corresponding URL for requested link
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
@@ -48,6 +50,8 @@ enum WebLinks {
                 return NSURL(string: backendServerURL + "userexpimprovproj")!
         case .SectionInfo:
                 return NSURL(string: backendServerURL + "sectioninfo")!
+        case .RetrieveThreads:
+                return NSURL(string: backendServerURL + "retrievethreads")!
         }
     }
     
@@ -70,6 +74,8 @@ enum WebLinks {
             return "用户体验改进计划"
         case .SectionInfo:
             return "板块基本信息"
+        case .RetrieveThreads:
+            return "返回主题列表"
         }
     }
     

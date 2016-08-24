@@ -19,6 +19,8 @@ extension ForumSections {
             return (-1,-1)
         case Sections.MovieFanfic_General:
             return (2,-1)
+        case Sections.MovieFanfic_Avengers_General_Reserved:
+            return (37,-1)
         case Sections.MovieFanfic_Avengers_Avengers:
             return (37,4)
         case Sections.MovieFanfic_Avengers_Ironman:
@@ -33,6 +35,8 @@ extension ForumSections {
             return (37,9)
         case Sections.MovieFanfic_Avengers_TheIncredibleHulk:
             return (37,10)
+        case Sections.MovieFanfic_PopularFandoms_General_Reserved:
+            return (38,-1)
         case Sections.MovieFanfic_PopularFandoms_DCUniverse:
             return (38,11)
         case Sections.MovieFanfic_PopularFandoms_Inception:
@@ -61,6 +65,8 @@ extension ForumSections {
             return (38,23)
         case Sections.TVFanfic_General:
             return (36,-1)
+        case Sections.TVFanfic_Sherlock_General_Reserved:
+            return (50,-1)
         case Sections.TVFanfic_Sherlock_SherlockTVSeries2012:
             return (50,27)
         case Sections.TVFanfic_Sherlock_SherlockHolmesCollection:
@@ -73,6 +79,8 @@ extension ForumSections {
             return (50,31)
         case Sections.TVFanfic_Sherlock_Crossovers:
             return (50,32)
+        case Sections.TVFanfic_PopularFandoms_General_Reserved:
+            return (49,-1)
         case Sections.TVFanfic_PopularFandoms_CSISeries:
             return (49,33)
         case Sections.TVFanfic_PopularFandoms_Supernatural:

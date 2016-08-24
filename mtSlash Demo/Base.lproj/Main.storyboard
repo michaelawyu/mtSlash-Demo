@@ -1091,7 +1091,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="322"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-n6-xkO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleBackground_Circles.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-n6-xkO">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="382"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1114,7 +1114,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电视剧同人区" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUs-Wz-JSG">
-                                <rect key="frame" x="128" y="205" width="119" height="21"/>
+                                <rect key="frame" x="76" y="205" width="223" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="tyY-i8-Dqb"/>
                                 </constraints>
@@ -1374,6 +1374,23 @@
                                 <rect key="frame" x="339" y="322" width="40" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="复仇者联盟专区" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKE-C7-3zL">
+                                <rect key="frame" x="122" y="234" width="131" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="CA7-WM-Wao"/>
+                                    <constraint firstAttribute="height" constant="21" id="Ntg-wV-Cd1"/>
+                                    <constraint firstAttribute="height" constant="21" id="mj8-Cl-G3f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CA7-WM-Wao"/>
+                                        <exclude reference="mj8-Cl-G3f"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cUt-JE-2bp" secondAttribute="trailing" constant="-20" id="0FQ-HL-9Lu"/>
@@ -1391,13 +1408,15 @@
                             <constraint firstItem="cUt-JE-2bp" firstAttribute="top" secondItem="gaM-jT-5yq" secondAttribute="bottom" id="JgL-Ys-PIQ"/>
                             <constraint firstItem="uWS-y5-Psx" firstAttribute="top" secondItem="o3b-ZP-TuV" secondAttribute="topMargin" id="KOs-Gl-EYd"/>
                             <constraint firstItem="2yc-ZC-XjX" firstAttribute="leading" secondItem="o3b-ZP-TuV" secondAttribute="leadingMargin" constant="20" id="PIC-cI-LQ5"/>
+                            <constraint firstItem="dKE-C7-3zL" firstAttribute="top" secondItem="aUs-Wz-JSG" secondAttribute="bottom" constant="8" id="TEH-ho-2mt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dKE-C7-3zL" secondAttribute="trailing" constant="106" id="TdK-LV-ezI"/>
                             <constraint firstItem="2yc-ZC-XjX" firstAttribute="top" secondItem="o3b-ZP-TuV" secondAttribute="topMargin" constant="322" id="V9c-ua-Wos"/>
                             <constraint firstItem="cUt-JE-2bp" firstAttribute="top" secondItem="2yc-ZC-XjX" secondAttribute="bottom" id="XFk-Bi-Jmb"/>
                             <constraint firstItem="e6F-n6-xkO" firstAttribute="leading" secondItem="o3b-ZP-TuV" secondAttribute="leadingMargin" constant="-20" id="c14-KT-cxj"/>
                             <constraint firstItem="cUt-JE-2bp" firstAttribute="leading" secondItem="o3b-ZP-TuV" secondAttribute="leadingMargin" constant="-20" id="cQi-WZ-UdG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cUt-JE-2bp" secondAttribute="trailing" constant="-20" id="cnf-dj-0xx"/>
-                            <constraint firstItem="aUs-Wz-JSG" firstAttribute="leading" secondItem="o3b-ZP-TuV" secondAttribute="leadingMargin" constant="112" id="d7m-L8-jh2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aUs-Wz-JSG" secondAttribute="trailing" constant="112" id="fXu-9M-HV1"/>
+                            <constraint firstItem="aUs-Wz-JSG" firstAttribute="leading" secondItem="o3b-ZP-TuV" secondAttribute="leadingMargin" constant="60" id="d7m-L8-jh2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aUs-Wz-JSG" secondAttribute="trailing" constant="60" id="fXu-9M-HV1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2yc-ZC-XjX" secondAttribute="trailing" constant="20" id="g2S-t8-HFr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uWS-y5-Psx" secondAttribute="trailing" constant="-20" id="hhX-13-361"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e6F-n6-xkO" secondAttribute="trailing" constant="-20" id="iG4-Hw-EXS"/>
@@ -1406,6 +1425,7 @@
                             <constraint firstItem="gaM-jT-5yq" firstAttribute="top" secondItem="uWS-y5-Psx" secondAttribute="bottom" id="q0f-Sr-F5B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b1f-c4-JIG" secondAttribute="trailing" constant="34" id="wPF-hi-CK4"/>
                             <constraint firstItem="bqp-D3-V6u" firstAttribute="top" secondItem="uWS-y5-Psx" secondAttribute="bottom" id="wPY-8C-bJz"/>
+                            <constraint firstItem="dKE-C7-3zL" firstAttribute="leading" secondItem="o3b-ZP-TuV" secondAttribute="leadingMargin" constant="106" id="wpQ-QR-pT7"/>
                             <constraint firstItem="e6F-n6-xkO" firstAttribute="top" secondItem="o3b-ZP-TuV" secondAttribute="topMargin" id="zN1-Rc-aQC"/>
                         </constraints>
                         <variation key="default">
@@ -1428,9 +1448,12 @@
                     <connections>
                         <outlet property="backgroundPanelInUpperRegion" destination="e6F-n6-xkO" id="Y94-UY-fMB"/>
                         <outlet property="leftPlaceholderView" destination="bqp-D3-V6u" id="szk-Ti-ZFS"/>
+                        <outlet property="mainTitleInUpperRegion" destination="b1f-c4-JIG" id="P2U-Uv-wQs"/>
                         <outlet property="navigationItemOnCurrentPage" destination="m65-sY-D5b" id="20l-6b-Uj8"/>
+                        <outlet property="noteInUpperRegion" destination="dKE-C7-3zL" id="yxX-sa-dcQ"/>
                         <outlet property="rightPlaceholderView" destination="gaM-jT-5yq" id="tGa-Fr-Kul"/>
                         <outlet property="subSectionsCollectionView" destination="2yc-ZC-XjX" id="qtL-fs-X08"/>
+                        <outlet property="subTitleInUpperRegion" destination="aUs-Wz-JSG" id="6KO-kg-Hr1"/>
                         <outlet property="topicsTableView" destination="cUt-JE-2bp" id="FlR-2G-obH"/>
                         <outlet property="upperRegionForPanGestureRecognizer" destination="uWS-y5-Psx" id="x14-IP-pbI"/>
                     </connections>
@@ -3344,9 +3367,9 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
         <image name="codeSlash.png" width="287" height="287"/>
         <image name="discoverScreenBackgroundMask.png" width="1242" height="2208"/>
         <image name="kingsmanDiscoverScreenBackground.prototype.jpg" width="2000" height="3000"/>
-        <image name="movieFanficSectionTopicsViewScreenBackground.prototype.original.jpg" width="1920" height="1200"/>
         <image name="passwordInputPageBackgroundImage.prototype.jpg" width="2560" height="1600"/>
         <image name="sampleAvatarProfileImage.jpg" width="120" height="120"/>
+        <image name="sampleBackground_Circles.jpg" width="1920" height="1200"/>
         <image name="searchScreenBackground.prototype.png" width="3840" height="2160"/>
         <image name="settingsScreenBackground.prototype.jpg" width="4036" height="3027"/>
         <image name="usernameInputPageBackgroundImage.prototype.jpg" width="1920" height="1200"/>

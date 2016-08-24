@@ -12,7 +12,13 @@ class subSectionNameContainerCell: UICollectionViewCell {
     
     @IBOutlet weak var subSectionNameButton: UIButton!
     
+    var embeddedSectionLink : Int? = nil
+    
     func setTitleOfButton(name : String) {
         subSectionNameButton.setTitle(name, forState: UIControlState.Normal)
+    }
+    
+    func setEmbeddedSectionLinkOfButton(number: Int) {
+        embeddedSectionLink = number
     }
 }
