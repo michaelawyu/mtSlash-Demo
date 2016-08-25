@@ -8,6 +8,9 @@
 
 import UIKit
 
+var storedNavigationBarStyle : NavigationBarStylesInTopicsAndPostsViewScreen.availableStyles? = nil
+var threadID : Int? = nil
+
 class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var topicsTableView: UITableView!
@@ -32,7 +35,11 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set background of navigation bar
         navigationBarInTopicsAndPostsViewScreens!.setBackgroundImage(UIImage.fromColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)), forBarMetrics: UIBarMetrics.Default)
+        
+        // Set estimated item size of collection view, enabling auto-dimension
         (subSectionsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: 100, height: 50.5)
         
         // Load current section
@@ -62,6 +69,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         retrieveThreadsFromServer()
     }
     
+    // Function for retrieving threads from the server
     func retrieveThreadsFromServer() {
         // Fetch the URL of backend Server from WebLinks class
         let serverEndURLForRetrievingThreads = WebLinks.getAddressOfWebLink(WebLinks.RetrieveThreads)
@@ -81,6 +89,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
                     self.topicsTableView.reloadData()
                 })
             } else {
+                // Issuse a warning if an error has occurred
                 dispatch_async(dispatch_get_main_queue(), {
                     let retrievalOfThreadsFailed = UIAlertController(title: "无法获取主题列表", message: "似乎发生了一个网络错误。您的数据链接可能已经中断，或服务器暂时无法为您提供服务。请稍后再试。", preferredStyle: UIAlertControllerStyle.Alert)
                     let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
@@ -97,7 +106,8 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    // Set the style of status bar
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -107,10 +117,12 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // Required function for collection view
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listOfAvailableSubSectionsAndItsRefs.count
     }
     
+    // Required function for collection view
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = (subSectionsCollectionView.dequeueReusableCellWithReuseIdentifier("subSectionNameContainerCell", forIndexPath: indexPath) as! subSectionNameContainerCell)
         let titleOfSubSection = listOfAvailableSubSectionsAndItsRefs[indexPath.indexAtPosition(1)].0
@@ -120,10 +132,12 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         return cell
     }
     
+    // Required function for table view
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfThreads.count + 1
     }
     
+    // Required function for table view
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let currentEntryIndex = indexPath.indexAtPosition(1)
         
@@ -135,7 +149,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         
         // If reaches the end of list of the threads, return a cell indicating the option to load more threads from server
         if currentEntryIndex == listOfThreads.count {
-            let cell = tableView.dequeueReusableCellWithIdentifier("noContentSignifierCell")!
+            let cell = tableView.dequeueReusableCellWithIdentifier("loadMoreThreadsSignifierCell")!
             return cell
         }
         
@@ -156,7 +170,6 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         let typeID = currentThread["type_id"] as! Int
         let numberOfViews = currentThread["views"] as! Int
         
-        
         cell.setTitle(postTitle)
         cell.setAuthor(authorName, authorID: authorID)
         cell.setDateOfPublishing(publishDateInSections)
@@ -164,6 +177,43 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         cell.setAdditonalInfo(fid, tid: tid, categoryID: categoryID, typeID: typeID)
         
         return cell
+    }
+    
+    // Set height of rows in table view
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.indexAtPosition(1) == listOfThreads.count {
+            return 55.0
+        }
+        
+        return 160.0
+    }
+    
+    // Set estimated height of rows in table view, improving the rendering performance
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.indexAtPosition(1) == listOfThreads.count {
+            return 55.0
+        }
+        
+        return 160.0
+    }
+    
+    // Function to call when a row of table is select
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.indexAtPosition(1) == listOfThreads.count {
+            currentNumberOfPages = currentNumberOfPages + 1
+            retrieveThreadsFromServer()
+            return
+        }
+        
+        // Record current style of navigation bar for future references
+        storedNavigationBarStyle = NavigationBarStylesInTopicsAndPostsViewScreen.getCurrentStyleOfNaviationBar(navigationItemOnCurrentPage)
+        
+        // Load thread ID from selected row
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath)! as! topicTitleContainerCell
+        threadID = selectedCell.tid
+        
+        // Initiate transition to the next screen (posts view screen)
+        self.performSegueWithIdentifier("fromTopicsViewScreenToPostsViewScreen", sender: self)
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -215,8 +265,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
             leftPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
             rightPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
             
-            // Filled With Sample Data: Update When Code is Ready
-            navigationItemOnCurrentPage.title = "MOVIE FANFIC"
+            navigationItemOnCurrentPage.title = "主题列表"
 
             deltaDistanceMovedVertically = 0
         }
@@ -273,8 +322,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
             leftPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
             rightPlaceholderView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
             
-            // Filled With Sample Data: Update When Code is Ready
-            navigationItemOnCurrentPage.title = "MOVIE FANFIC"
+            navigationItemOnCurrentPage.title = "主题列表"
             
             deltaDistanceMovedVertically = 0
         }

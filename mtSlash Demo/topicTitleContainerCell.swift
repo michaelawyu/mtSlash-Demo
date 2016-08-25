@@ -48,7 +48,9 @@ class topicTitleContainerCell: UITableViewCell {
     }
     
     func setTitle(title: String) {
-        topicTitleLabel.text = title
+        let newAttributedString = NSMutableAttributedString(attributedString: topicTitleLabel.attributedText!)
+        newAttributedString.mutableString.setString(title)
+        topicTitleLabel.attributedText = newAttributedString
         postTitle = title
     }
     
@@ -67,7 +69,8 @@ class topicTitleContainerCell: UITableViewCell {
         let publishDateFormatter = NSDateFormatter()
         publishDateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         
-        dateOfPublishingLabel.text = publishDateFormatter.stringFromDate(publishDate)
+        let publishDateInString = publishDateFormatter.stringFromDate(publishDate)
+        dateOfPublishingLabel.text = "发表于\(publishDateInString)"
     }
     
     private func setAuthorAvatarProfileImage() {

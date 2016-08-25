@@ -141,6 +141,8 @@
 		09E6A8811D6C9D4700D4A571 /* sampleBackground_Pentagons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A8801D6C9D4700D4A571 /* sampleBackground_Pentagons.jpg */; };
 		09E6A8831D6C9D9A00D4A571 /* sampleBackground_Hexagons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A8821D6C9D9A00D4A571 /* sampleBackground_Hexagons.jpg */; };
 		09E6A8851D6EC56900D4A571 /* sampleAvatarProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A8841D6EC56900D4A571 /* sampleAvatarProfileImage.jpg */; };
+		09E6A8871D6F636100D4A571 /* NavigationBarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6A8861D6F636100D4A571 /* NavigationBarStyles.swift */; };
+		09E6A88B1D6F713C00D4A571 /* postContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6A88A1D6F713C00D4A571 /* postContainerCell.swift */; };
 		09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */; };
 		09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */; };
 		09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */; };
@@ -316,6 +318,8 @@
 		09E6A8801D6C9D4700D4A571 /* sampleBackground_Pentagons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleBackground_Pentagons.jpg; sourceTree = "<group>"; };
 		09E6A8821D6C9D9A00D4A571 /* sampleBackground_Hexagons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleBackground_Hexagons.jpg; sourceTree = "<group>"; };
 		09E6A8841D6EC56900D4A571 /* sampleAvatarProfileImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleAvatarProfileImage.jpg; sourceTree = "<group>"; };
+		09E6A8861D6F636100D4A571 /* NavigationBarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarStyles.swift; sourceTree = "<group>"; };
+		09E6A88A1D6F713C00D4A571 /* postContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postContainerCell.swift; sourceTree = "<group>"; };
 		09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedScreenViewController.swift; sourceTree = "<group>"; };
 		09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedPage.swift; sourceTree = "<group>"; };
 		09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accessGrantedPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 		0902ACCF1D0D62D700FD6AAD /* mtSlash Demo */ = {
 			isa = PBXGroup;
 			children = (
+				0902ACD41D0D62D700FD6AAD /* Main.storyboard */,
 				093792631D3D397000C8B233 /* Computation Model */,
 				0957DE871D2033F1004844A8 /* Data Model */,
 				0971A9DD1D12EA7400FC9868 /* Miscellaneous */,
@@ -388,7 +393,6 @@
 				0902ACD01D0D62D700FD6AAD /* AppDelegate.swift */,
 				09ED77481D15BAD8002C0276 /* View Controllers (Start Up) */,
 				09ED77491D15BAED002C0276 /* Custom Views (Start Up) */,
-				0902ACD41D0D62D700FD6AAD /* Main.storyboard */,
 				09ED77761D1836AB002C0276 /* View Controllers (Core) */,
 				0957DE891D2035D5004844A8 /* Custom Views (Core) */,
 				0923F2B91D2F4006000A8D14 /* View Controllers (Extension) */,
@@ -397,7 +401,7 @@
 				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
 				0902ACD71D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld */,
 				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
-				0957DE821D1E83F3004844A8 /* Custom Components */,
+				0957DE821D1E83F3004844A8 /* Custom Delegates */,
 				0902AD1A1D0E557D00FD6AAD /* Custom Segues */,
 				09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */,
 				0957DE901D2110C9004844A8 /* List of Available Categories (For References Only) */,
@@ -471,6 +475,7 @@
 				099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */,
 				09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */,
 				09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */,
+				09E6A88A1D6F713C00D4A571 /* postContainerCell.swift */,
 				0901284A1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift */,
 				0901284C1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift */,
 				0901284E1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift */,
@@ -490,11 +495,11 @@
 			name = "Computation Model";
 			sourceTree = "<group>";
 		};
-		0957DE821D1E83F3004844A8 /* Custom Components */ = {
+		0957DE821D1E83F3004844A8 /* Custom Delegates */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Custom Components";
+			name = "Custom Delegates";
 			sourceTree = "<group>";
 		};
 		0957DE871D2033F1004844A8 /* Data Model */ = {
@@ -578,6 +583,7 @@
 				09BE85451D65A7F0000802B3 /* ForumSections+Functions.swift */,
 				0932011E1D6751620043ED8B /* ForumSections+MoreFunctions.swift */,
 				09E6A87A1D6C680700D4A571 /* ForumSections+AnotherGroupOfFunctions.swift */,
+				09E6A8861D6F636100D4A571 /* NavigationBarStyles.swift */,
 			);
 			name = Miscellaneous;
 			sourceTree = "<group>";
@@ -901,6 +907,7 @@
 			files = (
 				096203201D40E7EE00E14A74 /* BulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
 				090128531D5A7A0D007F1032 /* currentAccountSidenoteInSettingsViewCell.swift in Sources */,
+				09E6A88B1D6F713C00D4A571 /* postContainerCell.swift in Sources */,
 				0971E2431D5385A200CFE64E /* Alignments.swift in Sources */,
 				0949E0711D61AB7D00499193 /* ForumSections.swift in Sources */,
 				097AB7A81D50F72F008B9A76 /* Colors.swift in Sources */,
@@ -928,6 +935,7 @@
 				095C16B41D58796F000970A3 /* MTReadingList.swift in Sources */,
 				09BE85461D65A7F0000802B3 /* ForumSections+Functions.swift in Sources */,
 				09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */,
+				09E6A8871D6F636100D4A571 /* NavigationBarStyles.swift in Sources */,
 				09FE23821D4B74B4000002CD /* PostsViewScreenViewController.swift in Sources */,
 				0923F2BB1D2F4093000A8D14 /* SampleTableViewController.swift in Sources */,
 				096203271D411E1E00E14A74 /* Fonts.swift in Sources */,

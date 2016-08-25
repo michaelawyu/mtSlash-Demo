@@ -10,12 +10,16 @@ import UIKit
 
 var navigationBarInTopicsAndPostsViewScreens : UINavigationBar? = nil
 
-class NavigationControllerforTopicsandPostsSectionViewController: UINavigationController {
+class NavigationControllerforTopicsandPostsSectionViewController: UINavigationController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarInTopicsAndPostsViewScreens = self.navigationBar
         // Do any additional setup after loading the view.
+        
+        navigationBarInTopicsAndPostsViewScreens = self.navigationBar
+        
+        // Set the delegate to self
+        self.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,4 +35,17 @@ class NavigationControllerforTopicsandPostsSectionViewController: UINavigationCo
         return super.popViewControllerAnimated(animated)
     }
 
+    // Restore the style of navigation bar when transitioning from posts view screen to topics view screen
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        if viewController is TopicsViewScreenViewController && storedNavigationBarStyle != nil && navigationBarInTopicsAndPostsViewScreens != nil {
+            // Restore to dark style
+            if storedNavigationBarStyle == NavigationBarStylesInTopicsAndPostsViewScreen.availableStyles.DarkStyle {
+                NavigationBarStylesInTopicsAndPostsViewScreen.setStyleOfNavigationBarToDarkStyle(navigationBarInTopicsAndPostsViewScreens!)
+            }
+            // Restore to translucent style 
+            if storedNavigationBarStyle == NavigationBarStylesInTopicsAndPostsViewScreen.availableStyles.TranslucentStyle {
+                NavigationBarStylesInTopicsAndPostsViewScreen.setStyleOfNavigationBarToTranslucentStyle(navigationBarInTopicsAndPostsViewScreens!)
+            }
+        }
+    }
 }
