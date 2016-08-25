@@ -12,6 +12,8 @@ import Foundation
 let backendServerURL : String = "http://mtslashmobileappdeploymenttestbed.southeastasia.cloudapp.azure.com:8000/"
 
 enum WebLinks {
+    // UCenter Avatar Profile Image Base URL
+    case UCenterAvatarProfileImage
     // Server Status
     case ServerStatus
     // Registration
@@ -52,6 +54,8 @@ enum WebLinks {
                 return NSURL(string: backendServerURL + "sectioninfo")!
         case .RetrieveThreads:
                 return NSURL(string: backendServerURL + "retrievethreads")!
+        case .UCenterAvatarProfileImage:
+                return NSURL(string: "http://mtslashmobileappdeploymenttestbed.southeastasia.cloudapp.azure.com/bbs/uc_server/avatar.php?")!
         }
     }
     
@@ -76,6 +80,8 @@ enum WebLinks {
             return "板块基本信息"
         case .RetrieveThreads:
             return "返回主题列表"
+        case .UCenterAvatarProfileImage:
+            return "UCenter用户头像基本路径"
         }
     }
     

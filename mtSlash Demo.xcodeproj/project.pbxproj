@@ -140,6 +140,7 @@
 		09E6A87F1D6C9CB200D4A571 /* sampleBackground_Triangles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A87E1D6C9CB200D4A571 /* sampleBackground_Triangles.jpg */; };
 		09E6A8811D6C9D4700D4A571 /* sampleBackground_Pentagons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A8801D6C9D4700D4A571 /* sampleBackground_Pentagons.jpg */; };
 		09E6A8831D6C9D9A00D4A571 /* sampleBackground_Hexagons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A8821D6C9D9A00D4A571 /* sampleBackground_Hexagons.jpg */; };
+		09E6A8851D6EC56900D4A571 /* sampleAvatarProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A8841D6EC56900D4A571 /* sampleAvatarProfileImage.jpg */; };
 		09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */; };
 		09ED774B1D15BB30002C0276 /* AccessGrantedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */; };
 		09ED77631D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */; };
@@ -153,7 +154,6 @@
 		09FE23761D43AD6F000002CD /* sampleBackground_Circles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09FE23751D43AD6F000002CD /* sampleBackground_Circles.jpg */; };
 		09FE23781D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */; };
 		09FE237C1D44BD7B000002CD /* subSectionNameContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */; };
-		09FE237E1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */; };
 		09FE23801D4B3BE7000002CD /* topicTitleContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */; };
 		09FE23821D4B74B4000002CD /* PostsViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE23811D4B74B4000002CD /* PostsViewScreenViewController.swift */; };
 /* End PBXBuildFile section */
@@ -315,6 +315,7 @@
 		09E6A87E1D6C9CB200D4A571 /* sampleBackground_Triangles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleBackground_Triangles.jpg; sourceTree = "<group>"; };
 		09E6A8801D6C9D4700D4A571 /* sampleBackground_Pentagons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleBackground_Pentagons.jpg; sourceTree = "<group>"; };
 		09E6A8821D6C9D9A00D4A571 /* sampleBackground_Hexagons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleBackground_Hexagons.jpg; sourceTree = "<group>"; };
+		09E6A8841D6EC56900D4A571 /* sampleAvatarProfileImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleAvatarProfileImage.jpg; sourceTree = "<group>"; };
 		09ED77461D15BACF002C0276 /* AccessGrantedScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedScreenViewController.swift; sourceTree = "<group>"; };
 		09ED774A1D15BB30002C0276 /* AccessGrantedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGrantedPage.swift; sourceTree = "<group>"; };
 		09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accessGrantedPageBackgroundImage.prototype.jpg; sourceTree = "<group>"; };
@@ -328,7 +329,6 @@
 		09FE23751D43AD6F000002CD /* sampleBackground_Circles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleBackground_Circles.jpg; sourceTree = "<group>"; };
 		09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerforTopicsandPostsSectionViewController.swift; sourceTree = "<group>"; };
 		09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subSectionNameContainerCell.swift; sourceTree = "<group>"; };
-		09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleAvatarProfileImage.jpg; sourceTree = "<group>"; };
 		09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topicTitleContainerCell.swift; sourceTree = "<group>"; };
 		09FE23811D4B74B4000002CD /* PostsViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -437,7 +437,7 @@
 				0902AD351D0EEDAE00FD6AAD /* usernameInputPageBackgroundImage.prototype.jpg */,
 				09ED77621D15CE5A002C0276 /* accessGrantedPageBackgroundImage.prototype.jpg */,
 				09336CA31D1401A7007E8C63 /* passwordInputPageBackgroundImage.prototype.jpg */,
-				09FE237D1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg */,
+				09E6A8841D6EC56900D4A571 /* sampleAvatarProfileImage.jpg */,
 				095C16B71D59C0DA000970A3 /* settingsScreenBackground.prototype.jpg */,
 			);
 			name = Assets;
@@ -799,6 +799,7 @@
 				093201511D6875F50043ED8B /* suitsDiscoverScreenBackground.prototype.jpg in Resources */,
 				09BE85081D62494D000802B3 /* TheIncredibleHulkPanelBackground.prototype.jpg in Resources */,
 				09BE85181D624E43000802B3 /* PacificRimPanelBackground.prototype.jpg in Resources */,
+				09E6A8851D6EC56900D4A571 /* sampleAvatarProfileImage.jpg in Resources */,
 				09ED777B1D18591C002C0276 /* Copyright Statement (US-EN) in Resources */,
 				093201231D6761F30043ED8B /* dcUniverseDiscoverScreenBackground.prototype.jpg in Resources */,
 				09D078A51D68CB88000B5AD2 /* FleaMarketIcon(Large).png in Resources */,
@@ -813,7 +814,6 @@
 				09E6A8811D6C9D4700D4A571 /* sampleBackground_Pentagons.jpg in Resources */,
 				093201251D6762930043ED8B /* inceptionDiscoverScreenBackground.prototype.jpg in Resources */,
 				09BE85221D63868A000802B3 /* SherlockTVSeries2012PanelBackground.prototype.jpg in Resources */,
-				09FE237E1D4B3B5F000002CD /* sampleAvatarProfileImage.jpg in Resources */,
 				0932014B1D6875E70043ED8B /* poiDiscoverScreenBackground.prototype.jpg in Resources */,
 				09BE85281D638922000802B3 /* ElementaryTVSeries2012PanelBackground.prototype.jpg in Resources */,
 				09BE84FA1D624545000802B3 /* GeneralPanelBackground.prototype.jpg in Resources */,

@@ -1173,7 +1173,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="285" id="9oJ-ut-t3n"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SampleCell" id="GDB-Ta-H3n" customClass="topicTitleContainerCell" customModule="mtSlash_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="standardTopicContainerCell" id="GDB-Ta-H3n" customClass="topicTitleContainerCell" customModule="mtSlash_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GDB-Ta-H3n" id="4aD-6p-Yxb">
@@ -1185,6 +1185,7 @@
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleAvatarProfileImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NF4-AI-MUT">
                                                             <rect key="frame" x="32" y="10" width="36" height="36"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="36" id="Ggj-Aa-Fhs"/>
                                                                 <constraint firstAttribute="height" constant="36" id="fZX-PL-EgE"/>
@@ -1354,6 +1355,31 @@
                                             <outlet property="noOfRepliesViewsAndLastReplyFromLabel" destination="6hn-Bl-1N4" id="ViZ-Tv-dIG"/>
                                             <outlet property="topicTitleLabel" destination="MNd-Vc-rGG" id="dQ5-He-jpU"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noContentSignifierCell" rowHeight="79" id="r4l-ju-m2I">
+                                        <rect key="frame" x="0.0" y="188" width="383" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r4l-ju-m2I" id="RoS-Wr-dFa">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在加载主题列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUS-dw-HuE">
+                                                    <rect key="frame" x="123" y="29" width="137" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Xti-s1-XD1"/>
+                                                        <constraint firstAttribute="width" constant="137" id="fXa-5x-OuI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="DUS-dw-HuE" firstAttribute="top" secondItem="RoS-Wr-dFa" secondAttribute="topMargin" constant="21" id="BoX-wi-8al"/>
+                                                <constraint firstItem="DUS-dw-HuE" firstAttribute="leading" secondItem="RoS-Wr-dFa" secondAttribute="leadingMargin" constant="115" id="yQO-tC-q9R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">

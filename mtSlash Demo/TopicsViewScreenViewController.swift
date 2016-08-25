@@ -77,9 +77,18 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
             if error == nil && data != nil {
                 let retrievedThreads = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                 self.listOfThreads = retrievedThreads["results"]! as! [NSDictionary]
-                print(self.listOfThreads)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.topicsTableView.reloadData()
+                })
             } else {
-                //
+                dispatch_async(dispatch_get_main_queue(), {
+                    let retrievalOfThreadsFailed = UIAlertController(title: "无法获取主题列表", message: "似乎发生了一个网络错误。您的数据链接可能已经中断，或服务器暂时无法为您提供服务。请稍后再试。", preferredStyle: UIAlertControllerStyle.Alert)
+                    let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
+                        retrievalOfThreadsFailed.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                    retrievalOfThreadsFailed.addAction(OKAction)
+                    self.presentViewController(retrievalOfThreadsFailed, animated: true, completion: nil)
+                })
             }
         }
         taskForRetrievingThreads.resume()
@@ -112,11 +121,48 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return listOfThreads.count + 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SampleCell")!
+        let currentEntryIndex = indexPath.indexAtPosition(1)
+        
+        // If list of threads is not available yet, return a cell indicating that the list of threads is still being retrieved
+        if listOfThreads.count == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("noContentSignifierCell")!
+            return cell
+        }
+        
+        // If reaches the end of list of the threads, return a cell indicating the option to load more threads from server
+        if currentEntryIndex == listOfThreads.count {
+            let cell = tableView.dequeueReusableCellWithIdentifier("noContentSignifierCell")!
+            return cell
+        }
+        
+        // Configure the cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("standardTopicContainerCell")! as! topicTitleContainerCell
+        
+        let currentThread = listOfThreads[currentEntryIndex]
+        
+        let authorName = currentThread["author"] as! String
+        let authorID = currentThread["authorid"] as! Int
+        let publishDateInSections = currentThread["dateline"] as! Int
+        let fid = currentThread["fid"] as! Int
+        let lastPosterName = currentThread["lastposter"] as! String
+        let numberOfReplies = currentThread["replies"] as! Int
+        let categoryID = currentThread["sort_id"] as! Int
+        let postTitle = currentThread["subject"] as! String
+        let tid = currentThread["tid"] as! Int
+        let typeID = currentThread["type_id"] as! Int
+        let numberOfViews = currentThread["views"] as! Int
+        
+        
+        cell.setTitle(postTitle)
+        cell.setAuthor(authorName, authorID: authorID)
+        cell.setDateOfPublishing(publishDateInSections)
+        cell.setNoOfRepliesViewsAndLastReplyFromInfo(numberOfReplies, numberOfViews: numberOfViews, lastPosterName: lastPosterName)
+        cell.setAdditonalInfo(fid, tid: tid, categoryID: categoryID, typeID: typeID)
+        
         return cell
     }
     
