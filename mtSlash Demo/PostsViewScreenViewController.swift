@@ -24,6 +24,12 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         // Set the style of navigation bar to light style, better accomodate current settings
         NavigationBarStylesInTopicsAndPostsViewScreen.setStyleOfNavigationBarToLightStyle(navigationBarInTopicsAndPostsViewScreens!)
         
+        // Retrieve posts from the server
+        
+    }
+    
+    // Function for retrieving posts from the server
+    func retrievePostsFromServer() {
         
     }
 

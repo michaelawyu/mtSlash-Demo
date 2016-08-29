@@ -10,7 +10,7 @@ import UIKit
 
 class subSectionNameContainerCell: UICollectionViewCell {
     
-    @IBOutlet weak var subSectionNameButton: UIButton!
+    @IBOutlet weak var subSectionNameButton: UIButtonWithLink!
     
     var embeddedSectionLink : Int? = nil
     
@@ -20,5 +20,7 @@ class subSectionNameContainerCell: UICollectionViewCell {
     
     func setEmbeddedSectionLinkOfButton(number: Int) {
         embeddedSectionLink = number
+        subSectionNameButton.link = embeddedSectionLink
     }
+    
 }

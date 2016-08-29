@@ -24,13 +24,14 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     @IBOutlet weak var subTitleInUpperRegion: UILabel!
     @IBOutlet weak var noteInUpperRegion: UILabel!
     
-    
     var listOfAvailableSubSectionsAndItsRefs : [(String, Int)] = []
     var listOfThreads : [NSDictionary] = []
     
     // Convert InAppSectionDef (sectionLink) to web end reference number
-    let currentForumID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).0
+    var currentForumID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).0
     var currentSort_ID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).1
+    
+    // Pages to load when retrieving threads
     var currentNumberOfPages : Int = 1
 
     override func viewDidLoad() {
@@ -114,6 +115,9 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     
     // Return to the previous screen
     @IBAction func leftBackButtonPressed(sender: AnyObject) {
+        // Clear the stored navigation bar style
+        storedNavigationBarStyle = nil
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -199,6 +203,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     
     // Function to call when a row of table is select
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Load more threads from server if More button is pressed
         if indexPath.indexAtPosition(1) == listOfThreads.count {
             currentNumberOfPages = currentNumberOfPages + 1
             retrieveThreadsFromServer()
@@ -215,6 +220,23 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         // Initiate transition to the next screen (posts view screen)
         self.performSegueWithIdentifier("fromTopicsViewScreenToPostsViewScreen", sender: self)
     }
+    
+    // Function to call when a view (in the collection view) is selected
+    @IBAction func newCategorySelected(sender: UIButtonWithLink) {
+        // Reset the number of pages
+        currentNumberOfPages = 1
+        
+        // Load the category ID
+        let categoryID = sender.link!
+        
+        // Update currentForumID_Raw and currentSortID_Raw
+        currentForumID_Raw = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: categoryID)!).0
+        currentSort_ID_Raw = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: categoryID)!).1
+        
+        // Reload data
+        retrieveThreadsFromServer()
+    }
+    
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
 

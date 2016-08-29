@@ -125,6 +125,7 @@
 		09BE85421D639301000802B3 /* H5OPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85411D639301000802B3 /* H5OPanelBackground.prototype.jpg */; };
 		09BE85441D639336000802B3 /* DoctorWhoPanelBackground.prototype.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09BE85431D639336000802B3 /* DoctorWhoPanelBackground.prototype.jpg */; };
 		09BE85461D65A7F0000802B3 /* ForumSections+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE85451D65A7F0000802B3 /* ForumSections+Functions.swift */; };
+		09BFE0D21D73564F000A4B19 /* UIButtonWithLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFE0D11D73564F000A4B19 /* UIButtonWithLink.swift */; };
 		09C3FA8E1D25875000B0A23B /* hannibalDiscoverScreenBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8D1D25875000B0A23B /* hannibalDiscoverScreenBackground.jpg */; };
 		09C3FA901D25876700B0A23B /* discoverScreenBackgroundMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */; };
 		09D078A31D68BE58000B5AD2 /* AvengersIcon(Large).png in Resources */ = {isa = PBXBuildFile; fileRef = 09D078A21D68BE58000B5AD2 /* AvengersIcon(Large).png */; };
@@ -302,6 +303,7 @@
 		09BE85411D639301000802B3 /* H5OPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = H5OPanelBackground.prototype.jpg; sourceTree = "<group>"; };
 		09BE85431D639336000802B3 /* DoctorWhoPanelBackground.prototype.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DoctorWhoPanelBackground.prototype.jpg; sourceTree = "<group>"; };
 		09BE85451D65A7F0000802B3 /* ForumSections+Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForumSections+Functions.swift"; sourceTree = "<group>"; };
+		09BFE0D11D73564F000A4B19 /* UIButtonWithLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonWithLink.swift; sourceTree = "<group>"; };
 		09C3FA8D1D25875000B0A23B /* hannibalDiscoverScreenBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hannibalDiscoverScreenBackground.jpg; sourceTree = "<group>"; };
 		09C3FA8F1D25876700B0A23B /* discoverScreenBackgroundMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discoverScreenBackgroundMask.png; sourceTree = "<group>"; };
 		09D078A21D68BE58000B5AD2 /* AvengersIcon(Large).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AvengersIcon(Large).png"; sourceTree = "<group>"; };
@@ -401,7 +403,7 @@
 				0902ACDC1D0D62D700FD6AAD /* LaunchScreen.storyboard */,
 				0902ACD71D0D62D700FD6AAD /* mtSlash_Demo.xcdatamodeld */,
 				0902ACDA1D0D62D700FD6AAD /* Assets.xcassets */,
-				0957DE821D1E83F3004844A8 /* Custom Delegates */,
+				0957DE821D1E83F3004844A8 /* Custom Components */,
 				0902AD1A1D0E557D00FD6AAD /* Custom Segues */,
 				09ED777A1D18591C002C0276 /* Copyright Statement (US-EN) */,
 				0957DE901D2110C9004844A8 /* List of Available Categories (For References Only) */,
@@ -495,11 +497,12 @@
 			name = "Computation Model";
 			sourceTree = "<group>";
 		};
-		0957DE821D1E83F3004844A8 /* Custom Delegates */ = {
+		0957DE821D1E83F3004844A8 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				09BFE0D11D73564F000A4B19 /* UIButtonWithLink.swift */,
 			);
-			name = "Custom Delegates";
+			name = "Custom Components";
 			sourceTree = "<group>";
 		};
 		0957DE871D2033F1004844A8 /* Data Model */ = {
@@ -916,6 +919,7 @@
 				09336CA81D142C4B007E8C63 /* customSegueFromPasswordInputScreenToUsernameInputScreen.swift in Sources */,
 				090128511D5A79F8007F1032 /* displaySampleSidenoteInSettingsViewCell.swift in Sources */,
 				0901284D1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift in Sources */,
+				09BFE0D21D73564F000A4B19 /* UIButtonWithLink.swift in Sources */,
 				095C16B11D58796F000970A3 /* MTUsers+CoreDataProperties.swift in Sources */,
 				0902ACD31D0D62D700FD6AAD /* CoverPageViewController.swift in Sources */,
 				099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */,
