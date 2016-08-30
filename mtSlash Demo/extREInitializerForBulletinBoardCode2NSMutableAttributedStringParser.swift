@@ -17,7 +17,7 @@ extension BulletinBoardCode2NSMutableAttributedStringParser {
             regularExpressionForBoldText = try NSRegularExpression(pattern: "\\[b\\].*?\\[/b\\]", options: NSRegularExpressionOptions())
             regularExpressionForItalicText = try NSRegularExpression(pattern: "\\[i\\].*?\\[/i\\]", options: NSRegularExpressionOptions())
             regularExpressionForUnderlinedText = try NSRegularExpression(pattern: "\\[u\\].*?\\[/u\\]", options: NSRegularExpressionOptions())
-            regularExpressionForFontalText = try NSRegularExpression(pattern: "\\[font.+?\\].*?\\[/font\\]", options: NSRegularExpressionOptions())
+            regularExpressionForFontalText = try NSRegularExpression(pattern: "\\(?s)[font.+?\\].*?\\[/font\\]", options: NSRegularExpressionOptions())
             regularExpressionForHeadOfTagOfFontalText = try NSRegularExpression(pattern: "\\[font.+?\\]", options: NSRegularExpressionOptions())
             regularExpressionForTailOfTagOfFontalText = try NSRegularExpression(pattern: "\\[/font\\]", options: NSRegularExpressionOptions())
             regularExpressionForEmbeddedTable = try NSRegularExpression(pattern: "\\[table\\].*?\\[/table\\]", options: NSRegularExpressionOptions())

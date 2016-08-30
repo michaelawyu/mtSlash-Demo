@@ -79,7 +79,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         let sessionForRetrievingThreads = NSURLSession.sharedSession()
         let requestForRetrievingThreads = NSMutableURLRequest(URL: serverEndURLForRetrievingThreads)
         requestForRetrievingThreads.HTTPMethod = "POST"
-        requestForRetrievingThreads.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        requestForRetrievingThreads.cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
         let HTTPBodyContentForRequest = "fid=\(currentForumID_Raw)&sort_id=\(currentSort_ID_Raw)&limit_multiplier=\(currentNumberOfPages)"
         requestForRetrievingThreads.HTTPBody = HTTPBodyContentForRequest.dataUsingEncoding(NSUTF8StringEncoding)
         let taskForRetrievingThreads = sessionForRetrievingThreads.dataTaskWithRequest(requestForRetrievingThreads) { (data, response, error) in

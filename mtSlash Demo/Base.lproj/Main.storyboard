@@ -1626,15 +1626,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-4c-X9F">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-4c-X9F">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SampleCell" id="DV0-24-dEv" customClass="postContainerCell" customModule="mtSlash_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="standardPostContainerCell" id="DV0-24-dEv" customClass="postContainerCell" customModule="mtSlash_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DV0-24-dEv" id="fmZ-Fs-7pF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleAvatarProfileImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XT7-aW-XAE">
@@ -1690,7 +1692,6 @@
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svD-if-vPQ">
                                                     <rect key="frame" x="13" y="155" width="349" height="244.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
                                                             <string key="content">“可我不想结婚，”Sherlock抱怨着，把自己丢进他的有着华丽雕刻的王座椅子，力度之大都让椅子腿离开了地面。沉重的桃花心木前椅子腿重重地落地，发出尖锐，强烈的爆裂声，似乎是响应着主人的宣言。
@@ -1780,6 +1781,58 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                             <outlet property="viewContentFromThisAuthorOnlyButton" destination="m7D-DN-IDR" id="Lxd-ya-EOb"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noContentSignifierCell" rowHeight="66" id="qP5-3r-ZbP">
+                                        <rect key="frame" x="0.0" y="492" width="375" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qP5-3r-ZbP" id="eVW-P7-hgl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在加载帖子列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSy-dq-Ve2">
+                                                    <rect key="frame" x="119.5" y="22" width="136" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="139" id="nbO-Z8-xVG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="nbO-Z8-xVG"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OSy-dq-Ve2" secondAttribute="bottom" constant="14.5" id="IWS-Z1-p2i"/>
+                                                <constraint firstItem="OSy-dq-Ve2" firstAttribute="top" secondItem="eVW-P7-hgl" secondAttribute="topMargin" constant="14" id="cBY-Rz-GmD"/>
+                                                <constraint firstItem="OSy-dq-Ve2" firstAttribute="centerX" secondItem="eVW-P7-hgl" secondAttribute="centerX" id="gBc-xN-pib"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="loadMorePostsSignifierCell" rowHeight="66" id="mpm-oh-GAK">
+                                        <rect key="frame" x="0.0" y="558" width="375" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mpm-oh-GAK" id="0V1-hw-xv9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载更多帖子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2J-Up-UfO">
+                                                    <rect key="frame" x="136.5" y="22" width="102" height="21"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="q2J-Up-UfO" secondAttribute="bottom" constant="14.5" id="1jC-Zb-IVc"/>
+                                                <constraint firstItem="q2J-Up-UfO" firstAttribute="top" secondItem="0V1-hw-xv9" secondAttribute="topMargin" constant="14" id="ElB-Tx-M4Y"/>
+                                                <constraint firstItem="q2J-Up-UfO" firstAttribute="centerX" secondItem="0V1-hw-xv9" secondAttribute="centerX" id="cvz-Ea-vJe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="PwF-f4-Iae" id="Svd-e6-ST6"/>
@@ -1787,7 +1840,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="dqz-wI-Dck">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g4V-Nq-IRt">

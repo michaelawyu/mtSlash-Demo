@@ -66,8 +66,8 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
     // List of Available Alignments
     let supportedAlignments = Alignments()
     
-    init(bulletinBoardCode: String) {
-        self.bulletinBoardCode = bulletinBoardCode
+    init() {
+        self.bulletinBoardCode = "An empty (attributed) string."
         initializeRE()
         loadSavedStyles()
     }
@@ -82,6 +82,7 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
         
         // Apply Global Styles
         convertedString.addAttributes([NSFontAttributeName : UIFont(name: fontRegularStyle, size: fontSize)!], range: NSMakeRange(0, convertedString.mutableString.length))
+        convertedString.addAttributes([NSForegroundColorAttributeName : UIColor.blackColor()], range: NSMakeRange(0, convertedString.mutableString.length))
         
         // Convert All [b][/b] Tags to Bold Text
         while true {
@@ -163,11 +164,10 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             let matchedTailOfTagOfFontalText = regularExpressionForTailOfTagOfFontalText.firstMatchInString(convertedString.mutableString as String, options: NSMatchingOptions(), range: rangeOfMatchedFontalTextWithTag)
             
             let rangeOfHeadOfTag = matchedHeadOfTagOfFontalText!.range
-            let rangeOfTailOfTagBeforeDeletionOfHeadOfTag = matchedTailOfTagOfFontalText!.range
-            let rangeOfTailOfTag = NSMakeRange(rangeOfTailOfTagBeforeDeletionOfHeadOfTag.location - 19, 7)
+            let rangeOfTailOfTag = matchedTailOfTagOfFontalText!.range
             
-            convertedString.deleteCharactersInRange(rangeOfHeadOfTag)
             convertedString.deleteCharactersInRange(rangeOfTailOfTag)
+            convertedString.deleteCharactersInRange(rangeOfHeadOfTag)
         }
         
         // Remove All [table][/table] Tags : Tag Not Supported

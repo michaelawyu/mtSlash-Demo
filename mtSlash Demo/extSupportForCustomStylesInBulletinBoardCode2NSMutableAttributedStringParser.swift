@@ -12,15 +12,14 @@ import Foundation
 extension BulletinBoardCode2NSMutableAttributedStringParser {
     func loadSavedStyles() {
         // Update Needed: Load Styles From Local Source
-        fontRegularStyle = "PingFangSC"
+        fontRegularStyle = "PingFangSC-Regular"
         fontBoldStyle = Fonts.getBoldVersionOfSupportedFonts(Fonts.convertFontName2SupportedFonts(fontRegularStyle)!)
-        fontSize = 12.0
+        fontSize = 16.0
     }
     
     func refreshStyles() {
         loadSavedStyles()
         convert2NSMutableAttributedString()
     }
-    
     
 }

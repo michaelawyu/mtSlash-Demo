@@ -32,6 +32,8 @@ enum WebLinks {
     case SectionInfo
     // Retrieval of Threads
     case RetrieveThreads
+    // Retrieval of Posts
+    case RetrievePosts
     
     // Function: Return corresponding URL for requested link
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
@@ -56,6 +58,8 @@ enum WebLinks {
                 return NSURL(string: backendServerURL + "retrievethreads")!
         case .UCenterAvatarProfileImage:
                 return NSURL(string: "http://mtslashmobileappdeploymenttestbed.southeastasia.cloudapp.azure.com/bbs/uc_server/avatar.php?")!
+        case .RetrievePosts:
+                return NSURL(string: backendServerURL + "retrieveposts")!
         }
     }
     
@@ -82,6 +86,8 @@ enum WebLinks {
             return "返回主题列表"
         case .UCenterAvatarProfileImage:
             return "UCenter用户头像基本路径"
+        case .RetrievePosts:
+            return "返回帖子列表"
         }
     }
     

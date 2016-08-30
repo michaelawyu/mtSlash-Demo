@@ -18,6 +18,16 @@ class postContainerCell : UITableViewCell {
     @IBOutlet weak var viewContentFromThisAuthorOnlyButton: UIButton!
     @IBOutlet weak var postContentTextView: UITextView!
     
+    var pid : Int? = nil
+    var fid : Int? = nil
+    var tid : Int? = nil
+    var authorName : String? = nil
+    var authorID : Int? = nil
+    var subject : String? = nil
+    var publishDateInSeconds : Int? = nil
+    var publishDate : NSDate = NSDate()
+    var message : String? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,5 +42,60 @@ class postContainerCell : UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    func setAdditionalInfo(pid: Int, fid: Int, tid: Int) {
+        self.pid = pid
+        self.fid = fid
+        self.tid = tid
+    }
+    
+    func setAuthor(authorName: String, authorID: Int) {
+        self.authorName = authorName
+        self.authorID = authorID
+        
+        authorNameLabel.text = authorName
+        
+        setAuthorAvatarProfileImage()
+    }
+    
+    private func setAuthorAvatarProfileImage() {
+        let URLForRetrievingAvatarProfileImageInString = WebLinks.getAddressOfWebLink(WebLinks.UCenterAvatarProfileImage).absoluteString + "uid=\(authorID)&size=small"
+        let URLForRetrievingAvatarProfileImage = NSURL(string: URLForRetrievingAvatarProfileImageInString)!
+        let sessionForRetrievingAvatarProfileImage = NSURLSession.sharedSession()
+        let requestForRetrievingAvatarProfileImage = NSMutableURLRequest(URL: URLForRetrievingAvatarProfileImage)
+        requestForRetrievingAvatarProfileImage.cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
+        let taskForRetrievingAvatarProfileImage = sessionForRetrievingAvatarProfileImage.dataTaskWithURL(URLForRetrievingAvatarProfileImage) { (data, response, error) in
+            if error == nil && data != nil {
+                dispatch_async(dispatch_get_main_queue(), {
+                    let retrievedAvatarProfileImage = UIImage(data: data!)
+                    self.authorAvatarProfileImageView.image = retrievedAvatarProfileImage
+                })
+            }
+        }
+        taskForRetrievingAvatarProfileImage.resume()
+    }
+    
+    func setSubjectAndMessage(subject: String, message: String, parser: BulletinBoardCode2NSMutableAttributedStringParser) {
+        self.subject = subject
+        self.message = message
+        
+        self.postTitleLabel.text = subject
+        self.postContentTextView.attributedText = parser.updateStringToParse(message)
+    }
+    
+    func setDateOfPublishing(timeInSeconds: Int) {
+        publishDateInSeconds = timeInSeconds
+        publishDate = NSDate(timeIntervalSince1970: Double(timeInSeconds))
+        
+        let publishDateFormatter = NSDateFormatter()
+        publishDateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        let publishDateInString = publishDateFormatter.stringFromDate(publishDate)
+        publishDateLabel.text = "发表于\(publishDateInString)"
+    }
+    
+    func disableViewContentFromThisAuthorOnlyButton() {
+        viewContentFromThisAuthorOnlyButton.hidden = true
     }
 }
