@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "Full Screen Icon (Small).png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "Full Screen Icon (Medium).png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "FullScreenIcon (Large).png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

@@ -16,7 +16,7 @@ class NavigationBarStylesInTopicsAndPostsViewScreen {
     }
 
     static func setStyleOfNavigationBarToLightStyle(navigationBar: UINavigationBar) {
-        navigationBar.setBackgroundImage(UIImage.fromColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.4)), forBarMetrics: UIBarMetrics.Default)
+        navigationBar.setBackgroundImage(UIImage.fromColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), forBarMetrics: UIBarMetrics.Default)
         navigationBar.tintColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.8)
     }
     

@@ -36,6 +36,8 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
     var regularExpressionForHeadOfTagOfLinkedText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForTailOfTagOfLinkedText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForEmbeddedImage : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForHeadOfTagOfEmbeddedImage : NSRegularExpression = NSRegularExpression()
+    var regularExpressionForTailOfTagOfEmbeddedImage : NSRegularExpression = NSRegularExpression()
     var regularExpressionForSizedText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForHeadOfTagOfSizedText : NSRegularExpression = NSRegularExpression()
     var regularExpressionForTailOfTagOfSizedText : NSRegularExpression = NSRegularExpression()
@@ -325,7 +327,12 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             let rangeOfMatchedEmbeddedImageWithTag = matchedEmbeddedImageWithTag!.range
             
             let extractedString = convertedString.mutableString.substringWithRange(rangeOfMatchedEmbeddedImageWithTag)
-            let URLForEmbeddedImageAsString = extractedString[extractedString.startIndex.advancedBy(5)..<extractedString.endIndex.advancedBy(-6)]
+            
+            let matchedHeadOfTagOfEmbeddedImage = regularExpressionForHeadOfTagOfEmbeddedImage.firstMatchInString(extractedString, options: NSMatchingOptions(), range: NSMakeRange(0, NSMutableString(string: extractedString).length))
+            
+            let lengthOfMatchedHeadOfTagOfEmbeddedImage = matchedHeadOfTagOfEmbeddedImage!.range.length
+            
+            let URLForEmbeddedImageAsString = extractedString[extractedString.startIndex.advancedBy(lengthOfMatchedHeadOfTagOfEmbeddedImage)..<extractedString.endIndex.advancedBy(-6)]
             
             let URLForEmbeddedImage = NSAttributedString(string: "检测到的图像链接", attributes: [NSLinkAttributeName: NSURL(string: URLForEmbeddedImageAsString)!])
             
@@ -407,7 +414,7 @@ class BulletinBoardCode2NSMutableAttributedStringParser {
             var RequestedSize = Int(RequestedSizeInString)
             
             if RequestedSize == nil || RequestedSize < 1 || RequestedSize > 7 {
-                RequestedSize = Int(fontSize)
+                RequestedSize = 3
             }
             
             let updatedSize = CGFloat(Float(fontSize) - Float(3 - RequestedSize!))

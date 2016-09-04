@@ -47,9 +47,6 @@ class HomeScreenViewController: UIViewController {
         let readingListItemsFetchRequest = NSFetchRequest(entityName: "MTReadingList")
         let currentUser = ConvenientMethods.getCurrentUser(uid)
         
-        // Code disabled temporarily
-        //let predicateForFetchingSpecificReadingListWithOnlyVisibleItems = NSPredicate(format: "(belongTo == %@) AND (ifVisible == %@)", argumentArray: [currentUser, true])
-        
         let predicateForFetchingSpecificReadingListWithAllItems = NSPredicate(format: "(belongTo == %@)", argumentArray: [currentUser])
         readingListItemsFetchRequest.predicate = predicateForFetchingSpecificReadingListWithAllItems
         var readingListItems : [MTReadingList]? = nil

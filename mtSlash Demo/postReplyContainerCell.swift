@@ -1,22 +1,19 @@
 //
-//  postContainerCell.swift
+//  postReplyContainerCell.swift
 //  mtSlash Demo
 //
-//  Created by Michael.A.W.Yu on 8/26/16.
+//  Created by Michael.A.W.Yu on 9/1/16.
 //  Copyright © 2016 Michael.A.W.Yu. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class postContainerCell : UITableViewCell {
+class postReplyContainerCell: UITableViewCell {
     
     @IBOutlet weak var authorAvatarProfileImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var publishDateLabel: UILabel!
-    @IBOutlet weak var postTitleLabel: UILabel!
-    @IBOutlet weak var viewContentFromThisAuthorOnlyButton: UIButtonWithLink!
-    @IBOutlet weak var postContentTextView: UITextView!
+    @IBOutlet weak var postReplyContentTextView: UITextView!
     
     var pid : Int? = nil
     var fid : Int? = nil
@@ -38,12 +35,13 @@ class postContainerCell : UITableViewCell {
         authorAvatarProfileImageView.layer.cornerRadius = authorAvatarProfileImageView.frame.height / 2
         authorAvatarProfileImageView.clipsToBounds = true
     }
-    
+
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         // Configure the view for the selected state
     }
-    
+
     func setAdditionalInfo(pid: Int, fid: Int, tid: Int) {
         self.pid = pid
         self.fid = fid
@@ -55,7 +53,6 @@ class postContainerCell : UITableViewCell {
         self.authorID = authorID
         
         authorNameLabel.text = authorName
-        viewContentFromThisAuthorOnlyButton.link = authorID
         
         setAuthorAvatarProfileImage()
     }
@@ -80,9 +77,8 @@ class postContainerCell : UITableViewCell {
     func setSubjectAndMessage(subject: String, message: String, parser: BulletinBoardCode2NSMutableAttributedStringParser) {
         self.subject = subject
         self.message = message
-        
-        self.postTitleLabel.text = subject
-        self.postContentTextView.attributedText = parser.updateStringToParse(message)
+    
+        self.postReplyContentTextView.attributedText = parser.updateStringToParse(message)
     }
     
     func setDateOfPublishing(timeInSeconds: Int) {

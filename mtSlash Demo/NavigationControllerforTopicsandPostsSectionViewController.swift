@@ -9,6 +9,7 @@
 import UIKit
 
 var navigationBarInTopicsAndPostsViewScreens : UINavigationBar? = nil
+var navigationControllerInTopicsAndPostsViewScreens : NavigationControllerforTopicsandPostsSectionViewController? = nil
 
 class NavigationControllerforTopicsandPostsSectionViewController: UINavigationController, UINavigationControllerDelegate {
 
@@ -16,7 +17,9 @@ class NavigationControllerforTopicsandPostsSectionViewController: UINavigationCo
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // Expose navigation bar and navigation controller to other view controllers
         navigationBarInTopicsAndPostsViewScreens = self.navigationBar
+        navigationControllerInTopicsAndPostsViewScreens = self
         
         // Set the delegate to self
         self.delegate = self

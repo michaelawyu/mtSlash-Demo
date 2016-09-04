@@ -11,6 +11,9 @@ import Foundation
 // URL for backend server
 let backendServerURL : String = "http://mtslashmobileappdeploymenttestbed.southeastasia.cloudapp.azure.com:8000/"
 
+// URL for Discuz Forum
+let backendForumURL : String = "http://mtslashmobileappdeploymenttestbed.southeastasia.cloudapp.azure.com/bbs/"
+
 enum WebLinks {
     // UCenter Avatar Profile Image Base URL
     case UCenterAvatarProfileImage
@@ -34,6 +37,8 @@ enum WebLinks {
     case RetrieveThreads
     // Retrieval of Posts
     case RetrievePosts
+    // Sharing Threads
+    case ShareThreads
     
     // Function: Return corresponding URL for requested link
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
@@ -57,9 +62,11 @@ enum WebLinks {
         case .RetrieveThreads:
                 return NSURL(string: backendServerURL + "retrievethreads")!
         case .UCenterAvatarProfileImage:
-                return NSURL(string: "http://mtslashmobileappdeploymenttestbed.southeastasia.cloudapp.azure.com/bbs/uc_server/avatar.php?")!
+                return NSURL(string: backendForumURL + "uc_server/avatar.php?")!
         case .RetrievePosts:
                 return NSURL(string: backendServerURL + "retrieveposts")!
+        case .ShareThreads:
+                return NSURL(string: backendForumURL + "forum.php?mod=viewthread&tid=\(threadID!)")!
         }
     }
     
@@ -88,6 +95,8 @@ enum WebLinks {
             return "UCenter用户头像基本路径"
         case .RetrievePosts:
             return "返回帖子列表"
+        case .ShareThreads:
+            return "分享帖子"
         }
     }
     
