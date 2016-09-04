@@ -84,6 +84,9 @@
 		0971E2431D5385A200CFE64E /* Alignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971E2421D5385A200CFE64E /* Alignments.swift */; };
 		097AB7A81D50F72F008B9A76 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097AB7A71D50F72F008B9A76 /* Colors.swift */; };
 		098F8C9D1D1B0ED7002A6A46 /* Cosmos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */; };
+		0993CFA81D7C5BC1003BDB8E /* MTSearchHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0993CFA61D7C5BC1003BDB8E /* MTSearchHistory+CoreDataProperties.swift */; };
+		0993CFA91D7C5BC1003BDB8E /* MTSearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0993CFA71D7C5BC1003BDB8E /* MTSearchHistory.swift */; };
+		0993CFAB1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0993CFAA1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift */; };
 		099D91251D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */; };
 		099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */; };
 		09A89E7C1D78435800DEF4FC /* postReplyContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A89E7B1D78435800DEF4FC /* postReplyContainerCell.swift */; };
@@ -263,6 +266,9 @@
 		0971E2421D5385A200CFE64E /* Alignments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignments.swift; sourceTree = "<group>"; };
 		097AB7A71D50F72F008B9A76 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		098F8C9C1D1B0ED7002A6A46 /* Cosmos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cosmos.jpg; sourceTree = "<group>"; };
+		0993CFA61D7C5BC1003BDB8E /* MTSearchHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTSearchHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0993CFA71D7C5BC1003BDB8E /* MTSearchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSearchHistory.swift; sourceTree = "<group>"; };
+		0993CFAA1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = standardSearchHistoryEntryContainerCell.swift; sourceTree = "<group>"; };
 		099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewScreenViewController.swift; sourceTree = "<group>"; };
 		099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoPanelContainerCell.swift; sourceTree = "<group>"; };
 		09A89E7B1D78435800DEF4FC /* postReplyContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postReplyContainerCell.swift; sourceTree = "<group>"; };
@@ -481,6 +487,7 @@
 				09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */,
 				09E6A88A1D6F713C00D4A571 /* postContainerCell.swift */,
 				09A89E7B1D78435800DEF4FC /* postReplyContainerCell.swift */,
+				0993CFAA1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift */,
 				0901284A1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift */,
 				0901284C1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift */,
 				0901284E1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift */,
@@ -516,6 +523,8 @@
 				095C16AE1D58796F000970A3 /* MTUsers.swift */,
 				095C16AF1D58796F000970A3 /* MTReadingList+CoreDataProperties.swift */,
 				095C16B01D58796F000970A3 /* MTReadingList.swift */,
+				0993CFA61D7C5BC1003BDB8E /* MTSearchHistory+CoreDataProperties.swift */,
+				0993CFA71D7C5BC1003BDB8E /* MTSearchHistory.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -931,6 +940,7 @@
 				0971A9DF1D12EAAC00FC9868 /* WebLinks.swift in Sources */,
 				0902AD191D0E557800FD6AAD /* customSegueFromCoverPageToUsernameInputScreen.swift in Sources */,
 				09FE23781D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift in Sources */,
+				0993CFA81D7C5BC1003BDB8E /* MTSearchHistory+CoreDataProperties.swift in Sources */,
 				0902AD0A1D0DA75A00FD6AAD /* CoverPage.swift in Sources */,
 				0957DE8F1D2037F4004844A8 /* DefaultDataController.swift in Sources */,
 				0902AD3C1D116A2600FD6AAD /* PasswordInputScreenViewController.swift in Sources */,
@@ -949,6 +959,7 @@
 				096203271D411E1E00E14A74 /* Fonts.swift in Sources */,
 				0902ACD11D0D62D700FD6AAD /* AppDelegate.swift in Sources */,
 				096203221D410EFF00E14A74 /* extREInitializerForBulletinBoardCode2NSMutableAttributedStringParser.swift in Sources */,
+				0993CFAB1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift in Sources */,
 				09ED77751D1836A7002C0276 /* CentralControlTabBarController.swift in Sources */,
 				09A89E7C1D78435800DEF4FC /* postReplyContainerCell.swift in Sources */,
 				0957DE8D1D20363A004844A8 /* homePageShowcase.swift in Sources */,
@@ -966,6 +977,7 @@
 				0971A9E11D12EC7000FC9868 /* WebDocumentScreenViewController.swift in Sources */,
 				0902AD381D11661B00FD6AAD /* customSegueFromUsernameInputScreenToPasswordInputScreen.swift in Sources */,
 				09ED77471D15BACF002C0276 /* AccessGrantedScreenViewController.swift in Sources */,
+				0993CFA91D7C5BC1003BDB8E /* MTSearchHistory.swift in Sources */,
 				09ED77651D171F01002C0276 /* customSegueFromPasswordInputScreenToAccessGrantedScreen.swift in Sources */,
 				09FE23801D4B3BE7000002CD /* topicTitleContainerCell.swift in Sources */,
 				0902AD1E1D0E9E9300FD6AAD /* UsernameInputPage.swift in Sources */,

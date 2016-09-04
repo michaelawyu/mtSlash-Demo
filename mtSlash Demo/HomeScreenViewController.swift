@@ -32,7 +32,6 @@ class HomeScreenViewController: UIViewController {
         
         let showcaseWidthAfterInitialization = self.view.frame.width + 5.0
         
-        
         // Get the reading list contents from data model (as described in Data Model group).
         // Wait until the framework is initialized.
         while dataReadyFlag != true {
@@ -43,7 +42,7 @@ class HomeScreenViewController: UIViewController {
         let dataController : DefaultDataController = ConvenientMethods.getDataControllerInAppDelegate()
         let managedObjectContextInUse = dataController.managedObjectContext
         
-        // Set up fetch requests for future use
+        // Set up fetch request
         let readingListItemsFetchRequest = NSFetchRequest(entityName: "MTReadingList")
         let currentUser = ConvenientMethods.getCurrentUser(uid)
         
@@ -51,7 +50,7 @@ class HomeScreenViewController: UIViewController {
         readingListItemsFetchRequest.predicate = predicateForFetchingSpecificReadingListWithAllItems
         var readingListItems : [MTReadingList]? = nil
         
-        // Fetch user-specific reading list from the data famework
+        // Fetch user-specific reading list from the data framework
         do {
             readingListItems = try managedObjectContextInUse.executeFetchRequest(readingListItemsFetchRequest) as? [MTReadingList]
         } catch {
@@ -71,9 +70,11 @@ class HomeScreenViewController: UIViewController {
             }
         }
         
-        // Reveal fetched reading list items
-        fetchedReadingListItems = readingListItems!
-        
+        // Sort the reading list by time added and then expose it
+        let timeAddedSortDescriptor : NSSortDescriptor = NSSortDescriptor(key: "timeAdded", ascending: false)
+        let sortedReadingListItems = NSArray(array: readingListItems!).sortedArrayUsingDescriptors([timeAddedSortDescriptor])
+        fetchedReadingListItems = sortedReadingListItems as! [MTReadingList]
+
         // Set up the gesture recognizer
         let rightToLeftSwipeGestureRecognizerInShowcaseView = UISwipeGestureRecognizer(target: self, action: #selector(self.rightToLeftSwipedInShowcaseView))
         rightToLeftSwipeGestureRecognizerInShowcaseView.direction = UISwipeGestureRecognizerDirection.Left

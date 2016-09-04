@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 let searchKeyword : String? = nil
 
@@ -16,12 +17,47 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var keywordInputField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
+    var fetchedSearchHistoryItems : [MTSearchHistory] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         // Retrieve search history entries from database
         
+        // Wait until the framework is initialized
+        while dataReadyFlag != true {
+            print("Waiting for the data model to get ready.")
+        }
+        
+        // Set up data controller and moc (managed object context)
+        let dataController : DefaultDataController = ConvenientMethods.getDataControllerInAppDelegate()
+        let managedObjectContextInUse = dataController.managedObjectContext
+        
+        // Set up fetch requests
+        let searchHistoryEntriesFetchRequest = NSFetchRequest(entityName: "MTSearchHistory")
+        let currentUser = ConvenientMethods.getCurrentUser(uid)
+        
+        let predicateForFetchingSpecifiySearchHistory = NSPredicate(format: "(belongTo == %@)", argumentArray: [currentUser])
+        searchHistoryEntriesFetchRequest.predicate = predicateForFetchingSpecifiySearchHistory
+        searchHistoryEntriesFetchRequest.fetchLimit = 5
+        
+        var searchHistoryItems : [MTSearchHistory]? = nil
+        
+        // Fetch user-specific search history from the data framework
+        do {
+            searchHistoryItems = try managedObjectContextInUse.executeFetchRequest(searchHistoryEntriesFetchRequest) as? [MTSearchHistory]
+        } catch {
+            fatalError("An error has occurred: Failed to fetch search history from the database.")
+        }
+        
+        // Sort the search history entries by time added, then expose them
+        let timeAddedSortDescriptor : NSSortDescriptor = NSSortDescriptor(key: "timeAdded", ascending: false)
+        let sortedSearchHistoryEntries = NSArray(array: searchHistoryItems!).sortedArrayUsingDescriptors([timeAddedSortDescriptor])
+        fetchedSearchHistoryItems = sortedSearchHistoryEntries as! [MTSearchHistory]
+        
+        // Reload the table view
+        searchHistoryTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,12 +90,26 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
     
     // Required function for UITableViewDataSource protocol
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return fetchedSearchHistoryItems.count
     }
     
     // Required function for UITableViewDataSource protocol
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // Always return an empty cell if no search history is available
+        if fetchedSearchHistoryItems.count == 0 {
+            return UITableViewCell()
+        }
+        
+        let currentIndex = indexPath.indexAtPosition(1)
+        
+        // Request a standard cell from tableView
         let cell = tableView.dequeueReusableCellWithIdentifier("standardSearchHistoryEntryContainerCell")!
+        
+        // Load the corresponding entry from the list of search history
+        let requestedSearchHistoryEntry = fetchedSearchHistoryItems[currentIndex]
+        
+        // Configure the cell
+        
         // Disable the selection style
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
