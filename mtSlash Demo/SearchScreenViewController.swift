@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-let searchKeyword : String? = nil
+var searchKeyword : String? = nil
 
 class SearchScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -23,8 +23,11 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // Retrieve search history entries from database
-        
+        retrieveSearchHistory()
+    }
+    
+    // Function for retrieving search history entries from database
+    func retrieveSearchHistory() {
         // Wait until the framework is initialized
         while dataReadyFlag != true {
             print("Waiting for the data model to get ready.")
@@ -58,6 +61,7 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
         
         // Reload the table view
         searchHistoryTableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,9 +70,9 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func searchButtonPressed(sender: AnyObject) {
-        let searchKeyword = keywordInputField.text
+        let searchInput = keywordInputField.text
         
-        if searchKeyword == nil || searchKeyword == "" {
+        if searchInput == nil || searchInput == "" {
             let searchKeywordNotAvailable = UIAlertController(title: "无效的搜索关键词", message: "您似乎并没有输入任何搜索关键词。请重新输入后再试。", preferredStyle: UIAlertControllerStyle.Alert)
             let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
                 searchKeywordNotAvailable.dismissViewControllerAnimated(true, completion: nil)
@@ -79,9 +83,39 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
         }
         
         // Add current keyword to search history
+        // Wait until the framework is initialized.
+        while dataReadyFlag != true {
+            print("Waiting for the data model to get ready")
+        }
+        
+        // Set up data controller and moc (managed object context)
+        let dataController = ConvenientMethods.getDataControllerInAppDelegate()
+        let managedObjectContextInUse = dataController.managedObjectContext
+        
+        // Get current user
+        let currentUser = ConvenientMethods.getCurrentUser(uid)
+        
+        // Initialize a new reading list item based on current data model
+        let newSearchHistoryEntry = NSEntityDescription.insertNewObjectForEntityForName("MTSearchHistory", inManagedObjectContext: managedObjectContextInUse) as! MTSearchHistory
+        
+        // Set values of the new entry
+        newSearchHistoryEntry.setValuesOfSearchHistoryEntry(searchInput!, timeAdded: NSDate(), belongTo: currentUser)
+        
+        // Save the changes
+        do {
+            try managedObjectContextInUse.save()
+        } catch {
+            fatalError("An error has occurred: New search history entry cannot be saved.")
+        }
         
         // Clear the text field
         keywordInputField.text = ""
+        
+        // Refresh the search history table view
+        retrieveSearchHistory()
+        
+        // Expose search keyword
+        searchKeyword = searchInput!
         
         // Transition to the search result screen
         self.performSegueWithIdentifier("fromSearchScreenToSearchResultScreen", sender: self)
@@ -103,12 +137,15 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
         let currentIndex = indexPath.indexAtPosition(1)
         
         // Request a standard cell from tableView
-        let cell = tableView.dequeueReusableCellWithIdentifier("standardSearchHistoryEntryContainerCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("standardSearchHistoryEntryContainerCell")! as! standardSearchHistoryEntryContainerCell
         
         // Load the corresponding entry from the list of search history
         let requestedSearchHistoryEntry = fetchedSearchHistoryItems[currentIndex]
+        let keyword = requestedSearchHistoryEntry.keyword!
+        let timeAdded = requestedSearchHistoryEntry.timeAdded!
         
         // Configure the cell
+        cell.setValuesOfCell(keyword, timeAdded: timeAdded)
         
         // Disable the selection style
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -129,7 +166,11 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
     
     // Function to call when a cell is selected
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! standardSearchHistoryEntryContainerCell
+        
+        searchKeyword = selectedCell.keyword
+        
+        performSegueWithIdentifier("fromSearchScreenToSearchResultScreen", sender: self)
     }
     
     /*

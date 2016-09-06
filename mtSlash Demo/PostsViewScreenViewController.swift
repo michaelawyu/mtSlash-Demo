@@ -54,7 +54,7 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
     
     // Function for retrieving posts from the server
     func retrievePostsFromServer() {
-        // Fetch the URL of backend Server from WebLinks class
+        // Read the URL of backend server from WebLinks class
         let serverEndURLForRetrievingPosts = WebLinks.getAddressOfWebLink(WebLinks.RetrievePosts)
         
         // Download the list of threads from the server and read them into listOfThreads variable
@@ -72,7 +72,7 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
                     self.postsTableView.reloadData()
                 })
             } else {
-                // Issuse a warning if an error has occurred
+                // Issue a warning if an error has occurred
                 dispatch_async(dispatch_get_main_queue(), {
                     let retrievalOfPostsFailed = UIAlertController(title: "无法获取帖子列表", message: "似乎发生了一个网络错误。您的数据链接可能已经中断，或服务器暂时无法为您提供服务。请稍后再试。", preferredStyle: UIAlertControllerStyle.Alert)
                     let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in

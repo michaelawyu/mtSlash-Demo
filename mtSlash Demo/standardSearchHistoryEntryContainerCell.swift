@@ -10,6 +10,8 @@ import UIKit
 
 class standardSearchHistoryEntryContainerCell: UITableViewCell {
 
+    @IBOutlet weak var searchHistoryEntryLabel: UILabel!
+    
     var keyword : String? = nil
     var timeAdded : NSDate? = nil
     
@@ -19,6 +21,13 @@ class standardSearchHistoryEntryContainerCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setValuesOfCell(keyword: String, timeAdded: NSDate) {
+        self.keyword = keyword
+        self.timeAdded = timeAdded
+        
+        searchHistoryEntryLabel.text = keyword
     }
 
 }

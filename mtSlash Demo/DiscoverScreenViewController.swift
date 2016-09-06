@@ -175,17 +175,17 @@ class DiscoverScreenViewController: UIViewController {
         
         if numberOfThreadsInSectionsDict[forumID.description] != nil {
             numberOfThreads = numberOfThreadsInSectionsDict[forumID.description] as! Int
-            numberOfThreadsAbridgedInString = self.numberAbridger(numberOfThreads)
+            numberOfThreadsAbridgedInString = ConvenientMethods.numberAbridger(numberOfThreads)
         }
         
         if numberOfPostsInSectionsDict[forumID.description] != nil {
             numberOfPosts = numberOfPostsInSectionsDict[forumID.description] as! Int
-            numberOfPostsAbridgedInString = self.numberAbridger(numberOfPosts)
+            numberOfPostsAbridgedInString = ConvenientMethods.numberAbridger(numberOfPosts)
         }
         
         if numberOfPostsTodayInSectionsDict[forumID.description] != nil {
             numberOfPostsToday = numberOfPostsTodayInSectionsDict[forumID.description] as! Int
-            numberOfPostsTodayAbridgedInString = "今日新增\(self.numberAbridger(numberOfPostsToday))"
+            numberOfPostsTodayAbridgedInString = "今日新增\(ConvenientMethods.numberAbridger(numberOfPostsToday))"
         }
         
         noOfPosts.text = numberOfThreadsAbridgedInString
@@ -235,24 +235,6 @@ class DiscoverScreenViewController: UIViewController {
         
     }
     
-    func numberAbridger(number : Int) -> String {
-        if number >= 10000 {
-            let numberAbridged = number / 10000
-            return "\(numberAbridged)万+"
-        }
-        
-        if number >= 1000 && number < 10000 {
-            let numberAbridged = number / 1000
-            return "\(numberAbridged)千+"
-        }
-        
-        if number >= 100 && number < 1000 {
-            let numberAbridged = number / 100
-            return "\(numberAbridged)百+"
-        }
-        
-        return number.description
-    }
     
     @IBAction func enterCurrentSection(sender: AnyObject) {
         sectionLink = numberOfCurrentForumEntry

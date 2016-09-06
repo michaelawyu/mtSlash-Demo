@@ -39,6 +39,8 @@ enum WebLinks {
     case RetrievePosts
     // Sharing Threads
     case ShareThreads
+    // Basic Search
+    case BasicSearch
     
     // Function: Return corresponding URL for requested link
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
@@ -67,6 +69,8 @@ enum WebLinks {
                 return NSURL(string: backendServerURL + "retrieveposts")!
         case .ShareThreads:
                 return NSURL(string: backendForumURL + "forum.php?mod=viewthread&tid=\(threadID!)")!
+        case .BasicSearch:
+                return NSURL(string: backendServerURL + "basicsearch")!
         }
     }
     
@@ -97,6 +101,8 @@ enum WebLinks {
             return "返回帖子列表"
         case .ShareThreads:
             return "分享帖子"
+        case .BasicSearch:
+            return "基本搜索功能"
         }
     }
     

@@ -40,4 +40,23 @@ class ConvenientMethods {
         return currentUser!.last!
     }
     
+    static func numberAbridger(number : Int) -> String {
+        if number >= 10000 {
+            let numberAbridged = number / 10000
+            return "\(numberAbridged)万+"
+        }
+        
+        if number >= 1000 && number < 10000 {
+            let numberAbridged = number / 1000
+            return "\(numberAbridged)千+"
+        }
+        
+        if number >= 100 && number < 1000 {
+            let numberAbridged = number / 100
+            return "\(numberAbridged)百+"
+        }
+        
+        return number.description
+    }
+    
 }

@@ -482,11 +482,12 @@
 		0923F2C31D2F565E000A8D14 /* Custom Views (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */,
 				09FE237B1D44BD7B000002CD /* subSectionNameContainerCell.swift */,
 				09FE237F1D4B3BE7000002CD /* topicTitleContainerCell.swift */,
 				09E6A88A1D6F713C00D4A571 /* postContainerCell.swift */,
 				09A89E7B1D78435800DEF4FC /* postReplyContainerCell.swift */,
+				099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */,
+				0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */,
 				0993CFAA1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift */,
 				0901284A1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift */,
 				0901284C1D5A7993007F1032 /* standardSettingsWithoutAccessoryViewCell.swift */,
@@ -580,7 +581,6 @@
 			children = (
 				0957DE8C1D20363A004844A8 /* homePageShowcase.swift */,
 				0957DE831D1E841F004844A8 /* homePageShowcasePanel.swift */,
-				0923F2C11D2F5592000A8D14 /* searchResultContainerCell.swift */,
 			);
 			name = "Custom Views (Core)";
 			sourceTree = "<group>";

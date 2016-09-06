@@ -31,6 +31,7 @@ class Initialization {
     
         devProjectSummaryAsAReadingListItem.setValuesOfReadingListItem("欢迎加入开发者计划", timeAdded: NSDate(), link: "", ifVisible: false, category: 1, abstract: "对于如何开发此应用程序、改进其内部设计或是将此程序迁移至其它平台感兴趣？此文档内包含了一切与开发者计划相关的信息。", belongTo: user)
         
+        // Save the changes
         do {
             try managedObjectContextInUse.save()
         } catch {

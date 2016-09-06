@@ -2213,6 +2213,9 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="searchHistoryEntryLabel" destination="79F-BQ-vJK" id="icJ-ve-nAs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -2333,6 +2336,9 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                             <state key="normal" title="调整关键词">
                                                                 <color key="titleColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="redoSearchButtonPressed:" destination="Ucx-L9-zNd" eventType="touchUpInside" id="lXB-w2-duJ"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.87450980389999999" green="0.043137254899999998" blue="0.066666666669999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
@@ -2608,6 +2614,9 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="searchResultTableView" destination="EOk-WA-UyW" id="BNm-fP-Ths"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf6-BQ-XlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

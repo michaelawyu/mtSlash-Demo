@@ -23,5 +23,9 @@ class infoPanelContainerCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func updateSearchSummaryLabel(newText: String) {
+        searchSummaryLabel.text = newText
+    }
 
 }
