@@ -33,7 +33,7 @@ class HomeScreenViewController: UIViewController {
         let showcaseWidthAfterInitialization = self.view.frame.width + 5.0
         
         // Get the reading list contents from data model (as described in Data Model group).
-        // Wait until the framework is initialized.
+        // Wait until the framework is ready
         while dataReadyFlag != true {
             print("Waiting for the data model to get ready.")
         }
@@ -50,7 +50,7 @@ class HomeScreenViewController: UIViewController {
         readingListItemsFetchRequest.predicate = predicateForFetchingSpecificReadingListWithAllItems
         var readingListItems : [MTReadingList]? = nil
         
-        // Fetch user-specific reading list from the data framework
+        // Fetch user-specific reading list from data framework
         do {
             readingListItems = try managedObjectContextInUse.executeFetchRequest(readingListItemsFetchRequest) as? [MTReadingList]
         } catch {

@@ -105,14 +105,15 @@ class PasswordInputScreenViewController: UIViewController {
                 let ifPassedAuthentication = serverResponse["result"]!
                 let receivedUserInfo = serverResponse["user_info"]! as! NSDictionary
                 
-                // Load transferred user info to memory
-                self.receivedUsername = receivedUserInfo["username"] as! String
-                self.receivedPassword = password
-                uid = receivedUserInfo["uid"] as! Int
-                self.groupid = receivedUserInfo["groupid"] as! Int
-                self.email = receivedUserInfo["email"] as! String
-                
                 if ifPassedAuthentication as! Int == 1 {
+                    // Load transferred user info to memory
+                    self.receivedUsername = receivedUserInfo["username"] as! String
+                    self.receivedPassword = password
+                    uid = receivedUserInfo["uid"] as! Int
+                    self.groupid = receivedUserInfo["groupid"] as! Int
+                    self.email = receivedUserInfo["email"] as! String
+                    
+                    // Transition to the next screen (home screen)
                     self.performSegueWithIdentifier("fromPasswordInputScreenToAccessGrantedScreen", sender: self)
                 }
 
@@ -136,6 +137,8 @@ class PasswordInputScreenViewController: UIViewController {
                         self.optionsTitle.alpha = 1
                     })
                 }
+                
+                
             }
         }
         taskForUserAuthentication.resume()

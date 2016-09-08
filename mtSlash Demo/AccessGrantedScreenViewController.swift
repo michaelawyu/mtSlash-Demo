@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AccessGrantedScreenViewController: UIViewController {
 
@@ -14,6 +15,39 @@ class AccessGrantedScreenViewController: UIViewController {
         super.viewDidLoad()
         (self.view as! AccessGrantedPage).extInit()
         // Do any additional setup after loading the view.
+        
+        // Additional initialization procedure
+        extInit()
+    }
+    
+    func extInit() {
+        // Set default values of settings in database
+        // Wait until the framework is ready
+        while dataReadyFlag != true {
+            print("Waiting for the data model to get ready.")
+        }
+        
+        // Set up data controller and moc (managed object context)
+        let dataController = ConvenientMethods.getDataControllerInAppDelegate()
+        let managedObjectContextInUse = dataController.managedObjectContext
+        
+        // Initialize default setting based on current data model
+        let defaultSetting = NSEntityDescription.insertNewObjectForEntityForName("MTSettings", inManagedObjectContext: managedObjectContextInUse) as! MTSettings
+        
+        // Get current user
+        let currentUser = ConvenientMethods.getCurrentUser(uid)
+        
+        // Update settings
+        defaultSetting.definedFont = "PingFangSC-Regular"
+        defaultSetting.definedFontSize = 16.0
+        defaultSetting.belongTo = currentUser
+        
+        // Save the setting to data framework
+        do {
+            try managedObjectContextInUse.save()
+        } catch {
+            fatalError("An error has occurred: Failed to save updated setting to the database.")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,4 +77,5 @@ class AccessGrantedScreenViewController: UIViewController {
     @IBAction func proceedButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("fromAccessGrantedScreenToCentralControlScreen", sender: self)
     }
+    
 }

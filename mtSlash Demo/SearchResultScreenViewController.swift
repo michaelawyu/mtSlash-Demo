@@ -36,7 +36,6 @@ class SearchResultScreenViewController: UIViewController, UITableViewDataSource,
         requestForRetrievingSearchResult.HTTPMethod = "POST"
         requestForRetrievingSearchResult.cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
         let HTTPBodyContentForRequest = "keyword=\(searchKeyword!)&page=\(currentPageOfSearchResult)&search_id=\(searchID)"
-        print(HTTPBodyContentForRequest)
         requestForRetrievingSearchResult.HTTPBody = HTTPBodyContentForRequest.dataUsingEncoding(NSUTF8StringEncoding)
         let taskForRetrievingSearchResult = sessionForRetrievingSearchResult.dataTaskWithRequest(requestForRetrievingSearchResult) { (data, response, error) in
             if error == nil && data != nil {
@@ -69,12 +68,20 @@ class SearchResultScreenViewController: UIViewController, UITableViewDataSource,
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedSearchResultEntries.count + 2
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Configure info panel
         let currentIndex = indexPath.indexAtPosition(1)
         
         if currentIndex == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("infoPanelContainerCell", forIndexPath: indexPath) as! infoPanelContainerCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("infoPanelContainerCell") as! infoPanelContainerCell
             
             // Update the search summary label in info panel container cell when results are not yet fetched
             if fetchedSearchResultEntries == [] {
@@ -83,6 +90,12 @@ class SearchResultScreenViewController: UIViewController, UITableViewDataSource,
             // Update the search summary label in info panel container cell when results have been retrieved
                 cell.updateSearchSummaryLabel("搜索关键词\(searchKeyword!)共返回\(numberOfSearchResults)项结果。浏览下方的条目并找到符合您要求的主题，或更改搜索关键词以进一步缩小结果。")
             }
+            return cell
+        }
+        
+        // Configure loadMoreSearchResultSignifierCell
+        if currentIndex == fetchedSearchResultEntries.count + 1 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("loadMoreSearchResultSignifierCell")!
             return cell
         }
         
@@ -96,10 +109,8 @@ class SearchResultScreenViewController: UIViewController, UITableViewDataSource,
         let authorNameOfThread = currentSearchResultEntry["author"] as! String
         let sectionReferenceOfThread = currentSearchResultEntry["section"] as! Int
         
-        print(titleOfThread)
-        
         // Configure standardSearchResultContainerCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("searchResultContainerCell", forIndexPath: indexPath) as! searchResultContainerCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("searchResultContainerCell") as! searchResultContainerCell
         cell.setAdditionalInfo(threadID, sectionRef: sectionReferenceOfThread)
         cell.setTitleAndSummaryOfThread(titleOfThread, summary: summaryOfThread)
         cell.setNoOfRepliesAndViewCount(noOfRepliesOfThread, viewCount: viewCountOfThread)
@@ -107,13 +118,65 @@ class SearchResultScreenViewController: UIViewController, UITableViewDataSource,
         
         return cell
     }
-
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedSearchResultEntries.count + 1
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedIndex = indexPath.indexAtPosition(1)
+        
+        // Reminder: Reconstruct the code in next release
+        // Last cell is selected
+        if selectedIndex == fetchedSearchResultEntries.count + 1 {
+            // Check if the next page is available
+            let numberOfSearchResultEntriesLeft = (currentPageOfSearchResult + 1) * 30 - numberOfSearchResults
+            
+            if numberOfSearchResultEntriesLeft > 30 {
+                // Next page is unavailable
+                let nextPageOfSearchResultUnavailable = UIAlertController(title: "没有更多的可用结果", message: "当前已经显示了所有可用的搜索结果。请尝试更改搜索关键词或放宽搜索限制来找到更多的可用信息。", preferredStyle: UIAlertControllerStyle.Alert)
+                let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
+                    nextPageOfSearchResultUnavailable.dismissViewControllerAnimated(true, completion: nil)
+                    return
+                })
+                nextPageOfSearchResultUnavailable.addAction(OKAction)
+                self.presentViewController(nextPageOfSearchResultUnavailable, animated: true, completion: nil)
+            }
+            
+            // Next page is available
+            currentPageOfSearchResult = currentPageOfSearchResult + 1
+            
+            // Read the URL of backend server
+            let serverEndURLForRetrievingSearchResult = WebLinks.getAddressOfWebLink(WebLinks.BasicSearch)
+            
+            // Set a temporary container for newly retrieved search result entries
+            var fetchedNewSearchResultEntries : [NSDictionary] = []
+            
+            // Download the list of search result from server and read them into fetchedSearchResultEntries variable
+            let sessionForRetrievingSearchResult = NSURLSession.sharedSession()
+            let requestForRetrievingSearchResult = NSMutableURLRequest(URL: serverEndURLForRetrievingSearchResult)
+            requestForRetrievingSearchResult.HTTPMethod = "POST"
+            requestForRetrievingSearchResult.cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
+            let HTTPBodyContentForRequest = "keyword=\(searchKeyword!)&page=\(currentPageOfSearchResult)&search_id=\(searchID)"
+            requestForRetrievingSearchResult.HTTPBody = HTTPBodyContentForRequest.dataUsingEncoding(NSUTF8StringEncoding)
+            let taskForRetrievingSearchResult = sessionForRetrievingSearchResult.dataTaskWithRequest(requestForRetrievingSearchResult) { (data, response, error) in
+                if error == nil && data != nil {
+                    let retrievedSearchResult = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    fetchedNewSearchResultEntries = retrievedSearchResult["results"] as! [NSDictionary]
+                    self.fetchedSearchResultEntries = self.fetchedSearchResultEntries + fetchedNewSearchResultEntries
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.searchResultTableView.reloadData()
+                    })
+                } else {
+                    // Issue a warning if an error has occurred
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let retrievalOfSearchResultFailed = UIAlertController(title: "无法取得更多搜索结果", message: "似乎发生了一个网络错误。您的数据链接可能已经中断，或服务器暂时无法为您提供服务。请稍后再试", preferredStyle: UIAlertControllerStyle.Alert)
+                        let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
+                            retrievalOfSearchResultFailed.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                        retrievalOfSearchResultFailed.addAction(OKAction)
+                        self.presentViewController(retrievalOfSearchResultFailed, animated: true, completion: nil)
+                    })
+                }
+            }
+            taskForRetrievingSearchResult.resume()
+        }
     }
     
     @IBAction func redoSearchButtonPressed(sender: AnyObject) {

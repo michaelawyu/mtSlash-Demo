@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G1004" minimumToolsVersion="Automatic">
     <entity name="MTReadingList" representedClassName=".MTReadingList" syncable="YES">
         <attribute name="abstract" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="Integer 32" minValueString="1" maxValueString="77" defaultValueString="1" syncable="YES"/>
@@ -14,6 +14,11 @@
         <attribute name="timeAdded" attributeType="Date" syncable="YES"/>
         <relationship name="belongTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MTUsers" inverseName="haveASearchHistoryOf" inverseEntity="MTUsers" syncable="YES"/>
     </entity>
+    <entity name="MTSettings" representedClassName=".MTSettings" syncable="YES">
+        <attribute name="definedFont" attributeType="String" defaultValueString="PingFangSC-Regular" syncable="YES"/>
+        <attribute name="definedFontSize" attributeType="Float" defaultValueString="16" syncable="YES"/>
+        <relationship name="belongTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MTUsers" inverseName="haveASettingOf" inverseEntity="MTUsers" syncable="YES"/>
+    </entity>
     <entity name="MTUsers" representedClassName=".MTUsers" syncable="YES">
         <attribute name="email" attributeType="String" syncable="YES"/>
         <attribute name="groupid" attributeType="Integer 32" syncable="YES"/>
@@ -23,10 +28,12 @@
         <attribute name="username" attributeType="String" syncable="YES"/>
         <relationship name="haveAReadingListOf" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MTReadingList" inverseName="belongTo" inverseEntity="MTReadingList" syncable="YES"/>
         <relationship name="haveASearchHistoryOf" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MTSearchHistory" inverseName="belongTo" inverseEntity="MTSearchHistory" syncable="YES"/>
+        <relationship name="haveASettingOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MTSettings" inverseName="belongTo" inverseEntity="MTSettings" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MTReadingList" positionX="-63" positionY="-18" width="128" height="30"/>
-        <element name="MTUsers" positionX="-63" positionY="36" width="128" height="165"/>
+        <element name="MTReadingList" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="MTSearchHistory" positionX="-54" positionY="72" width="128" height="90"/>
+        <element name="MTUsers" positionX="-63" positionY="36" width="128" height="180"/>
+        <element name="MTSettings" positionX="-54" positionY="81" width="128" height="90"/>
     </elements>
 </model>
