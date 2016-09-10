@@ -30,7 +30,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
     
     // Convert InAppSectionDef (sectionLink) to web end reference number
     var currentForumID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).0
-    var currentSort_ID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).1
+    var currentType_ID_Raw : Int = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: sectionLink!)!).1
     
     // Pages to load when retrieving threads
     var currentNumberOfPages : Int = 1
@@ -81,7 +81,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         let requestForRetrievingThreads = NSMutableURLRequest(URL: serverEndURLForRetrievingThreads)
         requestForRetrievingThreads.HTTPMethod = "POST"
         requestForRetrievingThreads.cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
-        let HTTPBodyContentForRequest = "fid=\(currentForumID_Raw)&sort_id=\(currentSort_ID_Raw)&limit_multiplier=\(currentNumberOfPages)"
+        let HTTPBodyContentForRequest = "fid=\(currentForumID_Raw)&type_id=\(currentType_ID_Raw)&limit_multiplier=\(currentNumberOfPages)"
         requestForRetrievingThreads.HTTPBody = HTTPBodyContentForRequest.dataUsingEncoding(NSUTF8StringEncoding)
         let taskForRetrievingThreads = sessionForRetrievingThreads.dataTaskWithRequest(requestForRetrievingThreads) { (data, response, error) in
             if error == nil && data != nil {
@@ -255,13 +255,15 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         // Reset the number of pages
         currentNumberOfPages = 1
         
+        // Reset the list of threads
+        listOfThreads = []
+        
         // Load the category ID
         let categoryID = sender.link!
         
         // Update currentForumID_Raw and currentSortID_Raw
         currentForumID_Raw = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: categoryID)!).0
-        currentSort_ID_Raw = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: categoryID)!).1
-        
+        currentType_ID_Raw = ForumSections.convertInAppSectionDef2WebEndSectionNumber(ForumSections.Sections(rawValue: categoryID)!).1
         // Reload data
         retrieveThreadsFromServer()
     }

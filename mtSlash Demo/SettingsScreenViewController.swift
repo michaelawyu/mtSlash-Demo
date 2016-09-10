@@ -389,4 +389,16 @@ class SettingsScreenViewController: UIViewController, UITableViewDataSource, UIT
         successfullyLoggedOut.addAction(OKAction)
         self.presentViewController(successfullyLoggedOut, animated: true, completion: nil)
     }
+    
+    @IBAction func showListOfSupportedFontsButtonPressed(sender: AnyObject) {
+        ActivatedWebLink = WebLinks.ListOfSupportedFonts
+        self.performSegueWithIdentifier("fromSettingsScreenToWebDocumentViewScreen", sender: self)
+    }
+    
+    @IBAction func showInstructionsForAddingMoreFontsButtonPressed(sender: AnyObject) {
+        ActivatedWebLink = WebLinks.InstructionForAddingFonts
+        self.performSegueWithIdentifier("fromSettingsScreenToWebDocumentViewScreen", sender: self)
+    }
+    
+    
 }

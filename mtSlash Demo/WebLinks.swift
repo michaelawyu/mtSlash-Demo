@@ -41,6 +41,10 @@ enum WebLinks {
     case ShareThreads
     // Basic Search
     case BasicSearch
+    // List of Supported Fons
+    case ListOfSupportedFonts
+    // Instruction For Adding More Fonts
+    case InstructionForAddingFonts
     
     // Function: Return corresponding URL for requested link
     static func getAddressOfWebLink (weblink: WebLinks) -> NSURL {
@@ -71,6 +75,10 @@ enum WebLinks {
                 return NSURL(string: backendForumURL + "forum.php?mod=viewthread&tid=\(threadID!)")!
         case .BasicSearch:
                 return NSURL(string: backendServerURL + "basicsearch")!
+        case .ListOfSupportedFonts:
+                return NSURL(string: backendServerURL + "listofsupportedfonts")!
+        case .InstructionForAddingFonts:
+                return NSURL(string: backendServerURL + "addmorefonts")!
         }
     }
     
@@ -103,6 +111,10 @@ enum WebLinks {
             return "分享帖子"
         case .BasicSearch:
             return "基本搜索功能"
+        case .ListOfSupportedFonts:
+            return "支持的字体列表"
+        case .InstructionForAddingFonts:
+            return "字体添加指南"
         }
     }
     

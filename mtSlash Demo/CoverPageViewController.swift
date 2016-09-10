@@ -89,8 +89,18 @@ class CoverPageViewController: UIViewController {
                 (self.view as! CoverPage).viewWithTag(10)?.alpha = 0.0
             
                 }) { (ifCompleted) in
-                    // Perform the Segue
-                    self.performSegueWithIdentifier("fromCoverPageToUsernameInputScreen", sender: self)
+                    
+                    let testBuildWarning = UIAlertController(title: "您当前使用的是测试版本", message: "在您开始之前，请注意您即将测试的版本并非最终产品。部分功能及帮助文档可能不可用。请参阅发送至您手中的测试指南了解更多有关此测试版本的信息。", preferredStyle: UIAlertControllerStyle.Alert)
+                    let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
+                        dispatch_async(dispatch_get_main_queue(), {
+                            testBuildWarning.dismissViewControllerAnimated(true, completion: nil)
+                            // Perform the Segue
+                            self.performSegueWithIdentifier("fromCoverPageToUsernameInputScreen", sender: self)
+                        })
+                    })
+                    testBuildWarning.addAction(OKAction)
+                    self.presentViewController(testBuildWarning, animated: true, completion: nil)
+                    
             }
         }
     }

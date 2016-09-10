@@ -174,7 +174,17 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
         
         searchKeyword = selectedCell.keyword
         
-        performSegueWithIdentifier("fromSearchScreenToSearchResultScreen", sender: self)
+        let testBuildWarningForSearchScreen = UIAlertController(title: "搜索功能当前仅部分可用", message: "在此测试版本中，尽管应用程序的其他部分并未与正式版本使用的服务器相连，由于实现机制的不同，搜索功能当前已经可以正确显示由正式版本使用的服务器返回的搜索结果。尽管如此，限于测试版本的限制，返回的结果并不能在应用程序中全文阅读。请特别注意。", preferredStyle: UIAlertControllerStyle.Alert)
+        let OKAction = UIAlertAction(title: "确认", style: .Default) { (action) in
+            dispatch_async(dispatch_get_main_queue(), {
+                testBuildWarningForSearchScreen.dismissViewControllerAnimated(true, completion: nil)
+                // Transition to search result view screen
+                self.performSegueWithIdentifier("fromSearchScreenToSearchResultScreen", sender: self)
+            })
+        }
+        testBuildWarningForSearchScreen.addAction(OKAction)
+        self.presentViewController(testBuildWarningForSearchScreen, animated: true, completion: nil)
+       
     }
     
     /*

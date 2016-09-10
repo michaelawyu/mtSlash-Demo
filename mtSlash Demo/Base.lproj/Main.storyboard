@@ -1640,7 +1640,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-4c-X9F">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
+                                <rect key="frame" x="-4" y="0.0" width="383" height="621"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2107,7 +2107,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cfL-4c-X9F" secondAttribute="trailing" constant="-20" id="1TD-vs-gaQ"/>
                             <constraint firstItem="GoD-Ho-2Vi" firstAttribute="top" secondItem="N0w-Ts-6yP" secondAttribute="topMargin" id="2yT-4C-3FH"/>
-                            <constraint firstItem="PDb-UH-9hs" firstAttribute="top" secondItem="cfL-4c-X9F" secondAttribute="bottom" id="4yc-s5-GXE"/>
+                            <constraint firstItem="PDb-UH-9hs" firstAttribute="top" secondItem="cfL-4c-X9F" secondAttribute="bottom" constant="46" id="4yc-s5-GXE"/>
                             <constraint firstItem="GoD-Ho-2Vi" firstAttribute="leading" secondItem="N0w-Ts-6yP" secondAttribute="leadingMargin" constant="-20" id="6Em-Yh-mkb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GoD-Ho-2Vi" secondAttribute="trailing" constant="-20" id="Eyj-yV-JSy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5dv-ok-5hI" secondAttribute="trailing" constant="-20" id="V4e-yR-c6R"/>
@@ -2868,6 +2868,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                     <state key="normal" title="推荐的字体列表"/>
                                                     <connections>
                                                         <action selector="noteOfRecommendedFontButtonPressed:" destination="CsJ-Ni-XM2" eventType="touchUpInside" id="Yly-U7-gJC"/>
+                                                        <action selector="showListOfSupportedFontsButtonPressed:" destination="eu3-w1-SyY" eventType="touchUpInside" id="sBQ-pQ-jcM"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjQ-7N-8yR">
@@ -2880,6 +2881,7 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                                                     <connections>
                                                         <action selector="instructionsForAddingMoreFontsButtonPressed:" destination="CsJ-Ni-XM2" eventType="touchUpInside" id="mDP-RV-zdm"/>
                                                         <action selector="noteOfRecommendedFontButtonPressed:" destination="CsJ-Ni-XM2" eventType="touchUpInside" id="WAn-OR-FFn"/>
+                                                        <action selector="showInstructionsForAddingMoreFontsButtonPressed:" destination="eu3-w1-SyY" eventType="touchUpInside" id="gha-se-Imw"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -3055,6 +3057,9 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
                     <connections>
                         <outlet property="settingTableView" destination="BJK-Fb-yEt" id="mIB-SN-EfP"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="fromSettingsScreenToCoverPageScreen" id="y1Q-4m-nUi"/>
+                        <segue destination="xqx-Ju-QUr" kind="popoverPresentation" identifier="fromSettingsScreenToWebDocumentViewScreen" popoverAnchorView="jgm-6S-LKS" id="e2r-da-5je">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NyB-Tw-O0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4167,6 +4172,6 @@ Mycroft叹了口气，安顿在他那装饰稍显简单的靠椅里。他翘起�
     <inferredMetricsTieBreakers>
         <segue reference="kjg-DM-X8N"/>
         <segue reference="9Xb-WA-ah5"/>
-        <segue reference="oFl-IZ-AS2"/>
+        <segue reference="e2r-da-5je"/>
     </inferredMetricsTieBreakers>
 </document>
