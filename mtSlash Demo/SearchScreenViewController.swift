@@ -22,8 +22,12 @@ class SearchScreenViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         retrieveSearchHistory()
+        
+        super.viewWillAppear(animated)
     }
     
     // Function for retrieving search history entries from database

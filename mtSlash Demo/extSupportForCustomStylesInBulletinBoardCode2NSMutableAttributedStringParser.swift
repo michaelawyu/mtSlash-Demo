@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import UIKit
 // Extended BulletinBoardCode2NSMutableAttributedStringParser
 
 extension BulletinBoardCode2NSMutableAttributedStringParser {
     func loadSavedStyles() {
-        // Update Needed: Load Styles From Local Source
-        fontRegularStyle = "PingFangSC-Regular"
-        fontBoldStyle = Fonts.getStringDescriptorOfBoldVersionOfSupportedFonts(Fonts.SupportedFonts(rawValue: fontRegularStyle)!)
-        fontSize = 16.0
+        // Load Styles from Database
+        let currentStyle = ConvenientMethods.getCurrentSettingFromDatabase()
+        
+        fontRegularStyle = currentStyle.1.rawValue
+        fontBoldStyle = Fonts.getStringDescriptorOfBoldVersionOfSupportedFonts(currentStyle.1)
+        fontSize = CGFloat(currentStyle.0.rawValue)
     }
     
     func refreshStyles() {

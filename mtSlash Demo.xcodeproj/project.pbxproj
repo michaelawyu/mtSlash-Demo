@@ -89,6 +89,7 @@
 		0993CFAB1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0993CFAA1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift */; };
 		099C7DE11D81B321001FEA03 /* MTSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7DDF1D81B321001FEA03 /* MTSettings+CoreDataProperties.swift */; };
 		099C7DE21D81B321001FEA03 /* MTSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7DE01D81B321001FEA03 /* MTSettings.swift */; };
+		099C7DE41D830F1D001FEA03 /* StandalonePostViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7DE31D830F1D001FEA03 /* StandalonePostViewScreenViewController.swift */; };
 		099D91251D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */; };
 		099D91271D35358100A7E1C1 /* infoPanelContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */; };
 		09A89E7C1D78435800DEF4FC /* postReplyContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A89E7B1D78435800DEF4FC /* postReplyContainerCell.swift */; };
@@ -273,6 +274,7 @@
 		0993CFAA1D7C7620003BDB8E /* standardSearchHistoryEntryContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = standardSearchHistoryEntryContainerCell.swift; sourceTree = "<group>"; };
 		099C7DDF1D81B321001FEA03 /* MTSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		099C7DE01D81B321001FEA03 /* MTSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSettings.swift; sourceTree = "<group>"; };
+		099C7DE31D830F1D001FEA03 /* StandalonePostViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandalonePostViewScreenViewController.swift; sourceTree = "<group>"; };
 		099D91241D34E0D400A7E1C1 /* TopicsViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewScreenViewController.swift; sourceTree = "<group>"; };
 		099D91261D35358100A7E1C1 /* infoPanelContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoPanelContainerCell.swift; sourceTree = "<group>"; };
 		09A89E7B1D78435800DEF4FC /* postReplyContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postReplyContainerCell.swift; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				09ED776C1D1835F0002C0276 /* SearchScreenViewController.swift */,
 				09ED776E1D1835FD002C0276 /* SettingsScreenViewController.swift */,
 				09FE23771D43AEF3000002CD /* NavigationControllerforTopicsandPostsSectionViewController.swift */,
+				099C7DE31D830F1D001FEA03 /* StandalonePostViewScreenViewController.swift */,
 			);
 			name = "View Controllers (Core)";
 			sourceTree = "<group>";
@@ -953,6 +956,7 @@
 				0901284B1D5A7971007F1032 /* standardSettingsWithAccessoryViewCell.swift in Sources */,
 				0923F2C21D2F5592000A8D14 /* searchResultContainerCell.swift in Sources */,
 				0932011F1D6751620043ED8B /* ForumSections+MoreFunctions.swift in Sources */,
+				099C7DE41D830F1D001FEA03 /* StandalonePostViewScreenViewController.swift in Sources */,
 				0901284F1D5A79DB007F1032 /* fontSidenoteInSettingsViewCell.swift in Sources */,
 				09336CA61D141DB4007E8C63 /* PasswordInputPage.swift in Sources */,
 				09ED77691D1835A5002C0276 /* DiscoverScreenViewController.swift in Sources */,

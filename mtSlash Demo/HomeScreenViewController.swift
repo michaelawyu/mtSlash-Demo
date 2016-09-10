@@ -14,7 +14,6 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var rootView: UIView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var samplePanel: homePageShowcasePanel!
     @IBOutlet weak var showcase: homePageShowcase!
     @IBOutlet weak var monthAndDayLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
@@ -31,8 +30,92 @@ class HomeScreenViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         let showcaseWidthAfterInitialization = self.view.frame.width + 5.0
+
+        // Set up the gesture recognizer
+        let rightToLeftSwipeGestureRecognizerInShowcaseView = UISwipeGestureRecognizer(target: self, action: #selector(self.rightToLeftSwipedInShowcaseView))
+        rightToLeftSwipeGestureRecognizerInShowcaseView.direction = UISwipeGestureRecognizerDirection.Left
+        showcase.addGestureRecognizer(rightToLeftSwipeGestureRecognizerInShowcaseView)
         
-        // Get the reading list contents from data model (as described in Data Model group).
+        let leftToRightSwipeGestureRecognizerInShowcaseView = UISwipeGestureRecognizer(target: self, action: #selector(self.leftToRightSwipedInShowcaseView))
+        leftToRightSwipeGestureRecognizerInShowcaseView.direction = UISwipeGestureRecognizerDirection.Right
+        showcase.addGestureRecognizer(leftToRightSwipeGestureRecognizerInShowcaseView)
+        
+        let tappedGestureRecognizerInCenterShowcasePanelView = UITapGestureRecognizer(target: self, action: #selector(self.tappedInCenterShowcasePanelView(_:)))
+        let tappedGestureRecognizerInLeftShowcasePanelView = UITapGestureRecognizer(target: self, action: #selector(self.tappedInLeftShowcasePanelView(_:)))
+        let tappedGestureRecognizerInRightShowcasePanelView = UITapGestureRecognizer(target: self, action: #selector(self.tappedInRightShowcasePanelView(_:)))
+        
+        // Initialize the panels in homePageShowcase
+        centerPanel = homePageShowcasePanel(frame: CGRect(x: 0.0, y: 0.0, width: showcaseWidthAfterInitialization - 60.0, height: showcase.frame.height))
+        centerPanel.alpha = 1.0
+        centerPanel.addGestureRecognizer(tappedGestureRecognizerInCenterShowcasePanelView)
+        showcase.addSubview(centerPanel)
+        showcase.setConstraintsForCenterPanel(centerPanel)
+        
+        leftPanel = homePageShowcasePanel(frame: CGRect(x: 0.0, y: 0.0, width: showcaseWidthAfterInitialization - 60.0, height: showcase.frame.height))
+        leftPanel.alpha = 0.0
+        leftPanel.addGestureRecognizer(tappedGestureRecognizerInLeftShowcasePanelView)
+        showcase.addSubview(leftPanel)
+        showcase.setConstraintsForLeftPanel(leftPanel, showcaseWidth: showcaseWidthAfterInitialization)
+        
+        rightPanel = homePageShowcasePanel(frame: CGRect(x: 0.0, y: 0.0, width: showcaseWidthAfterInitialization - 60.0, height: showcase.frame.height))
+        if fetchedReadingListItems.count > 1 {
+            rightPanel.alpha = 0.1
+        } else {
+            rightPanel.alpha = 0.0
+        }
+        rightPanel.addGestureRecognizer(tappedGestureRecognizerInRightShowcasePanelView)
+        showcase.addSubview(rightPanel)
+        showcase.setConstraintsForRightPanel(rightPanel, showcaseWidth: showcaseWidthAfterInitialization)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentSize = CGSizeMake(rootView.frame.width, contentView.frame.height)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        retrieveReadingList()
+        
+        // Set the background image, title and last updated time in panels
+        // Embedded the info of specific reading list item in panel
+        // Note: Consider reconstructing the code for better clarity
+        
+        let sectionOfCenteredItem = ForumSections.Sections(rawValue: fetchedReadingListItems[currentReadingListPt].category!.longValue)!
+        let backgroundImageOfCenteredItem = ForumSections.getPanelBackgroundImageOfGivenSection(sectionOfCenteredItem)
+        let titleOfCenteredItem = fetchedReadingListItems[currentReadingListPt].title!
+        let lastUpdatedTimeOfCenteredItem = fetchedReadingListItems[currentReadingListPt].timeAdded!
+        let baseCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+        let numberOfDaysAfterLastUpdatedTimeOfCenteredItemInComponent = baseCalendar.components(NSCalendarUnit.Day, fromDate: lastUpdatedTimeOfCenteredItem, toDate: NSDate(), options: NSCalendarOptions())
+        let numberOfDaysAfterLastUpdatedTimeOfCenteredItem = numberOfDaysAfterLastUpdatedTimeOfCenteredItemInComponent.day
+        let lastUpdatedTimeOfCenteredItemInString = "上次更新于\(numberOfDaysAfterLastUpdatedTimeOfCenteredItem)天前"
+        
+        centerPanel.setUpContentsInPanel(backgroundImageOfCenteredItem, updateLabelContent: lastUpdatedTimeOfCenteredItemInString, itemTitleContent: titleOfCenteredItem)
+        
+        let currentReadingListItemInCenterPanel = fetchedReadingListItems[currentReadingListPt]
+        centerPanel.setInfoEmbeddedInPanel(currentReadingListItemInCenterPanel.title!, timeAdded: currentReadingListItemInCenterPanel.timeAdded!, link: currentReadingListItemInCenterPanel.link!, ifVisible: currentReadingListItemInCenterPanel.ifVisible!.boolValue, category: currentReadingListItemInCenterPanel.category!.longValue, abstract: currentReadingListItemInCenterPanel.abstract!)
+        
+        
+        if fetchedReadingListItems.count > 0 {
+            let sectionOfRightItem = ForumSections.Sections(rawValue: fetchedReadingListItems[currentReadingListPt + 1].category!.longValue)!
+            let backgroundImageOfRightItem = ForumSections.getPanelBackgroundImageOfGivenSection(sectionOfRightItem)
+            let titleOfRightItem = fetchedReadingListItems[currentReadingListPt + 1].title!
+            let lastUpdatedTimeOfRightItem = fetchedReadingListItems[currentReadingListPt + 1].timeAdded!
+            let numberOfDaysAfterLastUpdatedTimeOfRightItemInComponent = baseCalendar.components(NSCalendarUnit.Day, fromDate: lastUpdatedTimeOfRightItem, toDate: NSDate(), options: NSCalendarOptions())
+            let numberOfDaysAfterLastUpdatedTimeOfRightItem = numberOfDaysAfterLastUpdatedTimeOfRightItemInComponent.day
+            let lastUpdatedTimeOfRightItemInString = "上次更新于\(numberOfDaysAfterLastUpdatedTimeOfRightItem)天前"
+            
+            rightPanel.setUpContentsInPanel(backgroundImageOfRightItem, updateLabelContent: lastUpdatedTimeOfRightItemInString, itemTitleContent: titleOfRightItem)
+            
+            let currentReadingListItemInRightPanel = fetchedReadingListItems[currentReadingListPt + 1]
+            rightPanel.setInfoEmbeddedInPanel(currentReadingListItemInRightPanel.title!, timeAdded: currentReadingListItemInRightPanel.timeAdded!, link: currentReadingListItemInRightPanel.link!, ifVisible: currentReadingListItemInRightPanel.ifVisible!.boolValue, category: currentReadingListItemInRightPanel.category!.longValue, abstract: currentReadingListItemInRightPanel.abstract!)
+        }
+        
+        updateTimeLabel()
+    }
+    
+    // Get the reading list contents from data model (as described in Data Model group).
+    func retrieveReadingList() {
         // Wait until the framework is ready
         while dataReadyFlag != true {
             print("Waiting for the data model to get ready.")
@@ -74,60 +157,10 @@ class HomeScreenViewController: UIViewController {
         let timeAddedSortDescriptor : NSSortDescriptor = NSSortDescriptor(key: "timeAdded", ascending: false)
         let sortedReadingListItems = NSArray(array: readingListItems!).sortedArrayUsingDescriptors([timeAddedSortDescriptor])
         fetchedReadingListItems = sortedReadingListItems as! [MTReadingList]
-
-        // Set up the gesture recognizer
-        let rightToLeftSwipeGestureRecognizerInShowcaseView = UISwipeGestureRecognizer(target: self, action: #selector(self.rightToLeftSwipedInShowcaseView))
-        rightToLeftSwipeGestureRecognizerInShowcaseView.direction = UISwipeGestureRecognizerDirection.Left
-        showcase.addGestureRecognizer(rightToLeftSwipeGestureRecognizerInShowcaseView)
-        
-        let leftToRightSwipeGestureRecognizerInShowcaseView = UISwipeGestureRecognizer(target: self, action: #selector(self.leftToRightSwipedInShowcaseView))
-        leftToRightSwipeGestureRecognizerInShowcaseView.direction = UISwipeGestureRecognizerDirection.Right
-        showcase.addGestureRecognizer(leftToRightSwipeGestureRecognizerInShowcaseView)
-        
-        // Initialize the panels in homePageShowcase
-        // Note: centerPanel is already initialized in IB
-        centerPanel = samplePanel
-        
-        leftPanel = homePageShowcasePanel(frame: CGRect(x: 0.0, y: 0.0, width: showcaseWidthAfterInitialization - 60.0, height: showcase.frame.height))
-        leftPanel.alpha = 0.0
-        showcase.addSubview(leftPanel)
-        showcase.setConstraintsForLeftPanel(leftPanel, showcaseWidth: showcaseWidthAfterInitialization)
-        
-        rightPanel = homePageShowcasePanel(frame: CGRect(x: 0.0, y: 0.0, width: showcaseWidthAfterInitialization - 60.0, height: showcase.frame.height))
-        if fetchedReadingListItems.count > 1 {
-            rightPanel.alpha = 0.1
-        } else {
-            rightPanel.alpha = 0.0
-        }
-        showcase.addSubview(rightPanel)
-        showcase.setConstraintsForRightPanel(rightPanel, showcaseWidth: showcaseWidthAfterInitialization)
-        
-        // Set the background image, title and last updated time in panels
-        // Note: Consider reconstructing the code for better clarity
-        let sectionOfCenteredItem = ForumSections.Sections(rawValue: fetchedReadingListItems[currentReadingListPt].category!.longValue)!
-        let backgroundImageOfCenteredItem = ForumSections.getPanelBackgroundImageOfGivenSection(sectionOfCenteredItem)
-        let titleOfCenteredItem = fetchedReadingListItems[currentReadingListPt].title!
-        let lastUpdatedTimeOfCenteredItem = fetchedReadingListItems[currentReadingListPt].timeAdded!
-        let baseCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
-        let numberOfDaysAfterLastUpdatedTimeOfCenteredItemInComponent = baseCalendar.components(NSCalendarUnit.Day, fromDate: lastUpdatedTimeOfCenteredItem, toDate: NSDate(), options: NSCalendarOptions())
-        let numberOfDaysAfterLastUpdatedTimeOfCenteredItem = numberOfDaysAfterLastUpdatedTimeOfCenteredItemInComponent.day
-        let lastUpdatedTimeOfCenteredItemInString = "上次更新于\(numberOfDaysAfterLastUpdatedTimeOfCenteredItem)天前"
-        
-        centerPanel.setUpContentsInPanel(backgroundImageOfCenteredItem, updateLabelContent: lastUpdatedTimeOfCenteredItemInString, itemTitleContent: titleOfCenteredItem)
-        
-        if fetchedReadingListItems.count > 0 {
-            let sectionOfRightItem = ForumSections.Sections(rawValue: fetchedReadingListItems[currentReadingListPt + 1].category!.longValue)!
-            let backgroundImageOfRightItem = ForumSections.getPanelBackgroundImageOfGivenSection(sectionOfRightItem)
-            let titleOfRightItem = fetchedReadingListItems[currentReadingListPt + 1].title!
-            let lastUpdatedTimeOfRightItem = fetchedReadingListItems[currentReadingListPt + 1].timeAdded!
-            let numberOfDaysAfterLastUpdatedTimeOfRightItemInComponent = baseCalendar.components(NSCalendarUnit.Day, fromDate: lastUpdatedTimeOfRightItem, toDate: NSDate(), options: NSCalendarOptions())
-            let numberOfDaysAfterLastUpdatedTimeOfRightItem = numberOfDaysAfterLastUpdatedTimeOfRightItemInComponent.day
-            let lastUpdatedTimeOfRightItemInString = "上次更新于\(numberOfDaysAfterLastUpdatedTimeOfRightItem)天前"
-            
-            rightPanel.setUpContentsInPanel(backgroundImageOfRightItem, updateLabelContent: lastUpdatedTimeOfRightItemInString, itemTitleContent: titleOfRightItem)
-        }
-        
-        // Update the time label
+    }
+    
+    // Function for updating the time label
+    func updateTimeLabel() {
         // Note: Consider reconstructing the code for better clarity
         let currentDate = NSDate()
         let dateFormatter = NSDateFormatter()
@@ -146,14 +179,6 @@ class HomeScreenViewController: UIViewController {
         
         monthAndDayLabel.text = "\(monthInString) \(dayInString)"
         yearLabel.text = "\(yearInString)"
-    }
-    
-    override func viewDidLayoutSubviews() {
-        scrollView.contentSize = CGSizeMake(rootView.frame.width, contentView.frame.height)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -203,6 +228,9 @@ class HomeScreenViewController: UIViewController {
                         
                         self.rightPanel.setUpContentsInPanel(backgroundImageOfRightItem, updateLabelContent: lastUpdatedTimeOfRightItemInString, itemTitleContent: titleOfRightItem)
                         
+                        let currentReadingListItemInRightPanel = self.fetchedReadingListItems[self.currentReadingListPt + 1]
+                        self.rightPanel.setInfoEmbeddedInPanel(currentReadingListItemInRightPanel.title!, timeAdded: currentReadingListItemInRightPanel.timeAdded!, link: currentReadingListItemInRightPanel.link!, ifVisible: currentReadingListItemInRightPanel.ifVisible!.boolValue, category: currentReadingListItemInRightPanel.category!.longValue, abstract: currentReadingListItemInRightPanel.abstract!)
+                        
                         self.rightPanel.alpha = 0.1
                     }
                 })
@@ -251,10 +279,49 @@ class HomeScreenViewController: UIViewController {
                     
                     self.leftPanel.setUpContentsInPanel(backgroundImageOfLeftItem, updateLabelContent: lastUpdatedTimeOfLeftItemInString, itemTitleContent: titleOfLeftItem)
                     
+                    let currentReadingListItemInLeftPanel = self.fetchedReadingListItems[self.currentReadingListPt - 1]
+                    self.leftPanel.setInfoEmbeddedInPanel(currentReadingListItemInLeftPanel.title!, timeAdded: currentReadingListItemInLeftPanel.timeAdded!, link: currentReadingListItemInLeftPanel.link!, ifVisible: currentReadingListItemInLeftPanel.ifVisible!.boolValue, category: currentReadingListItemInLeftPanel.category!.longValue, abstract: currentReadingListItemInLeftPanel.abstract!)
+                    
                     self.leftPanel.alpha = 0.1
                 }
             })
         }
+    }
+    
+    func tappedInCenterShowcasePanelView(sender: UITapGestureRecognizer) {
+        let currentPanel = sender.view! as! homePageShowcasePanel
+        
+        // Set threadID and forumSectionIdentificationNumber
+        threadID = Int(currentPanel.link!)
+        forumSectionIdentificationNumber = ForumSections.Sections(rawValue: currentPanel.category!)
+        
+        // Perform the segue
+        self.performSegueWithIdentifier("fromHomeScreenToStandalonePostViewScreen", sender: self)
+        
+    }
+    
+    func tappedInLeftShowcasePanelView(sender: UITapGestureRecognizer) {
+        let currentPanel = sender.view! as! homePageShowcasePanel
+        
+        // Set threadID and forumSectionIdentificationNumber
+        threadID = Int(currentPanel.link!)
+        forumSectionIdentificationNumber = ForumSections.Sections(rawValue: currentPanel.category!)
+        
+        // Perform the segue
+        self.performSegueWithIdentifier("fromHomeScreenToStandalonePostViewScreen", sender: self)
+        
+    }
+    
+    func tappedInRightShowcasePanelView(sender: UITapGestureRecognizer) {
+        let currentPanel = sender.view! as! homePageShowcasePanel
+        
+        // Set threadID and forumSectionIdentificationNumber
+        threadID = Int(currentPanel.link!)
+        forumSectionIdentificationNumber = ForumSections.Sections(rawValue: currentPanel.category!)
+        
+        // Perform the segue
+        self.performSegueWithIdentifier("fromHomeScreenToStandalonePostViewScreen", sender: self)
+        
     }
 
 }

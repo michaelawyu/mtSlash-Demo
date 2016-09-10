@@ -10,6 +10,7 @@ import UIKit
 
 var storedNavigationBarStyle : NavigationBarStylesInTopicsAndPostsViewScreen.availableStyles? = nil
 var threadID : Int? = nil
+var forumSectionIdentificationNumber : ForumSections.Sections? = nil
 
 class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     
@@ -85,10 +86,31 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         let taskForRetrievingThreads = sessionForRetrievingThreads.dataTaskWithRequest(requestForRetrievingThreads) { (data, response, error) in
             if error == nil && data != nil {
                 let retrievedThreads = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                self.listOfThreads = retrievedThreads["results"]! as! [NSDictionary]
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.topicsTableView.reloadData()
-                })
+                let retrievedThreadsAsArray = retrievedThreads["results"]! as! [NSDictionary]
+                
+                // Load the retrieved threads into memory and refresh the view
+                if self.listOfThreads.count < retrievedThreadsAsArray.count {
+                    self.listOfThreads = retrievedThreads["results"]! as! [NSDictionary]
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.topicsTableView.reloadData()
+                    })
+                } else {
+                    // Reduce current number of pages
+                    if self.currentNumberOfPages > 1 {
+                        self.currentNumberOfPages = self.currentNumberOfPages - 1
+                    }
+                    
+                    // Issue a notification suggesting all threads available from server has been loaded
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let notificationForHavingLoadedAllThreadsFromServer = UIAlertController(title: "没有更多可用主题", message: "在您选择的类别下，当前没有更多主题可供读取。请稍后再试。", preferredStyle: UIAlertControllerStyle.Alert)
+                        let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
+                            notificationForHavingLoadedAllThreadsFromServer.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                        notificationForHavingLoadedAllThreadsFromServer.addAction(OKAction)
+                        self.presentViewController(notificationForHavingLoadedAllThreadsFromServer, animated: true, completion: nil)
+                    })
+                }
+
             } else {
                 // Issuse a warning if an error has occurred
                 dispatch_async(dispatch_get_main_queue(), {
@@ -148,17 +170,20 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         // If list of threads is not available yet, return a cell indicating that the list of threads is still being retrieved
         if listOfThreads.count == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("noContentSignifierCell")!
+            cell.selectionStyle = .None
             return cell
         }
         
         // If reaches the end of list of the threads, return a cell indicating the option to load more threads from server
         if currentEntryIndex == listOfThreads.count {
             let cell = tableView.dequeueReusableCellWithIdentifier("loadMoreThreadsSignifierCell")!
+            cell.selectionStyle = .None
             return cell
         }
         
         // Configure the cell
         let cell = tableView.dequeueReusableCellWithIdentifier("standardTopicContainerCell")! as! topicTitleContainerCell
+        cell.selectionStyle = .None
         
         let currentThread = listOfThreads[currentEntryIndex]
         
@@ -201,7 +226,7 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         return 160.0
     }
     
-    // Function to call when a row of table is select
+    // Function to call when a row of table is selected
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Load more threads from server if More button is pressed
         if indexPath.indexAtPosition(1) == listOfThreads.count {
@@ -216,6 +241,10 @@ class TopicsViewScreenViewController: UIViewController, UICollectionViewDataSour
         // Load thread ID from selected row
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)! as! topicTitleContainerCell
         threadID = selectedCell.tid
+        let forumIDInSelectedThread = selectedCell.fid
+        let currentTypeIDInSelectedThread = selectedCell.typeID
+        
+        forumSectionIdentificationNumber = ForumSections.convertWebEndSectionNumber2InAppSectionDef((forumIDInSelectedThread, currentTypeIDInSelectedThread))
         
         // Initiate transition to the next screen (posts view screen)
         self.performSegueWithIdentifier("fromTopicsViewScreenToPostsViewScreen", sender: self)

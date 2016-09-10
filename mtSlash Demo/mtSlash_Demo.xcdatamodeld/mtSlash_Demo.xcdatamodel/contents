@@ -7,7 +7,7 @@
         <attribute name="link" attributeType="String" syncable="YES"/>
         <attribute name="timeAdded" attributeType="Date" minDateTimeInterval="488044800" defaultDateTimeInterval="488044800" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
-        <relationship name="belongTo" maxCount="1" deletionRule="Cascade" destinationEntity="MTUsers" inverseName="haveAReadingListOf" inverseEntity="MTUsers" syncable="YES"/>
+        <relationship name="belongTo" maxCount="1" deletionRule="Nullify" destinationEntity="MTUsers" inverseName="haveAReadingListOf" inverseEntity="MTUsers" syncable="YES"/>
     </entity>
     <entity name="MTSearchHistory" representedClassName=".MTSearchHistory" syncable="YES">
         <attribute name="keyword" attributeType="String" syncable="YES"/>

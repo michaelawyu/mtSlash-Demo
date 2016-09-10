@@ -1,19 +1,19 @@
 //
-//  PostsViewScreenViewController.swift
+//  StandalonePostViewScreenViewController.swift
 //  mtSlash Demo
 //
-//  Created by Michael.A.W.Yu on 7/29/16.
+//  Created by Michael.A.W.Yu on 9/9/16.
 //  Copyright © 2016 Michael.A.W.Yu. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
+class StandalonePostViewScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var postsTableView: UITableView!
-    @IBOutlet weak var navigationItemOnCurrentPage: UINavigationItem!
     @IBOutlet weak var toolbarView: UIView!
+    @IBOutlet weak var navigationBarInStandalonePostsViewScreen: UINavigationBar!
     
     var currentNumberOfPages : Int = 1
     var selectedAuthorID : Int = -1
@@ -36,8 +36,8 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         postsTableView.estimatedRowHeight = 400.0
         postsTableView.rowHeight = UITableViewAutomaticDimension
         
-        // Set the style of navigation bar to light style, better accomodate current settings
-        NavigationBarStylesInTopicsAndPostsViewScreen.setStyleOfNavigationBarToLightStyle(navigationBarInTopicsAndPostsViewScreens!)
+        // Set the offset of postsTableView
+        postsTableView.transform = CGAffineTransformMakeTranslation(0.0, 64.0)
         
         // Retrieve posts from the server
         retrievePostsFromServer()
@@ -70,30 +70,10 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         let taskForRetrievingPosts = sessionForRetrievingPosts.dataTaskWithRequest(requestForRetrievingPosts) { (data, response, error) in
             if error == nil && data != nil {
                 let retrievedPosts = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                let retrievedPostsAsArray = retrievedPosts["results"]! as! [NSDictionary]
-                
-                // Load the retrieved posts into memory and refresh the view
-                if self.listOfPosts.count < retrievedPostsAsArray.count {
-                    self.listOfPosts = retrievedPosts["results"]! as! [NSDictionary]
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.postsTableView.reloadData()
-                    })
-                } else {
-                    // Reduce current number of pages
-                    if self.currentNumberOfPages > 1 {
-                        self.currentNumberOfPages = self.currentNumberOfPages - 1
-                    }
-                    
-                    // Issue a notification suggesting all posts available from server has been loaded
-                    dispatch_async(dispatch_get_main_queue(), {
-                        let notificationForHavingLoadedAllPostsFromServer = UIAlertController(title: "没有更多可用回复", message: "在您选择的主题下，当前没有更多符合条件的回复可供读取。请稍后再试。", preferredStyle: UIAlertControllerStyle.Alert)
-                        let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
-                            notificationForHavingLoadedAllPostsFromServer.dismissViewControllerAnimated(true, completion: nil)
-                        })
-                        notificationForHavingLoadedAllPostsFromServer.addAction(OKAction)
-                        self.presentViewController(notificationForHavingLoadedAllPostsFromServer, animated: true, completion: nil)
-                    })
-                }
+                self.listOfPosts = retrievedPosts["results"]! as! [NSDictionary]
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.postsTableView.reloadData()
+                })
             } else {
                 // Issue a warning if an error has occurred
                 dispatch_async(dispatch_get_main_queue(), {
@@ -124,7 +104,6 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         toolbarView.layer.shadowOffset = CGSize(width: 0.0, height: -0.05)
         toolbarView.layer.shadowOpacity = 0.2
         toolbarView.layer.shadowPath = toolbarViewShadowPath.CGPath
-
     }
     
     // Method from UIGestureRecognizerDelegate
@@ -133,10 +112,6 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         return true
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfPosts.count + 1
     }
@@ -147,14 +122,12 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         // If list of threads is not available yet, return a cell indicating that the list of posts is still being retrieved
         if listOfPosts.count == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("noContentSignifierCell")!
-            cell.selectionStyle = .None
             return cell
         }
         
-         // If reaches the end of list of the threads, return a cell indicating the option to load more posts from server
+        // If reaches the end of list of the threads, return a cell indicating the option to load more posts from server
         if currentEntryIndex == listOfPosts.count {
             let cell = tableView.dequeueReusableCellWithIdentifier("loadMorePostsSignifierCell")!
-            cell.selectionStyle = .None
             return cell
         }
         let currentPost = listOfPosts[currentEntryIndex]
@@ -171,8 +144,7 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         // Configure the cell containing the first post
         if currentEntryIndex == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("standardPostContainerCell")! as! postContainerCell
-            cell.selectionStyle = .None
-        
+            
             cell.setAdditionalInfo(pid, fid: fid, tid: tid)
             cell.setAuthor(authorName, authorID: authorID)
             cell.setSubjectAndMessage(subject, message: message, parser: bulletinBoardCodeParser)
@@ -180,13 +152,12 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
             
             // Save the thread title in memory
             self.threadTitle = subject
-        
+            
             return cell
         }
         
         // Configure the cell containing other posts
         let cell = tableView.dequeueReusableCellWithIdentifier("standardPostReplyContainerCell")! as! postReplyContainerCell
-        cell.selectionStyle = .None
         
         cell.setAdditionalInfo(pid, fid: fid, tid: tid)
         cell.setAuthor(authorName, authorID: authorID)
@@ -196,28 +167,38 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         return cell
     }
     
-    // Function to call when a row of table is selected
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // Load more threads from server if More button is pressed
-        if indexPath.indexAtPosition(1) == listOfPosts.count {
-            currentNumberOfPages = currentNumberOfPages + 1
-            retrievePostsFromServer()
-            return
-        }
-    }
-    
     // Function to call when the pan gesture recognizer is activated
     func pannedInPostsTableView(sender: UIPanGestureRecognizer) {
         let distanceMovedVertically = sender.translationInView(self.view).y
         
         // Hide the navigation bar when panned down long enough in the view
         if distanceMovedVertically <= -20 {
-            navigationControllerInTopicsAndPostsViewScreens?.setNavigationBarHidden(true, animated: true)
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: -1.0, options: UIViewAnimationOptions(), animations: {
+                
+                if self.navigationBarInStandalonePostsViewScreen.transform.ty == 0.0 {
+                self.navigationBarInStandalonePostsViewScreen.transform = CGAffineTransformMakeTranslation(0.0, -64.0)
+                }
+                
+                if self.postsTableView.transform.ty == 64.0 {
+                self.postsTableView.transform = CGAffineTransformIdentity
+                }
+                
+                }, completion: nil)
         }
         
         // Show the navigation bar when panned up long enough in the view
         if distanceMovedVertically >= 20 {
-            navigationControllerInTopicsAndPostsViewScreens?.setNavigationBarHidden(false, animated: true)
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: -1.0, options: UIViewAnimationOptions(), animations: {
+                
+                if self.navigationBarInStandalonePostsViewScreen.transform.ty == -64.0 {
+                    self.navigationBarInStandalonePostsViewScreen.transform = CGAffineTransformIdentity
+                }
+                
+                if self.postsTableView.transform.ty == 0.0 {
+                    self.postsTableView.transform = CGAffineTransformMakeTranslation(0.0, 64.0)
+                }
+                
+                }, completion: nil)
         }
         
     }
@@ -229,14 +210,19 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
             let switchOffFullScreenModeNotification = UIAlertController(title: "离开全屏模式", message: "即将离开全屏模式。离开全屏模式后，标题栏及工具栏将重新显示。您可以随时使用工具栏上的快捷方式重新启用全屏模式。", preferredStyle: UIAlertControllerStyle.Alert)
             let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) { (action) in
                 switchOffFullScreenModeNotification.dismissViewControllerAnimated(true, completion: nil)
-            
+                
                 // Enable panGestureRecognizerForAppearanceAndDisappearanceOfNavigationBar
                 self.panGestureRecognizerForAppearanceAndDisappearanceOfNavigationBar.enabled = true
-            
+                
                 // Disable pinchGestureRecognizerForDisablingFullScreenMode
                 self.pinchGestureRecognizerForDisablingFullScreenMode.enabled = false
-            
-                navigationControllerInTopicsAndPostsViewScreens?.setNavigationBarHidden(false, animated: true)
+                
+                // Hide the navigation bar
+                UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: -1.0, options: UIViewAnimationOptions(), animations: {
+                    self.navigationBarInStandalonePostsViewScreen.transform = CGAffineTransformMakeTranslation(0.0, -64.0)
+                    self.postsTableView.transform = CGAffineTransformIdentity
+                    }, completion: nil)
+                
                 self.toolbarView.hidden = false
             }
             let CancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Default) { (action) in
@@ -248,9 +234,7 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         }
     }
     
-    // Function to call when view content from this author only button is pressed
     @IBAction func viewPostsFromThisAuthorOnlyButtonPressed(sender: UIButtonWithLink) {
-        self.listOfPosts = []
         
         if selectedAuthorID == -1 {
             // Load selectedAuthorID, retrieve posts from the server and refresh the table
@@ -271,7 +255,6 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         }
     }
     
-    // Function to call when add this thread to reading list button is pressed
     @IBAction func addToReadingListButtonPressed(sender: AnyObject) {
         // Check if the thread has been loaded
         if listOfPosts.count == 0 {
@@ -365,7 +348,6 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         }
     }
     
-    // Function to call when like button is pressed
     @IBAction func likeButtonPressed(sender: AnyObject) {
         // Not implemented for current testing builds
         let likeActionFailed = UIAlertController(title: "在测试版本中无法执行此操作", message: "当前连接的服务器（随缘居移动应用程序测试站点）并未提供对当前的操作的支持。请在正式版本中再试。", preferredStyle: UIAlertControllerStyle.Alert)
@@ -375,9 +357,8 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         likeActionFailed.addAction(OKAction)
         self.presentViewController(likeActionFailed, animated: true, completion: nil)
     }
-    
-    // Function to cell when switch to full screen mode button is pressed
-    @IBAction func fullScreenButtonPressed(sender: AnyObject) {
+
+    @IBAction func fullScreenModeButtonPressed(sender: AnyObject) {
         // Issue a notification for switching to full screen mode
         let switchToFullScreenModeNotification = UIAlertController(title: "切换至全屏模式", message: "即将切换到全屏模式。在此模式下，标题栏及工具栏将被隐藏。您可以随时使用双指缩放屏幕回复。", preferredStyle: UIAlertControllerStyle.Alert)
         let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) { (action) in
@@ -389,7 +370,18 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
             // Enable pinchGestureRecognizerForDisablingFullScreenMode, for switching off full screen mode
             self.pinchGestureRecognizerForDisablingFullScreenMode.enabled = true
             
-            navigationControllerInTopicsAndPostsViewScreens?.setNavigationBarHidden(true, animated: true)
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: -1.0, options: UIViewAnimationOptions(), animations: {
+                
+                if self.navigationBarInStandalonePostsViewScreen.transform.ty == 0.0 {
+                    self.navigationBarInStandalonePostsViewScreen.transform = CGAffineTransformMakeTranslation(0.0, -64.0)
+                }
+                
+                if self.postsTableView.transform.ty == 64.0 {
+                    self.postsTableView.transform = CGAffineTransformIdentity
+                }
+                
+                }, completion: nil)
+            
             self.toolbarView.hidden = true
         }
         let CancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Default) { (action) in
@@ -400,21 +392,19 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         self.presentViewController(switchToFullScreenModeNotification, animated: true, completion: nil)
     }
     
-    // Function to call when share button is pressed
     @IBAction func shareButtonPressed(sender: AnyObject) {
         let sharedText = "@\(username)向您分享了一篇来自随缘居的文章。"
-            
+        
         let sharedURL = WebLinks.getAddressOfWebLink(WebLinks.ShareThreads)
         print(sharedURL)
         
         let objectsToShare = [sharedText, sharedURL]
         let activityViewControllerForSharing = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-                
+        
         activityViewControllerForSharing.popoverPresentationController?.sourceView = self.view
         self.presentViewController(activityViewControllerForSharing, animated: true, completion: nil)
     }
-   
-    // Function to call when reply button is pressed
+ 
     @IBAction func replyButtonPressed(sender: AnyObject) {
         // Not implemented for current testing buildings
         let replyActionFailed = UIAlertController(title: "在测试版本中无法执行此操作", message: "此功能在测试版本中不可用。请在正式版本中再试。", preferredStyle: UIAlertControllerStyle.Alert)
@@ -425,6 +415,7 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         self.presentViewController(replyActionFailed, animated: true, completion: nil)
     }
     
-    
-    
+    @IBAction func returnButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

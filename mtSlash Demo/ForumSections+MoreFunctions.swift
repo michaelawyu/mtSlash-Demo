@@ -94,7 +94,7 @@ extension ForumSections {
             let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("inceptionDiscoverScreenBackground.prototype", ofType: "jpg")
             return UIImage(named: sectionBackgroundImagePath!)!
         case 1:
-            let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("missionImpossibleWhoDiscoverScreenBackground.prototype", ofType: "jpg")
+            let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("missionImpossibleDiscoverScreenBackground.prototype", ofType: "jpg")
             return UIImage(named: sectionBackgroundImagePath!)!
         case 2:
             let sectionBackgroundImagePath = NSBundle.mainBundle().pathForResource("pacificRimDiscoverScreenBackground.prototype", ofType: "jpg")

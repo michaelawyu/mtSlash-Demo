@@ -13,6 +13,13 @@ class homePageShowcasePanel: UIView {
     var backgroundImage : UIImageView?
     var updateLabel : UILabel?
     var itemTitle : UILabel?
+    
+    var title : String? = nil
+    var timeAdded : NSDate? = nil
+    var link : String? = nil
+    var ifVisible : Bool? = nil
+    var category : Int? = nil
+    var abstract : String? = nil
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,6 +90,15 @@ class homePageShowcasePanel: UIView {
         backgroundImage?.image = newBackgroundImage
         updateLabel?.text = updateLabelContent
         itemTitle?.text = itemTitleContent
+    }
+    
+    func setInfoEmbeddedInPanel(title: String, timeAdded: NSDate, link: String, ifVisible: Bool, category: Int, abstract: String) {
+        self.title = title
+        self.timeAdded = timeAdded
+        self.link = link
+        self.ifVisible = ifVisible
+        self.category = category
+        self.abstract = abstract
     }
 
 
