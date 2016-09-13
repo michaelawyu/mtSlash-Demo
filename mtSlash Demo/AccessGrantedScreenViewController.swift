@@ -39,7 +39,7 @@ class AccessGrantedScreenViewController: UIViewController {
         
         // Update settings
         defaultSetting.definedFont = "PingFangSC-Regular"
-        defaultSetting.definedFontSize = 16.0
+        defaultSetting.definedFontSize = NSNumber(integer: 16)
         defaultSetting.belongTo = currentUser
         
         // Save the setting to data framework

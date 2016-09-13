@@ -212,7 +212,7 @@ class SettingsScreenViewController: UIViewController, UITableViewDataSource, UIT
         self.presentViewController(selectedANewFontSizeActionSheet, animated: true, completion: nil)
     }
     
-    func updateSettingOfCurrentUser(newFontSize: Float?, newFont: String?) {
+    func updateSettingOfCurrentUser(newFontSize: Int?, newFont: String?) {
         // Wait until the framework is ready
         while dataReadyFlag != true {
             print("Waiting for the data model to get ready.")
@@ -242,7 +242,7 @@ class SettingsScreenViewController: UIViewController, UITableViewDataSource, UIT
         
         // Update the setting of current user
         if newFontSize != nil {
-            settingOfCurrentUser!.definedFontSize = newFontSize!
+            settingOfCurrentUser!.definedFontSize = NSNumber(integer: newFontSize!)
         }
         
         if newFont != nil {

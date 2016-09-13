@@ -20,12 +20,12 @@ class Fonts {
     static let listOfSupportedFonts = [SupportedFonts.PingFangSC, SupportedFonts.Hiragino_Sans, SupportedFonts.Hiragino_Mincho_ProN]
     
     // Supported Font Sizes
-    enum SupportedFontSizes : Float {
-        case Largest = 20.0
-        case Larger = 18.0
-        case Standard = 16.0
-        case Smaller = 14.0
-        case Smallest = 12.0
+    enum SupportedFontSizes : Int {
+        case Largest = 20
+        case Larger = 18
+        case Standard = 16
+        case Smaller = 14
+        case Smallest = 12
     }
     
     static let listOfSupportedSizes : [SupportedFontSizes] = [.Largest, .Larger, .Standard, .Smaller, .Smallest]

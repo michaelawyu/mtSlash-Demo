@@ -55,7 +55,7 @@ class displaySampleSidenoteInSettingsViewCell: UITableViewCell {
             fatalError("An error has occurred: Failed to fetch setting items from the database.")
         }
         
-        let currentFontSizeInRawValue = settingOfCurrentUser!.definedFontSize!.floatValue
+        let currentFontSizeInRawValue = settingOfCurrentUser!.definedFontSize!.longValue
         let currentFontInRawValue = settingOfCurrentUser!.definedFont! as String
         
         displaySampleLabel.font = UIFont(name: currentFontInRawValue, size: CGFloat(currentFontSizeInRawValue))

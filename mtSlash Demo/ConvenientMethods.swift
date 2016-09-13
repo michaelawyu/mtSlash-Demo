@@ -72,6 +72,7 @@ class ConvenientMethods {
         
         // Set up fetch request
         let settingItemsFetchRequest = NSFetchRequest(entityName: "MTSettings")
+        print(uid)
         let currentUser = ConvenientMethods.getCurrentUser(uid)
         
         let predicateForFetchingSettingsOfSpecificUser = NSPredicate(format: "(belongTo == %@)", argumentArray: [currentUser])
@@ -88,7 +89,9 @@ class ConvenientMethods {
             fatalError("An error has occurred: Failed to fetch setting items from the database.")
         }
         
-        let currentFontSizeInRawValue = settingOfCurrentUser!.definedFontSize!.floatValue
+        print(settingOfCurrentUser)
+        
+        let currentFontSizeInRawValue = settingOfCurrentUser!.definedFontSize!.longValue
         let currentFontInRawValue = settingOfCurrentUser!.definedFont! as String
         
         let currentFontSize = Fonts.SupportedFontSizes(rawValue: currentFontSizeInRawValue)!

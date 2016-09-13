@@ -27,9 +27,9 @@ class Initialization {
         let devProjectSummaryAsAReadingListItem = NSEntityDescription.insertNewObjectForEntityForName("MTReadingList", inManagedObjectContext: managedObjectContextInUse) as! MTReadingList
         
         // Set values of the item
-        userManualAsAReadingListItem.setValuesOfReadingListItem("使用指南", timeAdded: NSDate(), link: "", ifVisible: false, category: 1, abstract: "欢迎您使用访问随缘居。请阅读此文档，了解如何使用、配置以及拓展此应用程序。", belongTo: user)
+        userManualAsAReadingListItem.setValuesOfReadingListItem("使用指南", timeAdded: NSDate(), link: "62", ifVisible: false, category: 70, abstract: "欢迎您使用访问随缘居。请阅读此文档，了解如何使用、配置以及拓展此应用程序。", belongTo: user)
     
-        devProjectSummaryAsAReadingListItem.setValuesOfReadingListItem("欢迎加入开发者计划", timeAdded: NSDate(), link: "", ifVisible: false, category: 1, abstract: "对于如何开发此应用程序、改进其内部设计或是将此程序迁移至其它平台感兴趣？此文档内包含了一切与开发者计划相关的信息。", belongTo: user)
+        devProjectSummaryAsAReadingListItem.setValuesOfReadingListItem("欢迎加入开发者计划", timeAdded: NSDate(), link: "61", ifVisible: false, category: 70, abstract: "对于如何开发此应用程序、改进其内部设计或是将此程序迁移至其它平台感兴趣？此文档内包含了一切与开发者计划相关的信息。", belongTo: user)
         
         // Save the changes
         do {

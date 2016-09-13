@@ -77,6 +77,9 @@ class HomeScreenViewController: UIViewController {
         
         retrieveReadingList()
         
+        // Reset pointer to reading list
+        currentReadingListPt = 0
+        
         // Set the background image, title and last updated time in panels
         // Embedded the info of specific reading list item in panel
         // Note: Consider reconstructing the code for better clarity

@@ -318,7 +318,7 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
             let currentUser = ConvenientMethods.getCurrentUser(uid)
             
             // Set values of the item
-            newReadingListItem.setValuesOfReadingListItem(threadTitle, timeAdded: NSDate(), link: String(threadID!), ifVisible: false, category: forumSectionIdentificationNumber!.rawValue, abstract: "", belongTo: currentUser)
+            newReadingListItem.setValuesOfReadingListItem(threadTitle, timeAdded: NSDate(), link: String(threadID!), ifVisible: true, category: forumSectionIdentificationNumber!.rawValue, abstract: "", belongTo: currentUser)
             
             // Save the changes
             do {
@@ -339,6 +339,17 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
         // Issue a warning if the entry has been added to the reading list
         if readingListItems.count > 0 {
             readingListItem = readingListItems.last!
+            
+            // Invisible reading list items cannot be removed
+            if readingListItem!.ifVisible!.boolValue == false {
+                let removalOfInvisibleItemsIsForbidden = UIAlertController(title: "无法修改当前项目", message: "当前主题是随程序一同安装的帮助文档，暂时无法从程序中移除。", preferredStyle: UIAlertControllerStyle.Alert)
+                let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in
+                    removalOfInvisibleItemsIsForbidden.dismissViewControllerAnimated(true, completion: nil)
+                })
+                removalOfInvisibleItemsIsForbidden.addAction(OKAction)
+                self.presentViewController(removalOfInvisibleItemsIsForbidden, animated: true, completion: nil)
+                return
+            }
             
             let confirmationOfRemovalOfReadingListItemRequired = UIAlertController(title: "当前主题已在阅读列表中", message: "您确认要从阅读列表中移除此主题吗？", preferredStyle: UIAlertControllerStyle.Alert)
             let OKAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (action) in

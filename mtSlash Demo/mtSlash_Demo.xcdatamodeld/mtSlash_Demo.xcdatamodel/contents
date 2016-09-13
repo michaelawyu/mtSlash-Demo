@@ -16,7 +16,7 @@
     </entity>
     <entity name="MTSettings" representedClassName=".MTSettings" syncable="YES">
         <attribute name="definedFont" attributeType="String" defaultValueString="PingFangSC-Regular" syncable="YES"/>
-        <attribute name="definedFontSize" attributeType="Float" defaultValueString="16" syncable="YES"/>
+        <attribute name="definedFontSize" attributeType="Integer 32" defaultValueString="16" syncable="YES"/>
         <relationship name="belongTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MTUsers" inverseName="haveASettingOf" inverseEntity="MTUsers" syncable="YES"/>
     </entity>
     <entity name="MTUsers" representedClassName=".MTUsers" syncable="YES">
@@ -33,7 +33,7 @@
     <elements>
         <element name="MTReadingList" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="MTSearchHistory" positionX="-54" positionY="72" width="128" height="90"/>
-        <element name="MTUsers" positionX="-63" positionY="36" width="128" height="180"/>
         <element name="MTSettings" positionX="-54" positionY="81" width="128" height="90"/>
+        <element name="MTUsers" positionX="-63" positionY="36" width="128" height="180"/>
     </elements>
 </model>
