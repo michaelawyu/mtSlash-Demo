@@ -324,6 +324,7 @@ class PostsViewScreenViewController: UIViewController, UITableViewDataSource, UI
             do {
                 try managedObjectContextInUse.save()
             } catch {
+                print(error)
                 fatalError("An error has occurred: Failed to save the changes to the database.")
             }
             

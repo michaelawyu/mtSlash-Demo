@@ -89,8 +89,6 @@ class ConvenientMethods {
             fatalError("An error has occurred: Failed to fetch setting items from the database.")
         }
         
-        print(settingOfCurrentUser)
-        
         let currentFontSizeInRawValue = settingOfCurrentUser!.definedFontSize!.longValue
         let currentFontInRawValue = settingOfCurrentUser!.definedFont! as String
         
